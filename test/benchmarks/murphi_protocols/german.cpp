@@ -1,14 +1,14 @@
 /******************************
   Program "./benchmarks/murphi_protocols/german.m" compiled by "Caching Murphi Release 5.5.0"
 
-  Murphi Last Compiled date: "Nov  3 2022"
+  Murphi Last Compiled date: "Nov 20 2022"
  ******************************/
 
 /********************
   Parameter
  ********************/
 #define MURPHI_VERSION "Caching Murphi Release 5.5.0"
-#define MURPHI_DATE "Nov  3 2022"
+#define MURPHI_DATE "Nov 20 2022"
 #define PROTOCOL_NAME "./benchmarks/murphi_protocols/german"
 #define BITS_IN_WORLD 200
 #define ALIGN
@@ -2457,9 +2457,12 @@ void Goal_value() {  // makun: set goalstate
 
     // set carelist about rulebase 
     carelist_rb.clear();  
-    carelist_rb.push_back("Chan1[1].Cmd");
-    carelist_rb.push_back("Cache[1].Data");
-    carelist_rb.push_back("AuxData");
+    carelist_rb.push_back("Chan2[1].Cmd");
+    carelist_rb.push_back("Inv");
+    carelist_rb.push_back("Chan3[1].Cmd");
+    carelist_rb.push_back("Empty");
+    carelist_rb.push_back("GntE");
+    carelist_rb.push_back("GntS");
 }
 char * Name(unsigned short r)
 {
@@ -2475,63 +2478,63 @@ unsigned short StartStateManager::numstartstates = 2;
 /********************
   Invariant records
  ********************/
-int mu__invariant_46( const mu_1_NODE &mu_j, const mu_1_NODE &mu_i) // Invariant "CntrlProp"
+int mu__invariant_44( const mu_1_NODE &mu_j, const mu_1_NODE &mu_i) // Invariant "CntrlProp"
 {
+bool mu__boolexpr45;
+  if (!((mu_i) != (mu_j))) mu__boolexpr45 = TRUE ;
+  else {
+bool mu__boolexpr46;
 bool mu__boolexpr47;
-  if (!((mu_i) != (mu_j))) mu__boolexpr47 = TRUE ;
+  if (!((mu_Cache[mu_i].mu_State) == (mu_E))) mu__boolexpr47 = TRUE ;
+  else {
+  mu__boolexpr47 = ((mu_Cache[mu_j].mu_State) == (mu_I)) ; 
+}
+  if (!(mu__boolexpr47)) mu__boolexpr46 = FALSE ;
   else {
 bool mu__boolexpr48;
+  if (!((mu_Cache[mu_i].mu_State) == (mu_S))) mu__boolexpr48 = TRUE ;
+  else {
 bool mu__boolexpr49;
-  if (!((mu_Cache[mu_i].mu_State) == (mu_E))) mu__boolexpr49 = TRUE ;
+  if ((mu_Cache[mu_j].mu_State) == (mu_I)) mu__boolexpr49 = TRUE ;
   else {
-  mu__boolexpr49 = ((mu_Cache[mu_j].mu_State) == (mu_I)) ; 
+  mu__boolexpr49 = ((mu_Cache[mu_j].mu_State) == (mu_E)) ; 
 }
-  if (!(mu__boolexpr49)) mu__boolexpr48 = FALSE ;
-  else {
-bool mu__boolexpr50;
-  if (!((mu_Cache[mu_i].mu_State) == (mu_S))) mu__boolexpr50 = TRUE ;
-  else {
-bool mu__boolexpr51;
-  if ((mu_Cache[mu_j].mu_State) == (mu_I)) mu__boolexpr51 = TRUE ;
-  else {
-  mu__boolexpr51 = ((mu_Cache[mu_j].mu_State) == (mu_E)) ; 
+  mu__boolexpr48 = (mu__boolexpr49) ; 
 }
-  mu__boolexpr50 = (mu__boolexpr51) ; 
+  mu__boolexpr46 = (mu__boolexpr48) ; 
 }
-  mu__boolexpr48 = (mu__boolexpr50) ; 
+  mu__boolexpr45 = (mu__boolexpr46) ; 
 }
-  mu__boolexpr47 = (mu__boolexpr48) ; 
-}
-return mu__boolexpr47;
+return mu__boolexpr45;
 };
 
-bool mu__condition_54() // Condition for Rule "CntrlProp, j:1, i:1"
+bool mu__condition_52() // Condition for Rule "CntrlProp, j:1, i:1"
 {
-  return mu__invariant_46( 1, 1 );
+  return mu__invariant_44( 1, 1 );
 }
 
-bool mu__condition_55() // Condition for Rule "CntrlProp, j:1, i:2"
+bool mu__condition_53() // Condition for Rule "CntrlProp, j:1, i:2"
 {
-  return mu__invariant_46( 1, 2 );
+  return mu__invariant_44( 1, 2 );
 }
 
-bool mu__condition_57() // Condition for Rule "CntrlProp, j:2, i:1"
+bool mu__condition_55() // Condition for Rule "CntrlProp, j:2, i:1"
 {
-  return mu__invariant_46( 2, 1 );
+  return mu__invariant_44( 2, 1 );
 }
 
-bool mu__condition_58() // Condition for Rule "CntrlProp, j:2, i:2"
+bool mu__condition_56() // Condition for Rule "CntrlProp, j:2, i:2"
 {
-  return mu__invariant_46( 2, 2 );
+  return mu__invariant_44( 2, 2 );
 }
 
 /**** end rule declaration ****/
 
 const rulerec invariants[] = {
-{"CntrlProp, j:2, i:2", &mu__condition_58, NULL, },
-{"CntrlProp, j:2, i:1", &mu__condition_57, NULL, },
-{"CntrlProp, j:1, i:2", &mu__condition_55, NULL, },
-{"CntrlProp, j:1, i:1", &mu__condition_54, NULL, },
+{"CntrlProp, j:2, i:2", &mu__condition_56, NULL, },
+{"CntrlProp, j:2, i:1", &mu__condition_55, NULL, },
+{"CntrlProp, j:1, i:2", &mu__condition_53, NULL, },
+{"CntrlProp, j:1, i:1", &mu__condition_52, NULL, },
 };
 const unsigned short numinvariants = 4;
 

@@ -8,7 +8,7 @@ Run this program with "-h" for the list of options.
 Bugs, questions, and comments should be directed to
 "melatti@di.uniroma1.it".
 
-CMurphi compiler last modified date: Nov  3 2022
+CMurphi compiler last modified date: Nov 20 2022
 Include files last modified date:    Jul 23 2021
 ==========================================================================
 
@@ -1111,15 +1111,19 @@ auxdata.values[3]:false
 
 ===== Startstates generated! =====
 
+Progress Report:
+
+	1000 states explored in 7.20s, with 1153 rules fired and 949 states in the queue.
+
 ==========================================================================
 
 Result:
 
-	Invariant "coherent, addr:0, n2:2, n1:0" failed.
+	Invariant "coherent, addr:3, n2:2, n1:0" failed.
 
 State Space Explored:
 
-	243 states, 265 rules fired in 3.74s.
+	1554 states, 1927 rules fired in 7.44s.
 
 Analysis of State Space:
 

@@ -1,14 +1,14 @@
 /******************************
   Program "./benchmarks/murphi_protocols/adash.m" compiled by "Caching Murphi Release 5.5.0"
 
-  Murphi Last Compiled date: "Nov  3 2022"
+  Murphi Last Compiled date: "Nov 20 2022"
  ******************************/
 
 /********************
   Parameter
  ********************/
 #define MURPHI_VERSION "Caching Murphi Release 5.5.0"
-#define MURPHI_DATE "Nov  3 2022"
+#define MURPHI_DATE "Nov 20 2022"
 #define PROTOCOL_NAME "./benchmarks/murphi_protocols/adash"
 #define BITS_IN_WORLD 4192
 #define ALIGN

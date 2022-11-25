@@ -1,14 +1,14 @@
 /******************************
   Program "./benchmarks/murphi_protocols/mutual.m" compiled by "Caching Murphi Release 5.5.0"
 
-  Murphi Last Compiled date: "Nov  3 2022"
+  Murphi Last Compiled date: "Nov 20 2022"
  ******************************/
 
 /********************
   Parameter
  ********************/
 #define MURPHI_VERSION "Caching Murphi Release 5.5.0"
-#define MURPHI_DATE "Nov  3 2022"
+#define MURPHI_DATE "Nov 20 2022"
 #define PROTOCOL_NAME "./benchmarks/murphi_protocols/mutual"
 #define BITS_IN_WORLD 48
 #define ALIGN
@@ -648,7 +648,9 @@ void Goal_value() {  // makun: set goalstate
 
     // set carelist about rulebase 
     carelist_rb.clear();  
+    carelist_rb.push_back("C");
     carelist_rb.push_back("x");
+    carelist_rb.push_back("I");
 }
 char * Name(unsigned short r)
 {

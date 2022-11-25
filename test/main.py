@@ -1,3 +1,5 @@
+#! python3
+
 import subprocess as sp
 from multiprocessing.dummy import Pool as ThreadPool
 import csv
@@ -6,8 +8,8 @@ import re
 mu_compile = '../src/mu'
 mu_include = '../include'
 
-# mu_compile_old = '../../cmurphi5.5.0/src/mu'
-# mu_include_old = '../../cmurphi5.5.0/include'
+mu_compile_old = '../../cmurphi5.5.0/src/mu'
+mu_include_old = '../../cmurphi5.5.0/include'
 
 
 invs_list = []
@@ -103,12 +105,23 @@ def collect_result(dir_path, mu_file_name, node_list):
     csv_file.close()
 
 
+import os
+import psutil
+
 # run lab testcases
 def run_all_testcases(test_path=''):
-    murphi_filename_list = ['mutual', 'german', 'german2004', 'adash', 'eadash', 'ldash', 'n_godsont', 'flash_ctc10_orig_node2']
+    murphi_filename_list = ['mutual', 'german', 'german2004', 'adash', 'eadash', 'ldash', 'n_godsont', 'flash']
+    node_num_list = [2, 4, 8]
     for murphi_filename in murphi_filename_list:
-        sp.run(['bash', 'run.sh', murphi_filename, mu_compile, mu_include], cwd='./', timeout=3600)
-        print(murphi_filename + " case run successfully!")
+        for node_num in node_num_list:
+            pid = os.getpid()
+            start_memory = psutil.Process(pid).memory_full_info().uss / 1024 / 1024
+            sp.run(['bash', 'run.sh', murphi_filename + '_node' + str(node_num), mu_compile, mu_include], cwd='./', timeout=3600)
+            print(murphi_filename + '_node' + str(node_num) + " case run successfully!")
+            end_memory = psutil.Process(pid).memory_full_info().uss / 1024 / 1024
+            print(murphi_filename + '_node' + str(node_num) + " occupies memory: " + str(end_memory - start_memory) + "MB")
+
+
 
 if __name__ == '__main__':
 
@@ -116,12 +129,12 @@ if __name__ == '__main__':
     # collect_result('./', 'flash_ctc10_orig', [2])
 
 
-    testcase_name = 'n_godsont'
-    sp.run(['bash', 'run.sh', testcase_name, mu_compile, mu_include], cwd='./', timeout=3600)
+    # testcase_name = 'n_godsont'
+    # sp.run(['bash', 'run.sh', testcase_name, mu_compile, mu_include], cwd='./', timeout=3600)
 
 
-    # sp.run(['bash', 'run.sh', './btor2murphi_case/' + 'blocks.4.prop1-back-serstep_f', mu_compile_old, mu_include_old], cwd='./', timeout=3600)
-    # sp.run(['bash', 'run.sh', 'test', mu_compile, mu_include_new], cwd='./', timeout=3600)
+    # sp.run(['bash', 'run.sh', 'german', mu_compile_old, mu_include_old], cwd='./', timeout=3600)
+    # sp.run(['bash', 'run.sh', 'german', mu_compile, mu_include], cwd='./', timeout=3600)
 
 
-    # run_all_testcases()
+    run_all_testcases()

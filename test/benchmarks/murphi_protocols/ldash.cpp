@@ -1,14 +1,14 @@
 /******************************
   Program "./benchmarks/murphi_protocols/ldash.m" compiled by "Caching Murphi Release 5.5.0"
 
-  Murphi Last Compiled date: "Nov  3 2022"
+  Murphi Last Compiled date: "Nov 20 2022"
  ******************************/
 
 /********************
   Parameter
  ********************/
 #define MURPHI_VERSION "Caching Murphi Release 5.5.0"
-#define MURPHI_DATE "Nov  3 2022"
+#define MURPHI_DATE "Nov 20 2022"
 #define PROTOCOL_NAME "./benchmarks/murphi_protocols/ldash"
 #define BITS_IN_WORLD 1592
 #define ALIGN
@@ -6334,12 +6334,10 @@ void Goal_value() {  // makun: set goalstate
 
     // set carelist about rulebase 
     carelist_rb.clear();  
-    carelist_rb.push_back("ULRAC.State");
-    carelist_rb.push_back("LDir.State");
-    carelist_rb.push_back("LDir.QueuedCount");
-    carelist_rb.push_back("LRAC.State");
-    carelist_rb.push_back("LCache.State");
+    carelist_rb.push_back("1");
+    carelist_rb.push_back("n");
     carelist_rb.push_back("LockOwner[1][4].Proc");
+    carelist_rb.push_back("nohome");
 }
 char * Name(unsigned short r)
 {

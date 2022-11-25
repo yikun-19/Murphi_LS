@@ -8,7 +8,7 @@ Run this program with "-h" for the list of options.
 Bugs, questions, and comments should be directed to
 "melatti@di.uniroma1.it".
 
-CMurphi compiler last modified date: Nov  3 2022
+CMurphi compiler last modified date: Nov 20 2022
 Include files last modified date:    Jul 23 2021
 ==========================================================================
 
@@ -167,17 +167,17 @@ repRule:NONE
 
 Progress Report:
 
-	1000 states explored in 9.72s, with 1387 rules fired and 935 states in the queue.
+	1000 states explored in 7.46s, with 1378 rules fired and 936 states in the queue.
 
 ==========================================================================
 
-Result:
+Status:
 
-	Invariant "Coherence, a:1, j:2, i:4" failed.
+	No error found.
 
 State Space Explored:
 
-	1785 states, 9906 rules fired in 11.02s.
+	1800 states, 10114 rules fired in 8.48s.
 
 Analysis of State Space:
 

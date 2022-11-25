@@ -1,14 +1,14 @@
 /******************************
   Program "./benchmarks/murphi_protocols/german2004.m" compiled by "Caching Murphi Release 5.5.0"
 
-  Murphi Last Compiled date: "Nov  3 2022"
+  Murphi Last Compiled date: "Nov 20 2022"
  ******************************/
 
 /********************
   Parameter
  ********************/
 #define MURPHI_VERSION "Caching Murphi Release 5.5.0"
-#define MURPHI_DATE "Nov  3 2022"
+#define MURPHI_DATE "Nov 20 2022"
 #define PROTOCOL_NAME "./benchmarks/murphi_protocols/german2004"
 #define BITS_IN_WORLD 4208
 #define ALIGN
@@ -5006,240 +5006,240 @@ unsigned short StartStateManager::numstartstates = 1;
 /********************
   Invariant records
  ********************/
-int mu__invariant_111( const mu_1_addr_type &mu_addr, const mu_1_node_id &mu_n2, const mu_1_node_id &mu_n1) // Invariant "coherent"
+int mu__invariant_108( const mu_1_addr_type &mu_addr, const mu_1_node_id &mu_n2, const mu_1_node_id &mu_n1) // Invariant "coherent"
 {
-bool mu__boolexpr112;
-bool mu__boolexpr113;
-  if (!((mu_n1) != (mu_n2))) mu__boolexpr113 = FALSE ;
+bool mu__boolexpr109;
+bool mu__boolexpr110;
+  if (!((mu_n1) != (mu_n2))) mu__boolexpr110 = FALSE ;
   else {
-  mu__boolexpr113 = ((mu_node[mu_n1].mu_cache[mu_addr].mu_state) == (mu_cache_shared)) ; 
+  mu__boolexpr110 = ((mu_node[mu_n1].mu_cache[mu_addr].mu_state) == (mu_cache_shared)) ; 
 }
-  if (!(mu__boolexpr113)) mu__boolexpr112 = TRUE ;
+  if (!(mu__boolexpr110)) mu__boolexpr109 = TRUE ;
   else {
-  mu__boolexpr112 = ((mu_node[mu_n2].mu_cache[mu_addr].mu_state) == (mu_cache_shared)) ; 
+  mu__boolexpr109 = ((mu_node[mu_n2].mu_cache[mu_addr].mu_state) == (mu_cache_shared)) ; 
 }
-return mu__boolexpr112;
+return mu__boolexpr109;
 };
 
-bool mu__condition_117() // Condition for Rule "coherent, addr:0, n2:0, n1:0"
+bool mu__condition_114() // Condition for Rule "coherent, addr:0, n2:0, n1:0"
 {
-  return mu__invariant_111( 0, 0, 0 );
+  return mu__invariant_108( 0, 0, 0 );
 }
 
-bool mu__condition_118() // Condition for Rule "coherent, addr:0, n2:0, n1:1"
+bool mu__condition_115() // Condition for Rule "coherent, addr:0, n2:0, n1:1"
 {
-  return mu__invariant_111( 0, 0, 1 );
+  return mu__invariant_108( 0, 0, 1 );
 }
 
-bool mu__condition_119() // Condition for Rule "coherent, addr:0, n2:0, n1:2"
+bool mu__condition_116() // Condition for Rule "coherent, addr:0, n2:0, n1:2"
 {
-  return mu__invariant_111( 0, 0, 2 );
+  return mu__invariant_108( 0, 0, 2 );
 }
 
-bool mu__condition_121() // Condition for Rule "coherent, addr:0, n2:1, n1:0"
+bool mu__condition_118() // Condition for Rule "coherent, addr:0, n2:1, n1:0"
 {
-  return mu__invariant_111( 0, 1, 0 );
+  return mu__invariant_108( 0, 1, 0 );
 }
 
-bool mu__condition_122() // Condition for Rule "coherent, addr:0, n2:1, n1:1"
+bool mu__condition_119() // Condition for Rule "coherent, addr:0, n2:1, n1:1"
 {
-  return mu__invariant_111( 0, 1, 1 );
+  return mu__invariant_108( 0, 1, 1 );
 }
 
-bool mu__condition_123() // Condition for Rule "coherent, addr:0, n2:1, n1:2"
+bool mu__condition_120() // Condition for Rule "coherent, addr:0, n2:1, n1:2"
 {
-  return mu__invariant_111( 0, 1, 2 );
+  return mu__invariant_108( 0, 1, 2 );
 }
 
-bool mu__condition_125() // Condition for Rule "coherent, addr:0, n2:2, n1:0"
+bool mu__condition_122() // Condition for Rule "coherent, addr:0, n2:2, n1:0"
 {
-  return mu__invariant_111( 0, 2, 0 );
+  return mu__invariant_108( 0, 2, 0 );
 }
 
-bool mu__condition_126() // Condition for Rule "coherent, addr:0, n2:2, n1:1"
+bool mu__condition_123() // Condition for Rule "coherent, addr:0, n2:2, n1:1"
 {
-  return mu__invariant_111( 0, 2, 1 );
+  return mu__invariant_108( 0, 2, 1 );
 }
 
-bool mu__condition_127() // Condition for Rule "coherent, addr:0, n2:2, n1:2"
+bool mu__condition_124() // Condition for Rule "coherent, addr:0, n2:2, n1:2"
 {
-  return mu__invariant_111( 0, 2, 2 );
+  return mu__invariant_108( 0, 2, 2 );
 }
 
-bool mu__condition_130() // Condition for Rule "coherent, addr:1, n2:0, n1:0"
+bool mu__condition_127() // Condition for Rule "coherent, addr:1, n2:0, n1:0"
 {
-  return mu__invariant_111( 1, 0, 0 );
+  return mu__invariant_108( 1, 0, 0 );
 }
 
-bool mu__condition_131() // Condition for Rule "coherent, addr:1, n2:0, n1:1"
+bool mu__condition_128() // Condition for Rule "coherent, addr:1, n2:0, n1:1"
 {
-  return mu__invariant_111( 1, 0, 1 );
+  return mu__invariant_108( 1, 0, 1 );
 }
 
-bool mu__condition_132() // Condition for Rule "coherent, addr:1, n2:0, n1:2"
+bool mu__condition_129() // Condition for Rule "coherent, addr:1, n2:0, n1:2"
 {
-  return mu__invariant_111( 1, 0, 2 );
+  return mu__invariant_108( 1, 0, 2 );
 }
 
-bool mu__condition_134() // Condition for Rule "coherent, addr:1, n2:1, n1:0"
+bool mu__condition_131() // Condition for Rule "coherent, addr:1, n2:1, n1:0"
 {
-  return mu__invariant_111( 1, 1, 0 );
+  return mu__invariant_108( 1, 1, 0 );
 }
 
-bool mu__condition_135() // Condition for Rule "coherent, addr:1, n2:1, n1:1"
+bool mu__condition_132() // Condition for Rule "coherent, addr:1, n2:1, n1:1"
 {
-  return mu__invariant_111( 1, 1, 1 );
+  return mu__invariant_108( 1, 1, 1 );
 }
 
-bool mu__condition_136() // Condition for Rule "coherent, addr:1, n2:1, n1:2"
+bool mu__condition_133() // Condition for Rule "coherent, addr:1, n2:1, n1:2"
 {
-  return mu__invariant_111( 1, 1, 2 );
+  return mu__invariant_108( 1, 1, 2 );
 }
 
-bool mu__condition_138() // Condition for Rule "coherent, addr:1, n2:2, n1:0"
+bool mu__condition_135() // Condition for Rule "coherent, addr:1, n2:2, n1:0"
 {
-  return mu__invariant_111( 1, 2, 0 );
+  return mu__invariant_108( 1, 2, 0 );
 }
 
-bool mu__condition_139() // Condition for Rule "coherent, addr:1, n2:2, n1:1"
+bool mu__condition_136() // Condition for Rule "coherent, addr:1, n2:2, n1:1"
 {
-  return mu__invariant_111( 1, 2, 1 );
+  return mu__invariant_108( 1, 2, 1 );
 }
 
-bool mu__condition_140() // Condition for Rule "coherent, addr:1, n2:2, n1:2"
+bool mu__condition_137() // Condition for Rule "coherent, addr:1, n2:2, n1:2"
 {
-  return mu__invariant_111( 1, 2, 2 );
+  return mu__invariant_108( 1, 2, 2 );
 }
 
-bool mu__condition_143() // Condition for Rule "coherent, addr:2, n2:0, n1:0"
+bool mu__condition_140() // Condition for Rule "coherent, addr:2, n2:0, n1:0"
 {
-  return mu__invariant_111( 2, 0, 0 );
+  return mu__invariant_108( 2, 0, 0 );
 }
 
-bool mu__condition_144() // Condition for Rule "coherent, addr:2, n2:0, n1:1"
+bool mu__condition_141() // Condition for Rule "coherent, addr:2, n2:0, n1:1"
 {
-  return mu__invariant_111( 2, 0, 1 );
+  return mu__invariant_108( 2, 0, 1 );
 }
 
-bool mu__condition_145() // Condition for Rule "coherent, addr:2, n2:0, n1:2"
+bool mu__condition_142() // Condition for Rule "coherent, addr:2, n2:0, n1:2"
 {
-  return mu__invariant_111( 2, 0, 2 );
+  return mu__invariant_108( 2, 0, 2 );
 }
 
-bool mu__condition_147() // Condition for Rule "coherent, addr:2, n2:1, n1:0"
+bool mu__condition_144() // Condition for Rule "coherent, addr:2, n2:1, n1:0"
 {
-  return mu__invariant_111( 2, 1, 0 );
+  return mu__invariant_108( 2, 1, 0 );
 }
 
-bool mu__condition_148() // Condition for Rule "coherent, addr:2, n2:1, n1:1"
+bool mu__condition_145() // Condition for Rule "coherent, addr:2, n2:1, n1:1"
 {
-  return mu__invariant_111( 2, 1, 1 );
+  return mu__invariant_108( 2, 1, 1 );
 }
 
-bool mu__condition_149() // Condition for Rule "coherent, addr:2, n2:1, n1:2"
+bool mu__condition_146() // Condition for Rule "coherent, addr:2, n2:1, n1:2"
 {
-  return mu__invariant_111( 2, 1, 2 );
+  return mu__invariant_108( 2, 1, 2 );
 }
 
-bool mu__condition_151() // Condition for Rule "coherent, addr:2, n2:2, n1:0"
+bool mu__condition_148() // Condition for Rule "coherent, addr:2, n2:2, n1:0"
 {
-  return mu__invariant_111( 2, 2, 0 );
+  return mu__invariant_108( 2, 2, 0 );
 }
 
-bool mu__condition_152() // Condition for Rule "coherent, addr:2, n2:2, n1:1"
+bool mu__condition_149() // Condition for Rule "coherent, addr:2, n2:2, n1:1"
 {
-  return mu__invariant_111( 2, 2, 1 );
+  return mu__invariant_108( 2, 2, 1 );
 }
 
-bool mu__condition_153() // Condition for Rule "coherent, addr:2, n2:2, n1:2"
+bool mu__condition_150() // Condition for Rule "coherent, addr:2, n2:2, n1:2"
 {
-  return mu__invariant_111( 2, 2, 2 );
+  return mu__invariant_108( 2, 2, 2 );
 }
 
-bool mu__condition_156() // Condition for Rule "coherent, addr:3, n2:0, n1:0"
+bool mu__condition_153() // Condition for Rule "coherent, addr:3, n2:0, n1:0"
 {
-  return mu__invariant_111( 3, 0, 0 );
+  return mu__invariant_108( 3, 0, 0 );
 }
 
-bool mu__condition_157() // Condition for Rule "coherent, addr:3, n2:0, n1:1"
+bool mu__condition_154() // Condition for Rule "coherent, addr:3, n2:0, n1:1"
 {
-  return mu__invariant_111( 3, 0, 1 );
+  return mu__invariant_108( 3, 0, 1 );
 }
 
-bool mu__condition_158() // Condition for Rule "coherent, addr:3, n2:0, n1:2"
+bool mu__condition_155() // Condition for Rule "coherent, addr:3, n2:0, n1:2"
 {
-  return mu__invariant_111( 3, 0, 2 );
+  return mu__invariant_108( 3, 0, 2 );
 }
 
-bool mu__condition_160() // Condition for Rule "coherent, addr:3, n2:1, n1:0"
+bool mu__condition_157() // Condition for Rule "coherent, addr:3, n2:1, n1:0"
 {
-  return mu__invariant_111( 3, 1, 0 );
+  return mu__invariant_108( 3, 1, 0 );
 }
 
-bool mu__condition_161() // Condition for Rule "coherent, addr:3, n2:1, n1:1"
+bool mu__condition_158() // Condition for Rule "coherent, addr:3, n2:1, n1:1"
 {
-  return mu__invariant_111( 3, 1, 1 );
+  return mu__invariant_108( 3, 1, 1 );
 }
 
-bool mu__condition_162() // Condition for Rule "coherent, addr:3, n2:1, n1:2"
+bool mu__condition_159() // Condition for Rule "coherent, addr:3, n2:1, n1:2"
 {
-  return mu__invariant_111( 3, 1, 2 );
+  return mu__invariant_108( 3, 1, 2 );
 }
 
-bool mu__condition_164() // Condition for Rule "coherent, addr:3, n2:2, n1:0"
+bool mu__condition_161() // Condition for Rule "coherent, addr:3, n2:2, n1:0"
 {
-  return mu__invariant_111( 3, 2, 0 );
+  return mu__invariant_108( 3, 2, 0 );
 }
 
-bool mu__condition_165() // Condition for Rule "coherent, addr:3, n2:2, n1:1"
+bool mu__condition_162() // Condition for Rule "coherent, addr:3, n2:2, n1:1"
 {
-  return mu__invariant_111( 3, 2, 1 );
+  return mu__invariant_108( 3, 2, 1 );
 }
 
-bool mu__condition_166() // Condition for Rule "coherent, addr:3, n2:2, n1:2"
+bool mu__condition_163() // Condition for Rule "coherent, addr:3, n2:2, n1:2"
 {
-  return mu__invariant_111( 3, 2, 2 );
+  return mu__invariant_108( 3, 2, 2 );
 }
 
 /**** end rule declaration ****/
 
 const rulerec invariants[] = {
-{"coherent, addr:3, n2:2, n1:2", &mu__condition_166, NULL, },
-{"coherent, addr:3, n2:2, n1:1", &mu__condition_165, NULL, },
-{"coherent, addr:3, n2:2, n1:0", &mu__condition_164, NULL, },
-{"coherent, addr:3, n2:1, n1:2", &mu__condition_162, NULL, },
-{"coherent, addr:3, n2:1, n1:1", &mu__condition_161, NULL, },
-{"coherent, addr:3, n2:1, n1:0", &mu__condition_160, NULL, },
-{"coherent, addr:3, n2:0, n1:2", &mu__condition_158, NULL, },
-{"coherent, addr:3, n2:0, n1:1", &mu__condition_157, NULL, },
-{"coherent, addr:3, n2:0, n1:0", &mu__condition_156, NULL, },
-{"coherent, addr:2, n2:2, n1:2", &mu__condition_153, NULL, },
-{"coherent, addr:2, n2:2, n1:1", &mu__condition_152, NULL, },
-{"coherent, addr:2, n2:2, n1:0", &mu__condition_151, NULL, },
-{"coherent, addr:2, n2:1, n1:2", &mu__condition_149, NULL, },
-{"coherent, addr:2, n2:1, n1:1", &mu__condition_148, NULL, },
-{"coherent, addr:2, n2:1, n1:0", &mu__condition_147, NULL, },
-{"coherent, addr:2, n2:0, n1:2", &mu__condition_145, NULL, },
-{"coherent, addr:2, n2:0, n1:1", &mu__condition_144, NULL, },
-{"coherent, addr:2, n2:0, n1:0", &mu__condition_143, NULL, },
-{"coherent, addr:1, n2:2, n1:2", &mu__condition_140, NULL, },
-{"coherent, addr:1, n2:2, n1:1", &mu__condition_139, NULL, },
-{"coherent, addr:1, n2:2, n1:0", &mu__condition_138, NULL, },
-{"coherent, addr:1, n2:1, n1:2", &mu__condition_136, NULL, },
-{"coherent, addr:1, n2:1, n1:1", &mu__condition_135, NULL, },
-{"coherent, addr:1, n2:1, n1:0", &mu__condition_134, NULL, },
-{"coherent, addr:1, n2:0, n1:2", &mu__condition_132, NULL, },
-{"coherent, addr:1, n2:0, n1:1", &mu__condition_131, NULL, },
-{"coherent, addr:1, n2:0, n1:0", &mu__condition_130, NULL, },
-{"coherent, addr:0, n2:2, n1:2", &mu__condition_127, NULL, },
-{"coherent, addr:0, n2:2, n1:1", &mu__condition_126, NULL, },
-{"coherent, addr:0, n2:2, n1:0", &mu__condition_125, NULL, },
-{"coherent, addr:0, n2:1, n1:2", &mu__condition_123, NULL, },
-{"coherent, addr:0, n2:1, n1:1", &mu__condition_122, NULL, },
-{"coherent, addr:0, n2:1, n1:0", &mu__condition_121, NULL, },
-{"coherent, addr:0, n2:0, n1:2", &mu__condition_119, NULL, },
-{"coherent, addr:0, n2:0, n1:1", &mu__condition_118, NULL, },
-{"coherent, addr:0, n2:0, n1:0", &mu__condition_117, NULL, },
+{"coherent, addr:3, n2:2, n1:2", &mu__condition_163, NULL, },
+{"coherent, addr:3, n2:2, n1:1", &mu__condition_162, NULL, },
+{"coherent, addr:3, n2:2, n1:0", &mu__condition_161, NULL, },
+{"coherent, addr:3, n2:1, n1:2", &mu__condition_159, NULL, },
+{"coherent, addr:3, n2:1, n1:1", &mu__condition_158, NULL, },
+{"coherent, addr:3, n2:1, n1:0", &mu__condition_157, NULL, },
+{"coherent, addr:3, n2:0, n1:2", &mu__condition_155, NULL, },
+{"coherent, addr:3, n2:0, n1:1", &mu__condition_154, NULL, },
+{"coherent, addr:3, n2:0, n1:0", &mu__condition_153, NULL, },
+{"coherent, addr:2, n2:2, n1:2", &mu__condition_150, NULL, },
+{"coherent, addr:2, n2:2, n1:1", &mu__condition_149, NULL, },
+{"coherent, addr:2, n2:2, n1:0", &mu__condition_148, NULL, },
+{"coherent, addr:2, n2:1, n1:2", &mu__condition_146, NULL, },
+{"coherent, addr:2, n2:1, n1:1", &mu__condition_145, NULL, },
+{"coherent, addr:2, n2:1, n1:0", &mu__condition_144, NULL, },
+{"coherent, addr:2, n2:0, n1:2", &mu__condition_142, NULL, },
+{"coherent, addr:2, n2:0, n1:1", &mu__condition_141, NULL, },
+{"coherent, addr:2, n2:0, n1:0", &mu__condition_140, NULL, },
+{"coherent, addr:1, n2:2, n1:2", &mu__condition_137, NULL, },
+{"coherent, addr:1, n2:2, n1:1", &mu__condition_136, NULL, },
+{"coherent, addr:1, n2:2, n1:0", &mu__condition_135, NULL, },
+{"coherent, addr:1, n2:1, n1:2", &mu__condition_133, NULL, },
+{"coherent, addr:1, n2:1, n1:1", &mu__condition_132, NULL, },
+{"coherent, addr:1, n2:1, n1:0", &mu__condition_131, NULL, },
+{"coherent, addr:1, n2:0, n1:2", &mu__condition_129, NULL, },
+{"coherent, addr:1, n2:0, n1:1", &mu__condition_128, NULL, },
+{"coherent, addr:1, n2:0, n1:0", &mu__condition_127, NULL, },
+{"coherent, addr:0, n2:2, n1:2", &mu__condition_124, NULL, },
+{"coherent, addr:0, n2:2, n1:1", &mu__condition_123, NULL, },
+{"coherent, addr:0, n2:2, n1:0", &mu__condition_122, NULL, },
+{"coherent, addr:0, n2:1, n1:2", &mu__condition_120, NULL, },
+{"coherent, addr:0, n2:1, n1:1", &mu__condition_119, NULL, },
+{"coherent, addr:0, n2:1, n1:0", &mu__condition_118, NULL, },
+{"coherent, addr:0, n2:0, n1:2", &mu__condition_116, NULL, },
+{"coherent, addr:0, n2:0, n1:1", &mu__condition_115, NULL, },
+{"coherent, addr:0, n2:0, n1:0", &mu__condition_114, NULL, },
 };
 const unsigned short numinvariants = 36;
 

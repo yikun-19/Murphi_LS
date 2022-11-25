@@ -8,7 +8,7 @@ Run this program with "-h" for the list of options.
 Bugs, questions, and comments should be directed to
 "melatti@di.uniroma1.it".
 
-CMurphi compiler last modified date: Nov  3 2022
+CMurphi compiler last modified date: Nov 20 2022
 Include files last modified date:    Jul 23 2021
 ==========================================================================
 
@@ -465,7 +465,7 @@ Result:
 
 State Space Explored:
 
-	7 states, 10 rules fired in 3.91s.
+	7 states, 10 rules fired in 6.65s.
 
 Analysis of State Space:
 

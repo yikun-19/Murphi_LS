@@ -1,0 +1,37 @@
+
+===========================================================================
+Caching Murphi Release 5.5.0
+Finite-state Concurrent System Compiler.
+
+Caching Murphi Release 5.5.0 is based on Murphi release 3.1.
+Caching Murphi Release 5.5.0 :
+Copyright (C) 2009 - 2012 by Sapienza University of Rome.
+Murphi Release 3.1 :
+Copyright (C) 1992 - 1999 by the Board of Trustees of
+Leland Stanford Junior University.
+===========================================================================
+Call with the -l flag or read the license file for terms
+and conditions of use.
+Run this program with "-h" for the list of options.
+Bugs, questions, and comments should be directed to
+"melatti@di.uniroma1.it".
+
+CMurphi compiler last compiled date: Nov 20 2022
+===========================================================================
+
+-------begin: declare part!-------
+  mu_n1 is declared as int type
+  mu_n2 is declared as int type
+  mu_Procsppp0mu_n10qqq.mu_Cacheppp0mu_h0qqqppp0mu_a0qqq.mu_State is declared as enum type
+  mu_Procsppp0mu_n20qqq.mu_Cacheppp0mu_h0qqqppp0mu_a0qqq.mu_State is declared as enum type
+-------end: declare part!---------
+
+invariant in string format: 
+  (assert (not (and (and (not (= mu_n1 mu_n2)) (= mu_Procsppp0mu_n10qqq.mu_Cacheppp0mu_h0qqqppp0mu_a0qqq.mu_State mu_Locally_Exmod)) (= mu_Procsppp0mu_n20qqq.mu_Cacheppp0mu_h0qqqppp0mu_a0qqq.mu_State mu_Locally_Shared))))
+
+--transfering input string to Z3 format... 
+--transfer successfully! 
+
+Z3 give a goal state successfully!
+
+Code generated in file ./benchmarks/murphi_protocols/eadash_node4.cpp

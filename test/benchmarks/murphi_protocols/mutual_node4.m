@@ -1,4 +1,4 @@
-const clientNUMS : 5; -- 设置成2，比较方便观察结果
+const clientNUMS : 4; -- 设置成2，比较方便观察结果
 type state : enum{I, T, C, E}; -- 4种进程的状态
 
      client: 1..clientNUMS;
