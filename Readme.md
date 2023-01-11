@@ -17,9 +17,17 @@ Please first check if your environment meets the following requirement:
 2. g++ 9.4.0 
 3. Python 3.8.10
 
-Now let's install Murphi_LS and its dependencies:
+Now let's install Murphi_LS and its dependencies. 
+First, you should install z3 solver:
 ```
-  sudo make install 
+  git clone https://github.com/Z3Prover/z3.git
+  python scripts/mk_make.py
+  cd build
+  make
+  sudo make install
+```
+Then, you can install flex and byacc if needed, and make this project:  
+```
   sudo apt-get install flex 
   sudo apt-get install byacc
   
