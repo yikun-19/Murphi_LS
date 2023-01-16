@@ -59,6 +59,15 @@ Run "./<testcase_name>.o -h" to show what options are supported in Murphi_LS.
 
 ![avatar](/workflow.png)
 
+First, protocol designers use Murphi language to model the parameterized protocol to be verified as a protocol.m file.
+Then the parser module of Murphi_LS is called to convert the .m file into the .cpp file, which describes important parts of the protocol and facilitates interaction with library files(e.g., verify functions and IO layer). Our local search algorithm is also in a form of library files for users to call. 
+Finally, users can invoke g++ to compile the cpp file to obtain an executable program, and add optional commands to run the program. 
+The above is the process of how a .m file provided by users interacts with Murphi_LS. 
+
+Our local search algorithm invokes a well-designed heuristic function to calculate the distance of each state from the target state. 
+This target state is automatically derived from the invariant to be verified, which is completed by calling Z3 solver. 
+Taking an invariant in SMT-LIB format as input, Z3 gets a set of variable assignments that break the given invariant, and init function executes these variable assignments to obtain the target state. 
+
 ## Files organization
 
 ```
