@@ -17,17 +17,9 @@ Please first check if your environment meets the following requirement:
 2. g++ 9.4.0 
 3. Python 3.8.10
 
-Now let's install Murphi_LS and its dependencies. 
-First, you should install z3 solver:
+Now let's install Murphi_LS and its dependencies:
 ```
-  git clone https://github.com/Z3Prover/z3.git
-  python scripts/mk_make.py
-  cd build
-  make
-  sudo make install
-```
-Then, you can install flex and byacc if needed, and make this project:  
-```
+  sudo make install 
   sudo apt-get install flex 
   sudo apt-get install byacc
   
@@ -58,15 +50,6 @@ Run "./<testcase_name>.o -h" to show what options are supported in Murphi_LS.
 ## Program workflow
 
 ![avatar](/workflow.png)
-
-First, protocol designers use Murphi language to model the parameterized protocol to be verified as a protocol.m file.
-Then the parser module of Murphi_LS is called to convert the .m file into the .cpp file, which describes important parts of the protocol and facilitates interaction with library files(e.g., verify functions and IO layer). Our local search algorithm is also in a form of library files for users to call. 
-Finally, users can invoke g++ to compile the cpp file to obtain an executable program, and add optional commands to run the program. 
-The above is the process of how a .m file provided by users interacts with Murphi_LS. 
-
-Our local search algorithm invokes a well-designed heuristic function to calculate the distance of each state from the target state. 
-This target state is automatically derived from the invariant to be verified, which is completed by calling Z3 solver. 
-Taking an invariant in SMT-LIB format as input, Z3 gets a set of variable assignments that break the given invariant, and init function executes these variable assignments to obtain the target state. 
 
 ## Files organization
 
@@ -108,13 +91,127 @@ Murphi_LS
 
 ## Experiments
 
+In the following experiments, we use different node numbers of each protocol to test the verification efficiency of these algorithms for protocol instances with different complexity. 
+The result which is a number indicates the number of states the algorithm needs to traverse to find the target state(the counterexample to a given property). 
+'-' indicates that the target state has not been found yet due to memory exhaustion. 
+
 ### Comparison of different heuristic functions
+
+In order to test the effect of different heuristic functions, we use different heuristic functions to verify the same protocol instance and properties. 
+H1 calculates Hamming distance from the current state to the target state. 
+H2 assigns weights to the variables involved in the invariant to be verified. 
+H3 assigns different weights ​​to variables of different categories. 
+
+We put test protocol files in this experiment in the /test/benchmarks/murphi_protocols/ directory. 
+The above three heuristic functions are defined in /include/murphi.original/mu_system.cpp. 
+
+
+| Protocol | Node     | H1       | H2       | H3       |
+| -------- | -------- | -------- | -------- | -------- |
+| MutualEx | 2        | 8        | 8        | 9        |
+| MutualEx | 4        | 13       | 13       | 11       |
+| MutualEx | 8        | 26       | 26       | 34       |
+| German   | 2        | 415      | 573      | 352      |
+| German   | 4        | 2959     | 222      | 338      |
+| German   | 8        | 29236    | 10943    | 340      |
+| Flash    | 2        | 120      | 191      | 76       |
+| Flash    | 4        | 912      | 474      | 141      |
+| Flash    | 8        | 2843     | 424      | 162      |
 
 
 ### BFS, DFS, BeFs and LS for typical target states
 
 
+
+| Protocol | Node     | BFS      | DFS      | BeFS     | LS       |
+| -------- | -------- | -------- | -------- | -------- | -------- |
+| MutualEx | 2        | 11       | 5        | 7        | 7        |
+| MutualEx | 4        | 36       | 5        | 28       | 28       |
+| MutualEx | 8        | 166      | 5        | 216      | 214      |
+| German   | 2        | 940      | 216      | 183      | 158      |
+| German   | 4        | 14198    | 860      | 1878     | 435      |
+| German   | 8        | 497361   | 3520     | 28974    | 868      |
+| Flash    | 2        | 360      | 1910     | 289      | 74       |
+| Flash    | 4        | 3296     | 327479   | 5625     | 1730     |
+| Flash    | 8        | 52491    | -        | 18611    | 5390     |
+| adash    | 2        | 240      | 1227     | 543      | 328      |
+| adash    | 4        | 1278     | 76219    | 1609     | 923      |
+| adash    | 8        | 2189     | -        | 2457     | 1478     |
+| eadash   | 2        | 61       | 50       | 81       | 84       |
+| eadash   | 4        | 136      | 212      | 306      | 260      |
+| eadash   | 8        | 171      | 1098     | 749      | 571      |
+| ldash    | 2        | 8        | 42       | 7        | 4        |
+| ldash    | 4        | 9        | 4315     | 12       | 10       |
+| ldash    | 8        | 10       | -        | 14       | 12       |
+| German04 | 2        | 27710    | 19       | 392      | 535      |
+| German04 | 4        | 407466   | 21       | 499      | 1783     |
+| German04 | 8        | -        | 25       | 1694     | 1535     |
+| Godson-T | 2        | 11961    | 49       | 11364    | 824      |
+| Godson-T | 4        | 88093    | 249      | 69208    | 1822     |
+| Godson-T | 8        | 675477   | 880      | 497068   | 3189     |
+| Godson-T | 16       | -        | 1917     | -        | 3821     |
+| Godson-T | 32       | -        | 4000     | -        | 6092     |
+
+
 ### Numerous invariants check
 
+
+
+### Reachability analysis for TileLink protocol
+
+| StateID | BFS    | DFS           | LS   |
+|---------|--------|---------------|------|
+| 1       | 449    | 276           | 513  |
+| 2       | 577    | 106           | 510  |
+| 3       | 151    | 6             | 77   |
+| 4       | 981    | 7220          | 2276 |
+| 5       | 789    | 253           | 759  |
+| 6       | 25465  | 100434        | 2943 |
+| 7       | 577    | 106           | 6953 |
+| 8       | 449    | 276           | 141  |
+| 9       | 151    | 6             | 77   |
+| 10      | 789    | 253           | 462  |
+| 11      | 981    | 7220          | 166  |
+| 12      | 25465  | 100434        | 543  |
+| 13      | 23     | 4             | 32   |
+| 14      | 258    | 491           | 100  |
+| 15      | 643    | 1410          | 307  |
+| 16      | 672    | 1405          | 828  |
+| 17      | 3710   | 36842         | 1140 |
+| 18      | 258    | 491           | 100  |
+| 19      | 672    | 1405          | 309  |
+| 20      | 643    | 1410          | 148  |
+| 21      | 3710   | 36842         | 214  |
+| 22      | 1985   | 5806          | 1087 |
+| 23      | 6868   | 5873          | 2212 |
+| 24      | 6919   | 5828          | 2350 |
+| 25      | 36589  | 36845         | 1122 |
+| 26      | 6919   | 5828          | 359  |
+| 27      | 21475  | 23436801  638 | 638  |
+| 28      | 22015  | 9277207       | 444  |
+| 29      | 101798 | -             | 553  |
+| 30      | 6858   | 5873          | 986  |
+| 31      | 21449  | 17351522      | 9889 |
+| 32      | 21475  | 23436801      | 1200 |
+| 33      | 101659 | -             | 1089 |
+| 34      | 36589  | 36845         | 689  |
+| 35      | 101659 | -             | 1089 |
+| 36      | 101798 | -             | 553  |
+| 37      | 420808 | -             | 941  |
+
+### Comparison of Murphi_LS and AVR
+
+| Protocol | Node    | AVR     | Murphi_LS |
+|----------|---------|---------|-----------|
+| MutualEx | 2       | 0.04    | 2.90      |
+| MutualEx | 5       | 0.92    | 4.82      |
+| MutualEx | 10      | 17.60   | 3.53      |
+| MutualEx | 20      | 231.86  | 6.69      |
+| German   | 2       | 0.59    | 4.63      |
+| German   | 5       | 68.79   | 5.28      |
+| German   | 10      | 1642.52 |           |
+| Flash    | 2       | 34.85   | 4.43      |
+| Flash    | 5       | -       | 6.00      |
+| Flash    | 10      | -       | 167.32    |
 
 
