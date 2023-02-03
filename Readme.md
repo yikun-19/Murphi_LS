@@ -121,7 +121,10 @@ The above three heuristic functions are defined in /include/murphi.original/mu_s
 
 ### BFS, DFS, BeFs and LS for typical target states
 
+To observe the verification efficiency of currently available algorithms for protocol instances with different scales and designs, we run the following four algorithms on typical protocols with different numbers of nodes: BFS(Breadth-First-Search), DFS(Depth-First-Search), BeFS(Best-First-Search), LS(Local-Search). 
+These algorithms can be easily invoked by adding optional commands(-vbfs/-dfs/-befs/-localsearch). 
 
+We implemented the calling process of this experiment in /test/main.py, and users can easily reproduce the results by running this script. 
 
 | Protocol | Node     | BFS      | DFS      | BeFS     | LS       |
 | -------- | -------- | -------- | -------- | -------- | -------- |
@@ -155,9 +158,18 @@ The above three heuristic functions are defined in /include/murphi.original/mu_s
 
 ### Numerous invariants check
 
+Considering the impact of different types of invariants on search efficiency, we take a large number of invariants generated in another algorithm as our testcases. Invariants are defined in /test/invs/inv_NI_Remote_Get_Put, of which 213 are true and 292 are false.
+
+The result is shown in /test/invs/result.csv, which shows that LS algorithm finds most of falied invariants(237/292) with a small cost(4,000 of the 700,000 states in the entire state space). It indicates that LS generally outperforms BFS for general invariants.
 
 
 ### Reachability analysis for TileLink protocol
+
+Due to the needs of practical applications, we formally modeled the TileLink protocol using the Murphi language, and tried to analyze its reachablity.
+
+Specifically, in order to ensure the correctness of the model, the designer gives some states that should be reachable if the protocol model is correct. Now what we need to do is to judge whether these states are really reachable for a given protocol instance. If some of them are unreachable, there is likely a bug in the protocol instance. In fact, we found and fixed some bugs in our model by this way. 
+
+Similarly, this experimental process is also placed in /test/main.py, our TileLink model is placed in /test/TL_states/, and users can reproduce the following results by running this script. The result demonstrates the clear advantages of the LS algorithm. 
 
 | StateID | BFS    | DFS           | LS   |
 |---------|--------|---------------|------|
@@ -200,6 +212,12 @@ The above three heuristic functions are defined in /include/murphi.original/mu_s
 | 37      | 420808 | -             | 941  |
 
 ### Comparison of Murphi_LS and AVR
+
+Finally, we contrast this tool with the well-known model checking tool AVR, which is the best word-level verifier
+in the single bit-vector track of Hardware Model Checking
+Competition (HWMCC) 2019. 
+We convert Murphi files to btor2 files for verification by AVR, and these btors files are stored in /test/btor2/.
+Since AVR uses symbolic model checking method, we compare the running time of two tools rather than the number of traversed states. 
 
 | Protocol | Node    | AVR     | Murphi_LS |
 |----------|---------|---------|-----------|
