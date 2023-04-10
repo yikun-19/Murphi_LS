@@ -69,7 +69,7 @@ OBJS = \
 	util.o
 
 mu: $(OBJS)
-	$(CPLUSPLUS) -o mu $(CFLAGS) $(OBJS) 
+	$(CPLUSPLUS) -o mu $(CFLAGS) $(OBJS) -lz3
 
 mu.o: mu.cpp mu.hpp y.tab.h
 	$(CPLUSPLUS) -c $(CFLAGS) mu.cpp
