@@ -498,75 +498,6 @@ state *StartStateManager::NextStartState()
 state *StartStateManager::StartState()
 {
 
-  if (startstate_flag == true)
-  {
-    
-    for(int i = 0; i < BLOCKS_IN_WORLD; i++)
-    {
-        tmpbits[i] = workingstate->bits[i];
-    } 
-    generator->Goal_value1(); 
-    for(int i = 0; i < BLOCKS_IN_WORLD; i++)
-    {
-        goalbits[i] = workingstate->bits[i];
-        workingstate->bits[i] = tmpbits[i];
-    }
-    
-    // A flow in German: SendReqS(1)、RecvReqS(1)、SendGntE(1)、RecvGntE(1)、Store(1, 1)
-    // rb10、rb8、rb4、rb2、rb11 ==> 20, 16, 8, 4, 22
-    generator->FlowSetter(); // now: 
-    for (int i = 0; i < flows.size(); i++)
-    {
-      // run a flow 
-      for (int j = 0; j < flows[i].size(); j++)
-      {
-        generator->Code(j);
-      }
-
-      for(int k = 0; k < BLOCKS_IN_WORLD; k++)
-      {
-        flowbits[k] = workingstate->bits[k];
-      }
-
-      for(int k = 0; k < BLOCKS_IN_WORLD; k++)
-      { 
-        if (flowbits[k] != goalbits[k])
-        {
-          if (goalbits[k] == tmpbits[k])
-          {
-            goalbits[k] = flowbits[k];
-          }
-        }
-      }
-    }
-
-    for(int i = 0; i < BLOCKS_IN_WORLD; i++)
-    {
-        goalbits[i] = workingstate->bits[i];
-        workingstate->bits[i] = tmpbits[i];
-    }
-
-    for (int i = 0; i < BLOCKS_IN_WORLD; i++)
-    {
-      if (flowbits[i] != workingstate->bits[i])
-        for (int j = 0; j < attr_list.size(); j++)
-        {
-          if(attr_list[j].first / 8 <= i && ( j == attr_list.size() - 1 || attr_list[j+1].first / 8 > i))
-            carelist_flow.push_back(attr_list[j].second); 
-        }
-    }
-
-    cout << "Carelist by flow: " << endl;
-    for (int i = 0; i < carelist_flow.size(); i++)
-    {
-      cout << carelist_flow[i] << endl;
-    }
-
-    workingstate->d = 1; 
-    workingstate->h = h(workingstate);
-    return workingstate;
-  }
-
   state *next_state = NULL;
 
   category = STARTSTATE;
@@ -639,6 +570,73 @@ state *StartStateManager::StartState()
     mu_n[1].goal_value(mu_I);
 }
   ******/
+
+  if (startstate_flag == true)
+  {
+    
+    for(int i = 0; i < BLOCKS_IN_WORLD; i++)
+    {
+        tmpbits[i] = workingstate->bits[i];
+    } 
+    generator->Goal_value1(); 
+    for(int i = 0; i < BLOCKS_IN_WORLD; i++)
+    {
+        goalbits[i] = workingstate->bits[i];
+        workingstate->bits[i] = tmpbits[i];
+    }
+    
+    // A flow in German: SendReqS(1)、RecvReqS(1)、SendGntE(1)、RecvGntE(1)、Store(1, 1)
+    // rb10、rb8、rb4、rb2、rb11 ==> 20, 16, 8, 4, 22
+    generator->FlowSetter(); // now: 
+    for (int i = 0; i < flows.size(); i++)
+    {
+      // run a flow 
+      for (int j = 0; j < flows[i].size(); j++)
+      {
+        generator->Code(j);
+      }
+
+      for(int k = 0; k < BLOCKS_IN_WORLD; k++)
+      {
+        flowbits[k] = workingstate->bits[k];
+      }
+
+      for(int k = 0; k < BLOCKS_IN_WORLD; k++)
+      { 
+        if (flowbits[k] != goalbits[k])
+        {
+          if (goalbits[k] == tmpbits[k])
+          {
+            goalbits[k] = flowbits[k];
+          }
+        }
+      }
+    }
+
+    for(int i = 0; i < BLOCKS_IN_WORLD; i++)
+    {
+        goalbits[i] = workingstate->bits[i];
+        workingstate->bits[i] = tmpbits[i];
+    }
+
+    for (int i = 0; i < BLOCKS_IN_WORLD; i++)
+    {
+      if (flowbits[i] != workingstate->bits[i])
+        for (int j = 0; j < attr_list.size(); j++)
+        {
+          if(attr_list[j].first / 8 <= i && ( j == attr_list.size() - 1 || attr_list[j+1].first / 8 > i))
+            carelist_flow.push_back(attr_list[j].second); 
+        }
+    }
+
+    cout << "Carelist by flow: " << endl;
+    for (int i = 0; i < carelist_flow.size(); i++)
+    {
+      cout << carelist_flow[i] << endl;
+    }
+
+    startstate_flag = false;
+  }
 
   return workingstate;
 }
