@@ -29,6 +29,15 @@ Now let's install Murphi_LS and its dependencies:
   make
 ```
 
+Install Z3:
+```
+  git clone https://github.com/Z3Prover/z3.git
+  python scripts/mk_make.py
+  cd build
+  make
+  sudo make install
+  make examples
+```
 
 ## How to run Murphi_LS
 
