@@ -129,12 +129,12 @@ if __name__ == '__main__':
     # collect_result('./', 'flash_ctc10_orig', [2])
 
 
-    # testcase_name = 'n_godsont'
+    # testcase_name = 'n_godsont_node16'
     # sp.run(['bash', 'run.sh', testcase_name, mu_compile, mu_include], cwd='./', timeout=3600)
 
 
-    # sp.run(['bash', 'run.sh', 'german', mu_compile_old, mu_include_old], cwd='./', timeout=3600)
-    # sp.run(['bash', 'run.sh', 'german', mu_compile, mu_include], cwd='./', timeout=3600)
+    # sp.run(['bash', 'run.sh', 'adash_node2', mu_compile_old, mu_include_old], cwd='./', timeout=3600)
+    sp.run(['bash', 'run.sh', 'adash_node2', mu_compile, mu_include], cwd='./', timeout=3600)
 
 
-    run_all_testcases()
+    # run_all_testcases()

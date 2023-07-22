@@ -816,6 +816,7 @@ bool RuleManager::AllNextStates(setofrules * fire)
                   {
                     (void) StateSet_Ls->Add(nextstate, TRUE, permanent);
                   }
+                  // (void) StateSet_Ls->Add(nextstate, TRUE, permanent);
                 }
                 else
                 {
@@ -1392,8 +1393,8 @@ void
 
     srand(time(0));
 
-    double SA_T0 = 1000.0;
-    double SA_k = 0.95;
+    double SA_T0 = 100000.0;  // 100 还是10000，不行再缩小区间
+    double SA_k = 0.95;   // 颗粒度，（小于一定值(实验确定的阈值)就不行，之后的可以仔细比较(细调)）,实验最后加参数分析
     int SA_t = 0;
     SA_T = SA_T0;   // pow(k, t) * T0;
 
