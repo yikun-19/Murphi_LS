@@ -1,0 +1,289 @@
+You choose the local search option :-)
+This program should be regarded as a DEBUGGING aid, not as a 
+certifier of correctness.
+Call with the -l flag or read the license file for terms
+and conditions of use.
+Run this program with "-h" for the list of options.
+
+Bugs, questions, and comments should be directed to
+"melatti@di.uniroma1.it".
+
+CMurphi compiler last modified date: Nov 26 2022
+Include files last modified date:    Jul 23 2021
+==========================================================================
+
+==========================================================================
+Caching Murphi Release 5.5.0
+Finite-state Concurrent System Verifier.
+
+Caching Murphi Release 5.5.0 is based on various versions of Murphi.
+Caching Murphi Release 5.5.0 :
+Copyright (C) 2009-2012 by Sapienza University of Rome.
+Murphi release 3.1 :
+Copyright (C) 1992 - 1999 by the Board of Trustees of
+Leland Stanford Junior University.
+
+==========================================================================
+
+Protocol: ./benchmarks/murphi_protocols/german_node8
+
+Algorithm:
+	Verification by our local search.
+	with symmetry algorithm 3 -- Heuristic Small Memory Normalization
+	with permutation trial limit 10.
+
+Memory usage:
+
+	* The size of each state is 680 bits (rounded up to 88 bytes).
+	* The memory allocated for the hash table and state queue is
+	  5242 Mbytes.
+	  With two words of overhead per state, the maximum size of
+	  the state space is 50027489 states.
+	   * Use option "-k" or "-m" to increase this, if necessary.
+	* Capacity in queue for breadth-first search: 5002748 states.
+	   * Change the constant gPercentActiveStates in mu_prolog.inc
+	     to increase this, if necessary.
+
+Warning: No trace will not be printed in the case of protocol errors!
+         Check the options if you want to have error traces.
+==========================================================================
+
+You are using local search algorithm:
+
+------------- Show Goalstate: ------------------
+Cache[1].State:S
+Cache[1].Data:Undefined
+Cache[2].State:GntS
+Cache[2].Data:Undefined
+Cache[3].State:I
+Cache[3].Data:Undefined
+Cache[4].State:I
+Cache[4].Data:Undefined
+Cache[5].State:I
+Cache[5].Data:Undefined
+Cache[6].State:I
+Cache[6].Data:Undefined
+Cache[7].State:I
+Cache[7].Data:Undefined
+Cache[8].State:I
+Cache[8].Data:Undefined
+Chan1[1].Cmd:Empty
+Chan1[1].Data:Undefined
+Chan1[2].Cmd:Empty
+Chan1[2].Data:Undefined
+Chan1[3].Cmd:Empty
+Chan1[3].Data:Undefined
+Chan1[4].Cmd:Empty
+Chan1[4].Data:Undefined
+Chan1[5].Cmd:Empty
+Chan1[5].Data:Undefined
+Chan1[6].Cmd:Empty
+Chan1[6].Data:Undefined
+Chan1[7].Cmd:Empty
+Chan1[7].Data:Undefined
+Chan1[8].Cmd:Empty
+Chan1[8].Data:Undefined
+Chan2[1].Cmd:Empty
+Chan2[1].Data:Undefined
+Chan2[2].Cmd:Empty
+Chan2[2].Data:Undefined
+Chan2[3].Cmd:Empty
+Chan2[3].Data:Undefined
+Chan2[4].Cmd:Empty
+Chan2[4].Data:Undefined
+Chan2[5].Cmd:Empty
+Chan2[5].Data:Undefined
+Chan2[6].Cmd:Empty
+Chan2[6].Data:Undefined
+Chan2[7].Cmd:Empty
+Chan2[7].Data:Undefined
+Chan2[8].Cmd:Empty
+Chan2[8].Data:Undefined
+Chan3[1].Cmd:Empty
+Chan3[1].Data:Undefined
+Chan3[2].Cmd:Empty
+Chan3[2].Data:Undefined
+Chan3[3].Cmd:Empty
+Chan3[3].Data:Undefined
+Chan3[4].Cmd:Empty
+Chan3[4].Data:Undefined
+Chan3[5].Cmd:Empty
+Chan3[5].Data:Undefined
+Chan3[6].Cmd:Empty
+Chan3[6].Data:Undefined
+Chan3[7].Cmd:Empty
+Chan3[7].Data:Undefined
+Chan3[8].Cmd:Empty
+Chan3[8].Data:Undefined
+InvSet[1]:false
+InvSet[2]:false
+InvSet[3]:false
+InvSet[4]:false
+InvSet[5]:false
+InvSet[6]:false
+InvSet[7]:false
+InvSet[8]:false
+ShrSet[1]:false
+ShrSet[2]:false
+ShrSet[3]:false
+ShrSet[4]:false
+ShrSet[5]:false
+ShrSet[6]:false
+ShrSet[7]:false
+ShrSet[8]:false
+ExGntd:false
+CurCmd:Empty
+CurPtr:Undefined
+MemData:1
+AuxData:1
+
+------------- Show Initstate: ------------------
+Cache[1].State:I
+Cache[1].Data:Undefined
+Cache[2].State:I
+Cache[2].Data:Undefined
+Cache[3].State:I
+Cache[3].Data:Undefined
+Cache[4].State:I
+Cache[4].Data:Undefined
+Cache[5].State:I
+Cache[5].Data:Undefined
+Cache[6].State:I
+Cache[6].Data:Undefined
+Cache[7].State:I
+Cache[7].Data:Undefined
+Cache[8].State:I
+Cache[8].Data:Undefined
+Chan1[1].Cmd:Empty
+Chan1[1].Data:Undefined
+Chan1[2].Cmd:Empty
+Chan1[2].Data:Undefined
+Chan1[3].Cmd:Empty
+Chan1[3].Data:Undefined
+Chan1[4].Cmd:Empty
+Chan1[4].Data:Undefined
+Chan1[5].Cmd:Empty
+Chan1[5].Data:Undefined
+Chan1[6].Cmd:Empty
+Chan1[6].Data:Undefined
+Chan1[7].Cmd:Empty
+Chan1[7].Data:Undefined
+Chan1[8].Cmd:Empty
+Chan1[8].Data:Undefined
+Chan2[1].Cmd:Empty
+Chan2[1].Data:Undefined
+Chan2[2].Cmd:Empty
+Chan2[2].Data:Undefined
+Chan2[3].Cmd:Empty
+Chan2[3].Data:Undefined
+Chan2[4].Cmd:Empty
+Chan2[4].Data:Undefined
+Chan2[5].Cmd:Empty
+Chan2[5].Data:Undefined
+Chan2[6].Cmd:Empty
+Chan2[6].Data:Undefined
+Chan2[7].Cmd:Empty
+Chan2[7].Data:Undefined
+Chan2[8].Cmd:Empty
+Chan2[8].Data:Undefined
+Chan3[1].Cmd:Empty
+Chan3[1].Data:Undefined
+Chan3[2].Cmd:Empty
+Chan3[2].Data:Undefined
+Chan3[3].Cmd:Empty
+Chan3[3].Data:Undefined
+Chan3[4].Cmd:Empty
+Chan3[4].Data:Undefined
+Chan3[5].Cmd:Empty
+Chan3[5].Data:Undefined
+Chan3[6].Cmd:Empty
+Chan3[6].Data:Undefined
+Chan3[7].Cmd:Empty
+Chan3[7].Data:Undefined
+Chan3[8].Cmd:Empty
+Chan3[8].Data:Undefined
+InvSet[1]:false
+InvSet[2]:false
+InvSet[3]:false
+InvSet[4]:false
+InvSet[5]:false
+InvSet[6]:false
+InvSet[7]:false
+InvSet[8]:false
+ShrSet[1]:false
+ShrSet[2]:false
+ShrSet[3]:false
+ShrSet[4]:false
+ShrSet[5]:false
+ShrSet[6]:false
+ShrSet[7]:false
+ShrSet[8]:false
+ExGntd:false
+CurCmd:Empty
+CurPtr:Undefined
+MemData:1
+AuxData:1
+
+------------- Show a heuristic value: ------------------
+20
+
+===== Startstates generated! =====
+
+Progress Report:
+
+	1000 states explored in 1.30s, with 2234 rules fired and 844 states in the queue.
+	2000 states explored in 1.33s, with 3795 rules fired and 1730 states in the queue.
+	3000 states explored in 1.37s, with 6205 rules fired and 2553 states in the queue.
+	4000 states explored in 1.43s, with 9959 rules fired and 3282 states in the queue.
+	5000 states explored in 1.48s, with 13054 rules fired and 4050 states in the queue.
+	6000 states explored in 1.51s, with 14843 rules fired and 4907 states in the queue.
+	7000 states explored in 1.54s, with 16522 rules fired and 5773 states in the queue.
+	8000 states explored in 1.59s, with 18854 rules fired and 6589 states in the queue.
+	9000 states explored in 1.63s, with 21564 rules fired and 7376 states in the queue.
+	10000 states explored in 1.67s, with 23573 rules fired and 8219 states in the queue.
+	11000 states explored in 1.71s, with 26017 rules fired and 9026 states in the queue.
+	12000 states explored in 1.76s, with 28836 rules fired and 9803 states in the queue.
+	13000 states explored in 1.81s, with 31600 rules fired and 10586 states in the queue.
+	14000 states explored in 1.89s, with 36278 rules fired and 11218 states in the queue.
+	15000 states explored in 1.97s, with 41733 rules fired and 11796 states in the queue.
+	16000 states explored in 2.12s, with 51109 rules fired and 12051 states in the queue.
+	17000 states explored in 2.15s, with 52419 rules fired and 12932 states in the queue.
+	18000 states explored in 2.18s, with 53852 rules fired and 13802 states in the queue.
+	19000 states explored in 2.21s, with 55685 rules fired and 14635 states in the queue.
+	20000 states explored in 2.25s, with 57509 rules fired and 15469 states in the queue.
+	21000 states explored in 2.29s, with 59485 rules fired and 16289 states in the queue.
+	22000 states explored in 2.33s, with 61299 rules fired and 17125 states in the queue.
+	23000 states explored in 2.37s, with 63447 rules fired and 17930 states in the queue.
+	24000 states explored in 2.41s, with 65314 rules fired and 18763 states in the queue.
+	25000 states explored in 2.45s, with 67481 rules fired and 19566 states in the queue.
+	26000 states explored in 2.49s, with 69783 rules fired and 20359 states in the queue.
+	27000 states explored in 2.54s, with 72137 rules fired and 21159 states in the queue.
+	28000 states explored in 2.59s, with 74939 rules fired and 21911 states in the queue.
+	29000 states explored in 2.64s, with 78091 rules fired and 22627 states in the queue.
+	30000 states explored in 2.69s, with 80817 rules fired and 23410 states in the queue.
+	31000 states explored in 2.73s, with 82718 rules fired and 24269 states in the queue.
+	32000 states explored in 2.79s, with 85397 rules fired and 25059 states in the queue.
+	33000 states explored in 2.86s, with 89232 rules fired and 25758 states in the queue.
+	34000 states explored in 2.90s, with 91068 rules fired and 26604 states in the queue.
+	35000 states explored in 2.94s, with 93014 rules fired and 27441 states in the queue.
+	36000 states explored in 3.00s, with 95897 rules fired and 28196 states in the queue.
+	37000 states explored in 3.06s, with 98944 rules fired and 28938 states in the queue.
+	38000 states explored in 3.12s, with 102205 rules fired and 29664 states in the queue.
+	39000 states explored in 3.20s, with 106351 rules fired and 30314 states in the queue.
+	40000 states explored in 3.28s, with 110563 rules fired and 30965 states in the queue.
+
+==========================================================================
+
+Result:
+
+	Invariant "CntrlProp, j:4, i:1" failed.
+
+State Space Explored:
+
+	40766 states, 116616 rules fired in 3.39s.
+
+Analysis of State Space:
+
+	There are rules that are never fired.
+	If you are running with symmetry, this may be why.  Otherwise,
+	please run this program with "-pr" for the rules information.

@@ -1,0 +1,170 @@
+You choose the local search option :-)
+This program should be regarded as a DEBUGGING aid, not as a 
+certifier of correctness.
+Call with the -l flag or read the license file for terms
+and conditions of use.
+Run this program with "-h" for the list of options.
+
+Bugs, questions, and comments should be directed to
+"melatti@di.uniroma1.it".
+
+CMurphi compiler last modified date: Nov 26 2022
+Include files last modified date:    Jul 23 2021
+==========================================================================
+
+==========================================================================
+Caching Murphi Release 5.5.0
+Finite-state Concurrent System Verifier.
+
+Caching Murphi Release 5.5.0 is based on various versions of Murphi.
+Caching Murphi Release 5.5.0 :
+Copyright (C) 2009-2012 by Sapienza University of Rome.
+Murphi release 3.1 :
+Copyright (C) 1992 - 1999 by the Board of Trustees of
+Leland Stanford Junior University.
+
+==========================================================================
+
+Protocol: ./benchmarks/murphi_protocols/german_node4
+
+Algorithm:
+	Verification by our local search.
+	with symmetry algorithm 3 -- Heuristic Small Memory Normalization
+	with permutation trial limit 10.
+
+Memory usage:
+
+	* The size of each state is 360 bits (rounded up to 48 bytes).
+	* The memory allocated for the hash table and state queue is
+	  5242 Mbytes.
+	  With two words of overhead per state, the maximum size of
+	  the state space is 80908657 states.
+	   * Use option "-k" or "-m" to increase this, if necessary.
+	* Capacity in queue for breadth-first search: 8090865 states.
+	   * Change the constant gPercentActiveStates in mu_prolog.inc
+	     to increase this, if necessary.
+
+Warning: No trace will not be printed in the case of protocol errors!
+         Check the options if you want to have error traces.
+==========================================================================
+
+You are using local search algorithm:
+
+------------- Show Goalstate: ------------------
+Cache[1].State:S
+Cache[1].Data:Undefined
+Cache[2].State:GntS
+Cache[2].Data:Undefined
+Cache[3].State:I
+Cache[3].Data:Undefined
+Cache[4].State:I
+Cache[4].Data:Undefined
+Chan1[1].Cmd:Empty
+Chan1[1].Data:Undefined
+Chan1[2].Cmd:Empty
+Chan1[2].Data:Undefined
+Chan1[3].Cmd:Empty
+Chan1[3].Data:Undefined
+Chan1[4].Cmd:Empty
+Chan1[4].Data:Undefined
+Chan2[1].Cmd:Empty
+Chan2[1].Data:Undefined
+Chan2[2].Cmd:Empty
+Chan2[2].Data:Undefined
+Chan2[3].Cmd:Empty
+Chan2[3].Data:Undefined
+Chan2[4].Cmd:Empty
+Chan2[4].Data:Undefined
+Chan3[1].Cmd:Empty
+Chan3[1].Data:Undefined
+Chan3[2].Cmd:Empty
+Chan3[2].Data:Undefined
+Chan3[3].Cmd:Empty
+Chan3[3].Data:Undefined
+Chan3[4].Cmd:Empty
+Chan3[4].Data:Undefined
+InvSet[1]:false
+InvSet[2]:false
+InvSet[3]:false
+InvSet[4]:false
+ShrSet[1]:false
+ShrSet[2]:false
+ShrSet[3]:false
+ShrSet[4]:false
+ExGntd:false
+CurCmd:Empty
+CurPtr:Undefined
+MemData:1
+AuxData:1
+
+------------- Show Initstate: ------------------
+Cache[1].State:I
+Cache[1].Data:Undefined
+Cache[2].State:I
+Cache[2].Data:Undefined
+Cache[3].State:I
+Cache[3].Data:Undefined
+Cache[4].State:I
+Cache[4].Data:Undefined
+Chan1[1].Cmd:Empty
+Chan1[1].Data:Undefined
+Chan1[2].Cmd:Empty
+Chan1[2].Data:Undefined
+Chan1[3].Cmd:Empty
+Chan1[3].Data:Undefined
+Chan1[4].Cmd:Empty
+Chan1[4].Data:Undefined
+Chan2[1].Cmd:Empty
+Chan2[1].Data:Undefined
+Chan2[2].Cmd:Empty
+Chan2[2].Data:Undefined
+Chan2[3].Cmd:Empty
+Chan2[3].Data:Undefined
+Chan2[4].Cmd:Empty
+Chan2[4].Data:Undefined
+Chan3[1].Cmd:Empty
+Chan3[1].Data:Undefined
+Chan3[2].Cmd:Empty
+Chan3[2].Data:Undefined
+Chan3[3].Cmd:Empty
+Chan3[3].Data:Undefined
+Chan3[4].Cmd:Empty
+Chan3[4].Data:Undefined
+InvSet[1]:false
+InvSet[2]:false
+InvSet[3]:false
+InvSet[4]:false
+ShrSet[1]:false
+ShrSet[2]:false
+ShrSet[3]:false
+ShrSet[4]:false
+ExGntd:false
+CurCmd:Empty
+CurPtr:Undefined
+MemData:1
+AuxData:1
+
+------------- Show a heuristic value: ------------------
+20
+
+===== Startstates generated! =====
+
+Progress Report:
+
+	1000 states explored in 1.32s, with 2129 rules fired and 629 states in the queue.
+
+==========================================================================
+
+Result:
+
+	Invariant "CntrlProp, j:3, i:1" failed.
+
+State Space Explored:
+
+	1971 states, 4142 rules fired in 1.33s.
+
+Analysis of State Space:
+
+	There are rules that are never fired.
+	If you are running with symmetry, this may be why.  Otherwise,
+	please run this program with "-pr" for the rules information.

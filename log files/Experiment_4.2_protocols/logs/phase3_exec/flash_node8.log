@@ -1,0 +1,299 @@
+You choose the local search option :-)
+This program should be regarded as a DEBUGGING aid, not as a 
+certifier of correctness.
+Call with the -l flag or read the license file for terms
+and conditions of use.
+Run this program with "-h" for the list of options.
+
+Bugs, questions, and comments should be directed to
+"melatti@di.uniroma1.it".
+
+CMurphi compiler last modified date: Nov 26 2022
+Include files last modified date:    Jul 23 2021
+==========================================================================
+
+==========================================================================
+Caching Murphi Release 5.5.0
+Finite-state Concurrent System Verifier.
+
+Caching Murphi Release 5.5.0 is based on various versions of Murphi.
+Caching Murphi Release 5.5.0 :
+Copyright (C) 2009-2012 by Sapienza University of Rome.
+Murphi release 3.1 :
+Copyright (C) 1992 - 1999 by the Board of Trustees of
+Leland Stanford Junior University.
+
+==========================================================================
+
+Protocol: ./benchmarks/murphi_protocols/flash_node8
+
+Algorithm:
+	Verification by our local search.
+	with symmetry algorithm 3 -- Heuristic Small Memory Normalization
+	with permutation trial limit 10.
+
+Memory usage:
+
+	* The size of each state is 808 bits (rounded up to 104 bytes).
+	* The memory allocated for the hash table and state queue is
+	  5242 Mbytes.
+	  With two words of overhead per state, the maximum size of
+	  the state space is 43401341 states.
+	   * Use option "-k" or "-m" to increase this, if necessary.
+	* Capacity in queue for breadth-first search: 4340134 states.
+	   * Change the constant gPercentActiveStates in mu_prolog.inc
+	     to increase this, if necessary.
+
+Warning: No trace will not be printed in the case of protocol errors!
+         Check the options if you want to have error traces.
+==========================================================================
+
+You are using local search algorithm:
+
+------------- Show Goalstate: ------------------
+Sta.Proc[1].ProcCmd:NODE_None
+Sta.Proc[1].InvMarked:false
+Sta.Proc[1].CacheState:CACHE_E
+Sta.Proc[2].ProcCmd:NODE_None
+Sta.Proc[2].InvMarked:false
+Sta.Proc[2].CacheState:CACHE_S
+Sta.Proc[3].ProcCmd:NODE_None
+Sta.Proc[3].InvMarked:false
+Sta.Proc[3].CacheState:CACHE_I
+Sta.Proc[4].ProcCmd:NODE_None
+Sta.Proc[4].InvMarked:false
+Sta.Proc[4].CacheState:CACHE_I
+Sta.Proc[5].ProcCmd:NODE_None
+Sta.Proc[5].InvMarked:false
+Sta.Proc[5].CacheState:CACHE_I
+Sta.Proc[6].ProcCmd:NODE_None
+Sta.Proc[6].InvMarked:false
+Sta.Proc[6].CacheState:CACHE_I
+Sta.Proc[7].ProcCmd:NODE_None
+Sta.Proc[7].InvMarked:false
+Sta.Proc[7].CacheState:CACHE_I
+Sta.Proc[8].ProcCmd:NODE_None
+Sta.Proc[8].InvMarked:false
+Sta.Proc[8].CacheState:CACHE_I
+Sta.HomeProc.ProcCmd:NODE_None
+Sta.HomeProc.InvMarked:false
+Sta.HomeProc.CacheState:CACHE_I
+Sta.Dir.Pending:false
+Sta.Dir.Local:false
+Sta.Dir.Dirty:false
+Sta.Dir.HeadVld:false
+Sta.Dir.HeadPtr:Undefined
+Sta.Dir.ShrVld:false
+Sta.Dir.ShrSet[1]:false
+Sta.Dir.ShrSet[2]:false
+Sta.Dir.ShrSet[3]:false
+Sta.Dir.ShrSet[4]:false
+Sta.Dir.ShrSet[5]:false
+Sta.Dir.ShrSet[6]:false
+Sta.Dir.ShrSet[7]:false
+Sta.Dir.ShrSet[8]:false
+Sta.Dir.InvSet[1]:false
+Sta.Dir.InvSet[2]:false
+Sta.Dir.InvSet[3]:false
+Sta.Dir.InvSet[4]:false
+Sta.Dir.InvSet[5]:false
+Sta.Dir.InvSet[6]:false
+Sta.Dir.InvSet[7]:false
+Sta.Dir.InvSet[8]:false
+Sta.UniMsg[1].Cmd:UNI_None
+Sta.UniMsg[1].Proc:Undefined
+Sta.UniMsg[1].HomeProc:false
+Sta.UniMsg[2].Cmd:UNI_None
+Sta.UniMsg[2].Proc:Undefined
+Sta.UniMsg[2].HomeProc:false
+Sta.UniMsg[3].Cmd:UNI_None
+Sta.UniMsg[3].Proc:Undefined
+Sta.UniMsg[3].HomeProc:false
+Sta.UniMsg[4].Cmd:UNI_None
+Sta.UniMsg[4].Proc:Undefined
+Sta.UniMsg[4].HomeProc:false
+Sta.UniMsg[5].Cmd:UNI_None
+Sta.UniMsg[5].Proc:Undefined
+Sta.UniMsg[5].HomeProc:false
+Sta.UniMsg[6].Cmd:UNI_None
+Sta.UniMsg[6].Proc:Undefined
+Sta.UniMsg[6].HomeProc:false
+Sta.UniMsg[7].Cmd:UNI_None
+Sta.UniMsg[7].Proc:Undefined
+Sta.UniMsg[7].HomeProc:false
+Sta.UniMsg[8].Cmd:UNI_None
+Sta.UniMsg[8].Proc:Undefined
+Sta.UniMsg[8].HomeProc:false
+Sta.HomeUniMsg.Cmd:UNI_None
+Sta.HomeUniMsg.Proc:Undefined
+Sta.HomeUniMsg.HomeProc:false
+Sta.InvMsg[1].Cmd:INV_None
+Sta.InvMsg[2].Cmd:INV_None
+Sta.InvMsg[3].Cmd:INV_None
+Sta.InvMsg[4].Cmd:INV_None
+Sta.InvMsg[5].Cmd:INV_None
+Sta.InvMsg[6].Cmd:INV_None
+Sta.InvMsg[7].Cmd:INV_None
+Sta.InvMsg[8].Cmd:INV_None
+Sta.RpMsg[1].Cmd:RP_None
+Sta.RpMsg[2].Cmd:RP_None
+Sta.RpMsg[3].Cmd:RP_None
+Sta.RpMsg[4].Cmd:RP_None
+Sta.RpMsg[5].Cmd:RP_None
+Sta.RpMsg[6].Cmd:RP_None
+Sta.RpMsg[7].Cmd:RP_None
+Sta.RpMsg[8].Cmd:RP_None
+Sta.WbMsg.Cmd:WB_None
+Sta.WbMsg.Proc:Undefined
+Sta.ShWbMsg.Cmd:SHWB_None
+Sta.ShWbMsg.Proc:Undefined
+Sta.NakcMsg.Cmd:NAKC_None
+Sta.PendReqSrc:Undefined
+Sta.HomePendReqSrc:false
+Sta.Collecting:false
+Sta.FwdCmd:UNI_None
+
+------------- Show a heuristic value: ------------------
+11
+
+------------- Show Goalstate: ------------------
+Sta.Proc[1].ProcCmd:NODE_None
+Sta.Proc[1].InvMarked:false
+Sta.Proc[1].CacheState:CACHE_I
+Sta.Proc[2].ProcCmd:NODE_None
+Sta.Proc[2].InvMarked:false
+Sta.Proc[2].CacheState:CACHE_I
+Sta.Proc[3].ProcCmd:NODE_None
+Sta.Proc[3].InvMarked:false
+Sta.Proc[3].CacheState:CACHE_I
+Sta.Proc[4].ProcCmd:NODE_None
+Sta.Proc[4].InvMarked:false
+Sta.Proc[4].CacheState:CACHE_I
+Sta.Proc[5].ProcCmd:NODE_None
+Sta.Proc[5].InvMarked:false
+Sta.Proc[5].CacheState:CACHE_I
+Sta.Proc[6].ProcCmd:NODE_None
+Sta.Proc[6].InvMarked:false
+Sta.Proc[6].CacheState:CACHE_I
+Sta.Proc[7].ProcCmd:NODE_None
+Sta.Proc[7].InvMarked:false
+Sta.Proc[7].CacheState:CACHE_I
+Sta.Proc[8].ProcCmd:NODE_None
+Sta.Proc[8].InvMarked:false
+Sta.Proc[8].CacheState:CACHE_I
+Sta.HomeProc.ProcCmd:NODE_None
+Sta.HomeProc.InvMarked:false
+Sta.HomeProc.CacheState:CACHE_I
+Sta.Dir.Pending:false
+Sta.Dir.Local:false
+Sta.Dir.Dirty:false
+Sta.Dir.HeadVld:false
+Sta.Dir.HeadPtr:Undefined
+Sta.Dir.ShrVld:false
+Sta.Dir.ShrSet[1]:false
+Sta.Dir.ShrSet[2]:false
+Sta.Dir.ShrSet[3]:false
+Sta.Dir.ShrSet[4]:false
+Sta.Dir.ShrSet[5]:false
+Sta.Dir.ShrSet[6]:false
+Sta.Dir.ShrSet[7]:false
+Sta.Dir.ShrSet[8]:false
+Sta.Dir.InvSet[1]:false
+Sta.Dir.InvSet[2]:false
+Sta.Dir.InvSet[3]:false
+Sta.Dir.InvSet[4]:false
+Sta.Dir.InvSet[5]:false
+Sta.Dir.InvSet[6]:false
+Sta.Dir.InvSet[7]:false
+Sta.Dir.InvSet[8]:false
+Sta.UniMsg[1].Cmd:UNI_None
+Sta.UniMsg[1].Proc:Undefined
+Sta.UniMsg[1].HomeProc:false
+Sta.UniMsg[2].Cmd:UNI_None
+Sta.UniMsg[2].Proc:Undefined
+Sta.UniMsg[2].HomeProc:false
+Sta.UniMsg[3].Cmd:UNI_None
+Sta.UniMsg[3].Proc:Undefined
+Sta.UniMsg[3].HomeProc:false
+Sta.UniMsg[4].Cmd:UNI_None
+Sta.UniMsg[4].Proc:Undefined
+Sta.UniMsg[4].HomeProc:false
+Sta.UniMsg[5].Cmd:UNI_None
+Sta.UniMsg[5].Proc:Undefined
+Sta.UniMsg[5].HomeProc:false
+Sta.UniMsg[6].Cmd:UNI_None
+Sta.UniMsg[6].Proc:Undefined
+Sta.UniMsg[6].HomeProc:false
+Sta.UniMsg[7].Cmd:UNI_None
+Sta.UniMsg[7].Proc:Undefined
+Sta.UniMsg[7].HomeProc:false
+Sta.UniMsg[8].Cmd:UNI_None
+Sta.UniMsg[8].Proc:Undefined
+Sta.UniMsg[8].HomeProc:false
+Sta.HomeUniMsg.Cmd:UNI_None
+Sta.HomeUniMsg.Proc:Undefined
+Sta.HomeUniMsg.HomeProc:false
+Sta.InvMsg[1].Cmd:INV_None
+Sta.InvMsg[2].Cmd:INV_None
+Sta.InvMsg[3].Cmd:INV_None
+Sta.InvMsg[4].Cmd:INV_None
+Sta.InvMsg[5].Cmd:INV_None
+Sta.InvMsg[6].Cmd:INV_None
+Sta.InvMsg[7].Cmd:INV_None
+Sta.InvMsg[8].Cmd:INV_None
+Sta.RpMsg[1].Cmd:RP_None
+Sta.RpMsg[2].Cmd:RP_None
+Sta.RpMsg[3].Cmd:RP_None
+Sta.RpMsg[4].Cmd:RP_None
+Sta.RpMsg[5].Cmd:RP_None
+Sta.RpMsg[6].Cmd:RP_None
+Sta.RpMsg[7].Cmd:RP_None
+Sta.RpMsg[8].Cmd:RP_None
+Sta.WbMsg.Cmd:WB_None
+Sta.WbMsg.Proc:Undefined
+Sta.ShWbMsg.Cmd:SHWB_None
+Sta.ShWbMsg.Proc:Undefined
+Sta.NakcMsg.Cmd:NAKC_None
+Sta.PendReqSrc:Undefined
+Sta.HomePendReqSrc:false
+Sta.Collecting:false
+Sta.FwdCmd:UNI_None
+
+===== Startstates generated! =====
+
+Progress Report:
+
+	1000 states explored in 5.00s, with 1565 rules fired and 903 states in the queue.
+	2000 states explored in 5.13s, with 3209 rules fired and 1798 states in the queue.
+	3000 states explored in 5.34s, with 5782 rules fired and 2631 states in the queue.
+	4000 states explored in 5.49s, with 7650 rules fired and 3515 states in the queue.
+	5000 states explored in 5.63s, with 9084 rules fired and 4426 states in the queue.
+	6000 states explored in 5.75s, with 10715 rules fired and 5323 states in the queue.
+	7000 states explored in 6.33s, with 12456 rules fired and 6216 states in the queue.
+	8000 states explored in 6.46s, with 13879 rules fired and 7129 states in the queue.
+	9000 states explored in 7.24s, with 15214 rules fired and 8046 states in the queue.
+	10000 states explored in 7.36s, with 16791 rules fired and 8949 states in the queue.
+	11000 states explored in 7.48s, with 18141 rules fired and 9865 states in the queue.
+	12000 states explored in 7.58s, with 19655 rules fired and 10774 states in the queue.
+	13000 states explored in 7.68s, with 21010 rules fired and 11691 states in the queue.
+	14000 states explored in 7.77s, with 22378 rules fired and 12605 states in the queue.
+	15000 states explored in 7.88s, with 23891 rules fired and 13513 states in the queue.
+	16000 states explored in 8.00s, with 25644 rules fired and 14406 states in the queue.
+	17000 states explored in 8.11s, with 27167 rules fired and 15309 states in the queue.
+	18000 states explored in 8.24s, with 28686 rules fired and 16207 states in the queue.
+
+==========================================================================
+
+Result:
+
+	Invariant "test_proprity, j:2, i:1" failed.
+
+State Space Explored:
+
+	18611 states, 29778 rules fired in 8.32s.
+
+Analysis of State Space:
+
+	There are rules that are never fired.
+	If you are running with symmetry, this may be why.  Otherwise,
+	please run this program with "-pr" for the rules information.

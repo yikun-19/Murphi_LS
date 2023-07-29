@@ -1,0 +1,2391 @@
+This program should be regarded as a DEBUGGING aid, not as a 
+certifier of correctness.
+Call with the -l flag or read the license file for terms
+and conditions of use.
+Run this program with "-h" for the list of options.
+
+Bugs, questions, and comments should be directed to
+"melatti@di.uniroma1.it".
+
+CMurphi compiler last modified date: Nov 26 2022
+Include files last modified date:    Jul 23 2021
+==========================================================================
+
+==========================================================================
+Caching Murphi Release 5.5.0
+Finite-state Concurrent System Verifier.
+
+Caching Murphi Release 5.5.0 is based on various versions of Murphi.
+Caching Murphi Release 5.5.0 :
+Copyright (C) 2009-2012 by Sapienza University of Rome.
+Murphi release 3.1 :
+Copyright (C) 1992 - 1999 by the Board of Trustees of
+Leland Stanford Junior University.
+
+==========================================================================
+
+Protocol: ./benchmarks/murphi_protocols/german2004_node4
+
+Algorithm:
+	Verification by breadth first search.
+	with symmetry algorithm 3 -- Heuristic Small Memory Normalization
+	with permutation trial limit 10.
+
+Memory usage:
+
+	* The size of each state is 7632 bits (rounded up to 960 bytes).
+	* The memory allocated for the hash table and state queue is
+	  5242 Mbytes.
+	  With two words of overhead per state, the maximum size of
+	  the state space is 5367403 states.
+	   * Use option "-k" or "-m" to increase this, if necessary.
+	* Capacity in queue for breadth-first search: 536740 states.
+	   * Change the constant gPercentActiveStates in mu_prolog.inc
+	     to increase this, if necessary.
+
+Warning: No trace will not be printed in the case of protocol errors!
+         Check the options if you want to have error traces.
+==========================================================================
+
+You are using breath-first search algorithm:
+
+------------- Show Goalstate: ------------------
+node[0].memory[0].values[0]:false
+node[0].memory[0].values[1]:false
+node[0].memory[0].values[2]:false
+node[0].memory[0].values[3]:false
+node[0].memory[1].values[0]:false
+node[0].memory[1].values[1]:false
+node[0].memory[1].values[2]:false
+node[0].memory[1].values[3]:false
+node[0].memory[2].values[0]:false
+node[0].memory[2].values[1]:false
+node[0].memory[2].values[2]:false
+node[0].memory[2].values[3]:false
+node[0].memory[3].values[0]:false
+node[0].memory[3].values[1]:false
+node[0].memory[3].values[2]:false
+node[0].memory[3].values[3]:false
+node[0].cache[0].state:cache_invalid
+node[0].cache[0].data.values[0]:false
+node[0].cache[0].data.values[1]:false
+node[0].cache[0].data.values[2]:false
+node[0].cache[0].data.values[3]:false
+node[0].cache[1].state:cache_invalid
+node[0].cache[1].data.values[0]:false
+node[0].cache[1].data.values[1]:false
+node[0].cache[1].data.values[2]:false
+node[0].cache[1].data.values[3]:false
+node[0].cache[2].state:cache_invalid
+node[0].cache[2].data.values[0]:false
+node[0].cache[2].data.values[1]:false
+node[0].cache[2].data.values[2]:false
+node[0].cache[2].data.values[3]:false
+node[0].cache[3].state:cache_invalid
+node[0].cache[3].data.values[0]:false
+node[0].cache[3].data.values[1]:false
+node[0].cache[3].data.values[2]:false
+node[0].cache[3].data.values[3]:false
+node[0].directory[0][0]:cache_invalid
+node[0].directory[0][1]:cache_invalid
+node[0].directory[0][2]:cache_invalid
+node[0].directory[0][3]:cache_invalid
+node[0].directory[0][4]:cache_invalid
+node[0].directory[1][0]:cache_invalid
+node[0].directory[1][1]:cache_invalid
+node[0].directory[1][2]:cache_invalid
+node[0].directory[1][3]:cache_invalid
+node[0].directory[1][4]:cache_invalid
+node[0].directory[2][0]:cache_invalid
+node[0].directory[2][1]:cache_invalid
+node[0].directory[2][2]:cache_invalid
+node[0].directory[2][3]:cache_invalid
+node[0].directory[2][4]:cache_invalid
+node[0].directory[3][0]:cache_invalid
+node[0].directory[3][1]:cache_invalid
+node[0].directory[3][2]:cache_invalid
+node[0].directory[3][3]:cache_invalid
+node[0].directory[3][4]:cache_invalid
+node[0].local_requests[0]:false
+node[0].local_requests[1]:false
+node[0].local_requests[2]:false
+node[0].local_requests[3]:false
+node[0].home_requests[0].source:0
+node[0].home_requests[0].op:op_invalid
+node[0].home_requests[0].data.values[0]:false
+node[0].home_requests[0].data.values[1]:false
+node[0].home_requests[0].data.values[2]:false
+node[0].home_requests[0].data.values[3]:false
+node[0].home_requests[0].invalidate_list[0]:false
+node[0].home_requests[0].invalidate_list[1]:false
+node[0].home_requests[0].invalidate_list[2]:false
+node[0].home_requests[0].invalidate_list[3]:false
+node[0].home_requests[0].invalidate_list[4]:false
+node[0].home_requests[0].status:inactive
+node[0].home_requests[1].source:0
+node[0].home_requests[1].op:op_invalid
+node[0].home_requests[1].data.values[0]:false
+node[0].home_requests[1].data.values[1]:false
+node[0].home_requests[1].data.values[2]:false
+node[0].home_requests[1].data.values[3]:false
+node[0].home_requests[1].invalidate_list[0]:false
+node[0].home_requests[1].invalidate_list[1]:false
+node[0].home_requests[1].invalidate_list[2]:false
+node[0].home_requests[1].invalidate_list[3]:false
+node[0].home_requests[1].invalidate_list[4]:false
+node[0].home_requests[1].status:inactive
+node[0].home_requests[2].source:0
+node[0].home_requests[2].op:op_invalid
+node[0].home_requests[2].data.values[0]:false
+node[0].home_requests[2].data.values[1]:false
+node[0].home_requests[2].data.values[2]:false
+node[0].home_requests[2].data.values[3]:false
+node[0].home_requests[2].invalidate_list[0]:false
+node[0].home_requests[2].invalidate_list[1]:false
+node[0].home_requests[2].invalidate_list[2]:false
+node[0].home_requests[2].invalidate_list[3]:false
+node[0].home_requests[2].invalidate_list[4]:false
+node[0].home_requests[2].status:inactive
+node[0].home_requests[3].source:0
+node[0].home_requests[3].op:op_invalid
+node[0].home_requests[3].data.values[0]:false
+node[0].home_requests[3].data.values[1]:false
+node[0].home_requests[3].data.values[2]:false
+node[0].home_requests[3].data.values[3]:false
+node[0].home_requests[3].invalidate_list[0]:false
+node[0].home_requests[3].invalidate_list[1]:false
+node[0].home_requests[3].invalidate_list[2]:false
+node[0].home_requests[3].invalidate_list[3]:false
+node[0].home_requests[3].invalidate_list[4]:false
+node[0].home_requests[3].status:inactive
+node[0].remote_requests[0].home:0
+node[0].remote_requests[0].op:op_invalid
+node[0].remote_requests[0].data.values[0]:false
+node[0].remote_requests[0].data.values[1]:false
+node[0].remote_requests[0].data.values[2]:false
+node[0].remote_requests[0].data.values[3]:false
+node[0].remote_requests[0].status:inactive
+node[0].remote_requests[1].home:0
+node[0].remote_requests[1].op:op_invalid
+node[0].remote_requests[1].data.values[0]:false
+node[0].remote_requests[1].data.values[1]:false
+node[0].remote_requests[1].data.values[2]:false
+node[0].remote_requests[1].data.values[3]:false
+node[0].remote_requests[1].status:inactive
+node[0].remote_requests[2].home:0
+node[0].remote_requests[2].op:op_invalid
+node[0].remote_requests[2].data.values[0]:false
+node[0].remote_requests[2].data.values[1]:false
+node[0].remote_requests[2].data.values[2]:false
+node[0].remote_requests[2].data.values[3]:false
+node[0].remote_requests[2].status:inactive
+node[0].remote_requests[3].home:0
+node[0].remote_requests[3].op:op_invalid
+node[0].remote_requests[3].data.values[0]:false
+node[0].remote_requests[3].data.values[1]:false
+node[0].remote_requests[3].data.values[2]:false
+node[0].remote_requests[3].data.values[3]:false
+node[0].remote_requests[3].status:inactive
+node[0].inchan[1].msg.source:0
+node[0].inchan[1].msg.dest:0
+node[0].inchan[1].msg.op:op_invalid
+node[0].inchan[1].msg.addr:0
+node[0].inchan[1].msg.data.values[0]:false
+node[0].inchan[1].msg.data.values[1]:false
+node[0].inchan[1].msg.data.values[2]:false
+node[0].inchan[1].msg.data.values[3]:false
+node[0].inchan[1].valid:false
+node[0].inchan[2].msg.source:0
+node[0].inchan[2].msg.dest:0
+node[0].inchan[2].msg.op:op_invalid
+node[0].inchan[2].msg.addr:0
+node[0].inchan[2].msg.data.values[0]:false
+node[0].inchan[2].msg.data.values[1]:false
+node[0].inchan[2].msg.data.values[2]:false
+node[0].inchan[2].msg.data.values[3]:false
+node[0].inchan[2].valid:false
+node[0].inchan[3].msg.source:0
+node[0].inchan[3].msg.dest:0
+node[0].inchan[3].msg.op:op_invalid
+node[0].inchan[3].msg.addr:0
+node[0].inchan[3].msg.data.values[0]:false
+node[0].inchan[3].msg.data.values[1]:false
+node[0].inchan[3].msg.data.values[2]:false
+node[0].inchan[3].msg.data.values[3]:false
+node[0].inchan[3].valid:false
+node[0].outchan[1].msg.source:0
+node[0].outchan[1].msg.dest:0
+node[0].outchan[1].msg.op:op_invalid
+node[0].outchan[1].msg.addr:0
+node[0].outchan[1].msg.data.values[0]:false
+node[0].outchan[1].msg.data.values[1]:false
+node[0].outchan[1].msg.data.values[2]:false
+node[0].outchan[1].msg.data.values[3]:false
+node[0].outchan[1].valid:false
+node[0].outchan[2].msg.source:0
+node[0].outchan[2].msg.dest:0
+node[0].outchan[2].msg.op:op_invalid
+node[0].outchan[2].msg.addr:0
+node[0].outchan[2].msg.data.values[0]:false
+node[0].outchan[2].msg.data.values[1]:false
+node[0].outchan[2].msg.data.values[2]:false
+node[0].outchan[2].msg.data.values[3]:false
+node[0].outchan[2].valid:false
+node[0].outchan[3].msg.source:0
+node[0].outchan[3].msg.dest:0
+node[0].outchan[3].msg.op:op_invalid
+node[0].outchan[3].msg.addr:0
+node[0].outchan[3].msg.data.values[0]:false
+node[0].outchan[3].msg.data.values[1]:false
+node[0].outchan[3].msg.data.values[2]:false
+node[0].outchan[3].msg.data.values[3]:false
+node[0].outchan[3].valid:false
+node[1].memory[0].values[0]:false
+node[1].memory[0].values[1]:false
+node[1].memory[0].values[2]:false
+node[1].memory[0].values[3]:false
+node[1].memory[1].values[0]:false
+node[1].memory[1].values[1]:false
+node[1].memory[1].values[2]:false
+node[1].memory[1].values[3]:false
+node[1].memory[2].values[0]:false
+node[1].memory[2].values[1]:false
+node[1].memory[2].values[2]:false
+node[1].memory[2].values[3]:false
+node[1].memory[3].values[0]:false
+node[1].memory[3].values[1]:false
+node[1].memory[3].values[2]:false
+node[1].memory[3].values[3]:false
+node[1].cache[0].state:cache_invalid
+node[1].cache[0].data.values[0]:false
+node[1].cache[0].data.values[1]:false
+node[1].cache[0].data.values[2]:false
+node[1].cache[0].data.values[3]:false
+node[1].cache[1].state:cache_shared
+node[1].cache[1].data.values[0]:false
+node[1].cache[1].data.values[1]:false
+node[1].cache[1].data.values[2]:false
+node[1].cache[1].data.values[3]:false
+node[1].cache[2].state:cache_invalid
+node[1].cache[2].data.values[0]:false
+node[1].cache[2].data.values[1]:false
+node[1].cache[2].data.values[2]:false
+node[1].cache[2].data.values[3]:false
+node[1].cache[3].state:cache_invalid
+node[1].cache[3].data.values[0]:false
+node[1].cache[3].data.values[1]:false
+node[1].cache[3].data.values[2]:false
+node[1].cache[3].data.values[3]:false
+node[1].directory[0][0]:cache_invalid
+node[1].directory[0][1]:cache_invalid
+node[1].directory[0][2]:cache_invalid
+node[1].directory[0][3]:cache_invalid
+node[1].directory[0][4]:cache_invalid
+node[1].directory[1][0]:cache_invalid
+node[1].directory[1][1]:cache_invalid
+node[1].directory[1][2]:cache_invalid
+node[1].directory[1][3]:cache_invalid
+node[1].directory[1][4]:cache_invalid
+node[1].directory[2][0]:cache_invalid
+node[1].directory[2][1]:cache_invalid
+node[1].directory[2][2]:cache_invalid
+node[1].directory[2][3]:cache_invalid
+node[1].directory[2][4]:cache_invalid
+node[1].directory[3][0]:cache_invalid
+node[1].directory[3][1]:cache_invalid
+node[1].directory[3][2]:cache_invalid
+node[1].directory[3][3]:cache_invalid
+node[1].directory[3][4]:cache_invalid
+node[1].local_requests[0]:false
+node[1].local_requests[1]:false
+node[1].local_requests[2]:false
+node[1].local_requests[3]:false
+node[1].home_requests[0].source:0
+node[1].home_requests[0].op:op_invalid
+node[1].home_requests[0].data.values[0]:false
+node[1].home_requests[0].data.values[1]:false
+node[1].home_requests[0].data.values[2]:false
+node[1].home_requests[0].data.values[3]:false
+node[1].home_requests[0].invalidate_list[0]:false
+node[1].home_requests[0].invalidate_list[1]:false
+node[1].home_requests[0].invalidate_list[2]:false
+node[1].home_requests[0].invalidate_list[3]:false
+node[1].home_requests[0].invalidate_list[4]:false
+node[1].home_requests[0].status:inactive
+node[1].home_requests[1].source:0
+node[1].home_requests[1].op:op_invalid
+node[1].home_requests[1].data.values[0]:false
+node[1].home_requests[1].data.values[1]:false
+node[1].home_requests[1].data.values[2]:false
+node[1].home_requests[1].data.values[3]:false
+node[1].home_requests[1].invalidate_list[0]:false
+node[1].home_requests[1].invalidate_list[1]:false
+node[1].home_requests[1].invalidate_list[2]:false
+node[1].home_requests[1].invalidate_list[3]:false
+node[1].home_requests[1].invalidate_list[4]:false
+node[1].home_requests[1].status:inactive
+node[1].home_requests[2].source:0
+node[1].home_requests[2].op:op_invalid
+node[1].home_requests[2].data.values[0]:false
+node[1].home_requests[2].data.values[1]:false
+node[1].home_requests[2].data.values[2]:false
+node[1].home_requests[2].data.values[3]:false
+node[1].home_requests[2].invalidate_list[0]:false
+node[1].home_requests[2].invalidate_list[1]:false
+node[1].home_requests[2].invalidate_list[2]:false
+node[1].home_requests[2].invalidate_list[3]:false
+node[1].home_requests[2].invalidate_list[4]:false
+node[1].home_requests[2].status:inactive
+node[1].home_requests[3].source:0
+node[1].home_requests[3].op:op_invalid
+node[1].home_requests[3].data.values[0]:false
+node[1].home_requests[3].data.values[1]:false
+node[1].home_requests[3].data.values[2]:false
+node[1].home_requests[3].data.values[3]:false
+node[1].home_requests[3].invalidate_list[0]:false
+node[1].home_requests[3].invalidate_list[1]:false
+node[1].home_requests[3].invalidate_list[2]:false
+node[1].home_requests[3].invalidate_list[3]:false
+node[1].home_requests[3].invalidate_list[4]:false
+node[1].home_requests[3].status:inactive
+node[1].remote_requests[0].home:0
+node[1].remote_requests[0].op:op_invalid
+node[1].remote_requests[0].data.values[0]:false
+node[1].remote_requests[0].data.values[1]:false
+node[1].remote_requests[0].data.values[2]:false
+node[1].remote_requests[0].data.values[3]:false
+node[1].remote_requests[0].status:inactive
+node[1].remote_requests[1].home:0
+node[1].remote_requests[1].op:op_invalid
+node[1].remote_requests[1].data.values[0]:false
+node[1].remote_requests[1].data.values[1]:false
+node[1].remote_requests[1].data.values[2]:false
+node[1].remote_requests[1].data.values[3]:false
+node[1].remote_requests[1].status:inactive
+node[1].remote_requests[2].home:0
+node[1].remote_requests[2].op:op_invalid
+node[1].remote_requests[2].data.values[0]:false
+node[1].remote_requests[2].data.values[1]:false
+node[1].remote_requests[2].data.values[2]:false
+node[1].remote_requests[2].data.values[3]:false
+node[1].remote_requests[2].status:inactive
+node[1].remote_requests[3].home:0
+node[1].remote_requests[3].op:op_invalid
+node[1].remote_requests[3].data.values[0]:false
+node[1].remote_requests[3].data.values[1]:false
+node[1].remote_requests[3].data.values[2]:false
+node[1].remote_requests[3].data.values[3]:false
+node[1].remote_requests[3].status:inactive
+node[1].inchan[1].msg.source:0
+node[1].inchan[1].msg.dest:0
+node[1].inchan[1].msg.op:op_invalid
+node[1].inchan[1].msg.addr:0
+node[1].inchan[1].msg.data.values[0]:false
+node[1].inchan[1].msg.data.values[1]:false
+node[1].inchan[1].msg.data.values[2]:false
+node[1].inchan[1].msg.data.values[3]:false
+node[1].inchan[1].valid:false
+node[1].inchan[2].msg.source:0
+node[1].inchan[2].msg.dest:0
+node[1].inchan[2].msg.op:op_invalid
+node[1].inchan[2].msg.addr:0
+node[1].inchan[2].msg.data.values[0]:false
+node[1].inchan[2].msg.data.values[1]:false
+node[1].inchan[2].msg.data.values[2]:false
+node[1].inchan[2].msg.data.values[3]:false
+node[1].inchan[2].valid:false
+node[1].inchan[3].msg.source:0
+node[1].inchan[3].msg.dest:0
+node[1].inchan[3].msg.op:op_invalid
+node[1].inchan[3].msg.addr:0
+node[1].inchan[3].msg.data.values[0]:false
+node[1].inchan[3].msg.data.values[1]:false
+node[1].inchan[3].msg.data.values[2]:false
+node[1].inchan[3].msg.data.values[3]:false
+node[1].inchan[3].valid:false
+node[1].outchan[1].msg.source:0
+node[1].outchan[1].msg.dest:0
+node[1].outchan[1].msg.op:op_invalid
+node[1].outchan[1].msg.addr:0
+node[1].outchan[1].msg.data.values[0]:false
+node[1].outchan[1].msg.data.values[1]:false
+node[1].outchan[1].msg.data.values[2]:false
+node[1].outchan[1].msg.data.values[3]:false
+node[1].outchan[1].valid:false
+node[1].outchan[2].msg.source:0
+node[1].outchan[2].msg.dest:0
+node[1].outchan[2].msg.op:op_invalid
+node[1].outchan[2].msg.addr:0
+node[1].outchan[2].msg.data.values[0]:false
+node[1].outchan[2].msg.data.values[1]:false
+node[1].outchan[2].msg.data.values[2]:false
+node[1].outchan[2].msg.data.values[3]:false
+node[1].outchan[2].valid:false
+node[1].outchan[3].msg.source:0
+node[1].outchan[3].msg.dest:0
+node[1].outchan[3].msg.op:op_invalid
+node[1].outchan[3].msg.addr:0
+node[1].outchan[3].msg.data.values[0]:false
+node[1].outchan[3].msg.data.values[1]:false
+node[1].outchan[3].msg.data.values[2]:false
+node[1].outchan[3].msg.data.values[3]:false
+node[1].outchan[3].valid:false
+node[2].memory[0].values[0]:false
+node[2].memory[0].values[1]:false
+node[2].memory[0].values[2]:false
+node[2].memory[0].values[3]:false
+node[2].memory[1].values[0]:false
+node[2].memory[1].values[1]:false
+node[2].memory[1].values[2]:false
+node[2].memory[1].values[3]:false
+node[2].memory[2].values[0]:false
+node[2].memory[2].values[1]:false
+node[2].memory[2].values[2]:false
+node[2].memory[2].values[3]:false
+node[2].memory[3].values[0]:false
+node[2].memory[3].values[1]:false
+node[2].memory[3].values[2]:false
+node[2].memory[3].values[3]:false
+node[2].cache[0].state:cache_invalid
+node[2].cache[0].data.values[0]:false
+node[2].cache[0].data.values[1]:false
+node[2].cache[0].data.values[2]:false
+node[2].cache[0].data.values[3]:false
+node[2].cache[1].state:pending
+node[2].cache[1].data.values[0]:false
+node[2].cache[1].data.values[1]:false
+node[2].cache[1].data.values[2]:false
+node[2].cache[1].data.values[3]:false
+node[2].cache[2].state:cache_invalid
+node[2].cache[2].data.values[0]:false
+node[2].cache[2].data.values[1]:false
+node[2].cache[2].data.values[2]:false
+node[2].cache[2].data.values[3]:false
+node[2].cache[3].state:cache_invalid
+node[2].cache[3].data.values[0]:false
+node[2].cache[3].data.values[1]:false
+node[2].cache[3].data.values[2]:false
+node[2].cache[3].data.values[3]:false
+node[2].directory[0][0]:cache_invalid
+node[2].directory[0][1]:cache_invalid
+node[2].directory[0][2]:cache_invalid
+node[2].directory[0][3]:cache_invalid
+node[2].directory[0][4]:cache_invalid
+node[2].directory[1][0]:cache_invalid
+node[2].directory[1][1]:cache_invalid
+node[2].directory[1][2]:cache_invalid
+node[2].directory[1][3]:cache_invalid
+node[2].directory[1][4]:cache_invalid
+node[2].directory[2][0]:cache_invalid
+node[2].directory[2][1]:cache_invalid
+node[2].directory[2][2]:cache_invalid
+node[2].directory[2][3]:cache_invalid
+node[2].directory[2][4]:cache_invalid
+node[2].directory[3][0]:cache_invalid
+node[2].directory[3][1]:cache_invalid
+node[2].directory[3][2]:cache_invalid
+node[2].directory[3][3]:cache_invalid
+node[2].directory[3][4]:cache_invalid
+node[2].local_requests[0]:false
+node[2].local_requests[1]:false
+node[2].local_requests[2]:false
+node[2].local_requests[3]:false
+node[2].home_requests[0].source:0
+node[2].home_requests[0].op:op_invalid
+node[2].home_requests[0].data.values[0]:false
+node[2].home_requests[0].data.values[1]:false
+node[2].home_requests[0].data.values[2]:false
+node[2].home_requests[0].data.values[3]:false
+node[2].home_requests[0].invalidate_list[0]:false
+node[2].home_requests[0].invalidate_list[1]:false
+node[2].home_requests[0].invalidate_list[2]:false
+node[2].home_requests[0].invalidate_list[3]:false
+node[2].home_requests[0].invalidate_list[4]:false
+node[2].home_requests[0].status:inactive
+node[2].home_requests[1].source:0
+node[2].home_requests[1].op:op_invalid
+node[2].home_requests[1].data.values[0]:false
+node[2].home_requests[1].data.values[1]:false
+node[2].home_requests[1].data.values[2]:false
+node[2].home_requests[1].data.values[3]:false
+node[2].home_requests[1].invalidate_list[0]:false
+node[2].home_requests[1].invalidate_list[1]:false
+node[2].home_requests[1].invalidate_list[2]:false
+node[2].home_requests[1].invalidate_list[3]:false
+node[2].home_requests[1].invalidate_list[4]:false
+node[2].home_requests[1].status:inactive
+node[2].home_requests[2].source:0
+node[2].home_requests[2].op:op_invalid
+node[2].home_requests[2].data.values[0]:false
+node[2].home_requests[2].data.values[1]:false
+node[2].home_requests[2].data.values[2]:false
+node[2].home_requests[2].data.values[3]:false
+node[2].home_requests[2].invalidate_list[0]:false
+node[2].home_requests[2].invalidate_list[1]:false
+node[2].home_requests[2].invalidate_list[2]:false
+node[2].home_requests[2].invalidate_list[3]:false
+node[2].home_requests[2].invalidate_list[4]:false
+node[2].home_requests[2].status:inactive
+node[2].home_requests[3].source:0
+node[2].home_requests[3].op:op_invalid
+node[2].home_requests[3].data.values[0]:false
+node[2].home_requests[3].data.values[1]:false
+node[2].home_requests[3].data.values[2]:false
+node[2].home_requests[3].data.values[3]:false
+node[2].home_requests[3].invalidate_list[0]:false
+node[2].home_requests[3].invalidate_list[1]:false
+node[2].home_requests[3].invalidate_list[2]:false
+node[2].home_requests[3].invalidate_list[3]:false
+node[2].home_requests[3].invalidate_list[4]:false
+node[2].home_requests[3].status:inactive
+node[2].remote_requests[0].home:0
+node[2].remote_requests[0].op:op_invalid
+node[2].remote_requests[0].data.values[0]:false
+node[2].remote_requests[0].data.values[1]:false
+node[2].remote_requests[0].data.values[2]:false
+node[2].remote_requests[0].data.values[3]:false
+node[2].remote_requests[0].status:inactive
+node[2].remote_requests[1].home:0
+node[2].remote_requests[1].op:op_invalid
+node[2].remote_requests[1].data.values[0]:false
+node[2].remote_requests[1].data.values[1]:false
+node[2].remote_requests[1].data.values[2]:false
+node[2].remote_requests[1].data.values[3]:false
+node[2].remote_requests[1].status:inactive
+node[2].remote_requests[2].home:0
+node[2].remote_requests[2].op:op_invalid
+node[2].remote_requests[2].data.values[0]:false
+node[2].remote_requests[2].data.values[1]:false
+node[2].remote_requests[2].data.values[2]:false
+node[2].remote_requests[2].data.values[3]:false
+node[2].remote_requests[2].status:inactive
+node[2].remote_requests[3].home:0
+node[2].remote_requests[3].op:op_invalid
+node[2].remote_requests[3].data.values[0]:false
+node[2].remote_requests[3].data.values[1]:false
+node[2].remote_requests[3].data.values[2]:false
+node[2].remote_requests[3].data.values[3]:false
+node[2].remote_requests[3].status:inactive
+node[2].inchan[1].msg.source:0
+node[2].inchan[1].msg.dest:0
+node[2].inchan[1].msg.op:op_invalid
+node[2].inchan[1].msg.addr:0
+node[2].inchan[1].msg.data.values[0]:false
+node[2].inchan[1].msg.data.values[1]:false
+node[2].inchan[1].msg.data.values[2]:false
+node[2].inchan[1].msg.data.values[3]:false
+node[2].inchan[1].valid:false
+node[2].inchan[2].msg.source:0
+node[2].inchan[2].msg.dest:0
+node[2].inchan[2].msg.op:op_invalid
+node[2].inchan[2].msg.addr:0
+node[2].inchan[2].msg.data.values[0]:false
+node[2].inchan[2].msg.data.values[1]:false
+node[2].inchan[2].msg.data.values[2]:false
+node[2].inchan[2].msg.data.values[3]:false
+node[2].inchan[2].valid:false
+node[2].inchan[3].msg.source:0
+node[2].inchan[3].msg.dest:0
+node[2].inchan[3].msg.op:op_invalid
+node[2].inchan[3].msg.addr:0
+node[2].inchan[3].msg.data.values[0]:false
+node[2].inchan[3].msg.data.values[1]:false
+node[2].inchan[3].msg.data.values[2]:false
+node[2].inchan[3].msg.data.values[3]:false
+node[2].inchan[3].valid:false
+node[2].outchan[1].msg.source:0
+node[2].outchan[1].msg.dest:0
+node[2].outchan[1].msg.op:op_invalid
+node[2].outchan[1].msg.addr:0
+node[2].outchan[1].msg.data.values[0]:false
+node[2].outchan[1].msg.data.values[1]:false
+node[2].outchan[1].msg.data.values[2]:false
+node[2].outchan[1].msg.data.values[3]:false
+node[2].outchan[1].valid:false
+node[2].outchan[2].msg.source:0
+node[2].outchan[2].msg.dest:0
+node[2].outchan[2].msg.op:op_invalid
+node[2].outchan[2].msg.addr:0
+node[2].outchan[2].msg.data.values[0]:false
+node[2].outchan[2].msg.data.values[1]:false
+node[2].outchan[2].msg.data.values[2]:false
+node[2].outchan[2].msg.data.values[3]:false
+node[2].outchan[2].valid:false
+node[2].outchan[3].msg.source:0
+node[2].outchan[3].msg.dest:0
+node[2].outchan[3].msg.op:op_invalid
+node[2].outchan[3].msg.addr:0
+node[2].outchan[3].msg.data.values[0]:false
+node[2].outchan[3].msg.data.values[1]:false
+node[2].outchan[3].msg.data.values[2]:false
+node[2].outchan[3].msg.data.values[3]:false
+node[2].outchan[3].valid:false
+node[3].memory[0].values[0]:false
+node[3].memory[0].values[1]:false
+node[3].memory[0].values[2]:false
+node[3].memory[0].values[3]:false
+node[3].memory[1].values[0]:false
+node[3].memory[1].values[1]:false
+node[3].memory[1].values[2]:false
+node[3].memory[1].values[3]:false
+node[3].memory[2].values[0]:false
+node[3].memory[2].values[1]:false
+node[3].memory[2].values[2]:false
+node[3].memory[2].values[3]:false
+node[3].memory[3].values[0]:false
+node[3].memory[3].values[1]:false
+node[3].memory[3].values[2]:false
+node[3].memory[3].values[3]:false
+node[3].cache[0].state:cache_invalid
+node[3].cache[0].data.values[0]:false
+node[3].cache[0].data.values[1]:false
+node[3].cache[0].data.values[2]:false
+node[3].cache[0].data.values[3]:false
+node[3].cache[1].state:cache_invalid
+node[3].cache[1].data.values[0]:false
+node[3].cache[1].data.values[1]:false
+node[3].cache[1].data.values[2]:false
+node[3].cache[1].data.values[3]:false
+node[3].cache[2].state:cache_invalid
+node[3].cache[2].data.values[0]:false
+node[3].cache[2].data.values[1]:false
+node[3].cache[2].data.values[2]:false
+node[3].cache[2].data.values[3]:false
+node[3].cache[3].state:cache_invalid
+node[3].cache[3].data.values[0]:false
+node[3].cache[3].data.values[1]:false
+node[3].cache[3].data.values[2]:false
+node[3].cache[3].data.values[3]:false
+node[3].directory[0][0]:cache_invalid
+node[3].directory[0][1]:cache_invalid
+node[3].directory[0][2]:cache_invalid
+node[3].directory[0][3]:cache_invalid
+node[3].directory[0][4]:cache_invalid
+node[3].directory[1][0]:cache_invalid
+node[3].directory[1][1]:cache_invalid
+node[3].directory[1][2]:cache_invalid
+node[3].directory[1][3]:cache_invalid
+node[3].directory[1][4]:cache_invalid
+node[3].directory[2][0]:cache_invalid
+node[3].directory[2][1]:cache_invalid
+node[3].directory[2][2]:cache_invalid
+node[3].directory[2][3]:cache_invalid
+node[3].directory[2][4]:cache_invalid
+node[3].directory[3][0]:cache_invalid
+node[3].directory[3][1]:cache_invalid
+node[3].directory[3][2]:cache_invalid
+node[3].directory[3][3]:cache_invalid
+node[3].directory[3][4]:cache_invalid
+node[3].local_requests[0]:false
+node[3].local_requests[1]:false
+node[3].local_requests[2]:false
+node[3].local_requests[3]:false
+node[3].home_requests[0].source:0
+node[3].home_requests[0].op:op_invalid
+node[3].home_requests[0].data.values[0]:false
+node[3].home_requests[0].data.values[1]:false
+node[3].home_requests[0].data.values[2]:false
+node[3].home_requests[0].data.values[3]:false
+node[3].home_requests[0].invalidate_list[0]:false
+node[3].home_requests[0].invalidate_list[1]:false
+node[3].home_requests[0].invalidate_list[2]:false
+node[3].home_requests[0].invalidate_list[3]:false
+node[3].home_requests[0].invalidate_list[4]:false
+node[3].home_requests[0].status:inactive
+node[3].home_requests[1].source:0
+node[3].home_requests[1].op:op_invalid
+node[3].home_requests[1].data.values[0]:false
+node[3].home_requests[1].data.values[1]:false
+node[3].home_requests[1].data.values[2]:false
+node[3].home_requests[1].data.values[3]:false
+node[3].home_requests[1].invalidate_list[0]:false
+node[3].home_requests[1].invalidate_list[1]:false
+node[3].home_requests[1].invalidate_list[2]:false
+node[3].home_requests[1].invalidate_list[3]:false
+node[3].home_requests[1].invalidate_list[4]:false
+node[3].home_requests[1].status:inactive
+node[3].home_requests[2].source:0
+node[3].home_requests[2].op:op_invalid
+node[3].home_requests[2].data.values[0]:false
+node[3].home_requests[2].data.values[1]:false
+node[3].home_requests[2].data.values[2]:false
+node[3].home_requests[2].data.values[3]:false
+node[3].home_requests[2].invalidate_list[0]:false
+node[3].home_requests[2].invalidate_list[1]:false
+node[3].home_requests[2].invalidate_list[2]:false
+node[3].home_requests[2].invalidate_list[3]:false
+node[3].home_requests[2].invalidate_list[4]:false
+node[3].home_requests[2].status:inactive
+node[3].home_requests[3].source:0
+node[3].home_requests[3].op:op_invalid
+node[3].home_requests[3].data.values[0]:false
+node[3].home_requests[3].data.values[1]:false
+node[3].home_requests[3].data.values[2]:false
+node[3].home_requests[3].data.values[3]:false
+node[3].home_requests[3].invalidate_list[0]:false
+node[3].home_requests[3].invalidate_list[1]:false
+node[3].home_requests[3].invalidate_list[2]:false
+node[3].home_requests[3].invalidate_list[3]:false
+node[3].home_requests[3].invalidate_list[4]:false
+node[3].home_requests[3].status:inactive
+node[3].remote_requests[0].home:0
+node[3].remote_requests[0].op:op_invalid
+node[3].remote_requests[0].data.values[0]:false
+node[3].remote_requests[0].data.values[1]:false
+node[3].remote_requests[0].data.values[2]:false
+node[3].remote_requests[0].data.values[3]:false
+node[3].remote_requests[0].status:inactive
+node[3].remote_requests[1].home:0
+node[3].remote_requests[1].op:op_invalid
+node[3].remote_requests[1].data.values[0]:false
+node[3].remote_requests[1].data.values[1]:false
+node[3].remote_requests[1].data.values[2]:false
+node[3].remote_requests[1].data.values[3]:false
+node[3].remote_requests[1].status:inactive
+node[3].remote_requests[2].home:0
+node[3].remote_requests[2].op:op_invalid
+node[3].remote_requests[2].data.values[0]:false
+node[3].remote_requests[2].data.values[1]:false
+node[3].remote_requests[2].data.values[2]:false
+node[3].remote_requests[2].data.values[3]:false
+node[3].remote_requests[2].status:inactive
+node[3].remote_requests[3].home:0
+node[3].remote_requests[3].op:op_invalid
+node[3].remote_requests[3].data.values[0]:false
+node[3].remote_requests[3].data.values[1]:false
+node[3].remote_requests[3].data.values[2]:false
+node[3].remote_requests[3].data.values[3]:false
+node[3].remote_requests[3].status:inactive
+node[3].inchan[1].msg.source:0
+node[3].inchan[1].msg.dest:0
+node[3].inchan[1].msg.op:op_invalid
+node[3].inchan[1].msg.addr:0
+node[3].inchan[1].msg.data.values[0]:false
+node[3].inchan[1].msg.data.values[1]:false
+node[3].inchan[1].msg.data.values[2]:false
+node[3].inchan[1].msg.data.values[3]:false
+node[3].inchan[1].valid:false
+node[3].inchan[2].msg.source:0
+node[3].inchan[2].msg.dest:0
+node[3].inchan[2].msg.op:op_invalid
+node[3].inchan[2].msg.addr:0
+node[3].inchan[2].msg.data.values[0]:false
+node[3].inchan[2].msg.data.values[1]:false
+node[3].inchan[2].msg.data.values[2]:false
+node[3].inchan[2].msg.data.values[3]:false
+node[3].inchan[2].valid:false
+node[3].inchan[3].msg.source:0
+node[3].inchan[3].msg.dest:0
+node[3].inchan[3].msg.op:op_invalid
+node[3].inchan[3].msg.addr:0
+node[3].inchan[3].msg.data.values[0]:false
+node[3].inchan[3].msg.data.values[1]:false
+node[3].inchan[3].msg.data.values[2]:false
+node[3].inchan[3].msg.data.values[3]:false
+node[3].inchan[3].valid:false
+node[3].outchan[1].msg.source:0
+node[3].outchan[1].msg.dest:0
+node[3].outchan[1].msg.op:op_invalid
+node[3].outchan[1].msg.addr:0
+node[3].outchan[1].msg.data.values[0]:false
+node[3].outchan[1].msg.data.values[1]:false
+node[3].outchan[1].msg.data.values[2]:false
+node[3].outchan[1].msg.data.values[3]:false
+node[3].outchan[1].valid:false
+node[3].outchan[2].msg.source:0
+node[3].outchan[2].msg.dest:0
+node[3].outchan[2].msg.op:op_invalid
+node[3].outchan[2].msg.addr:0
+node[3].outchan[2].msg.data.values[0]:false
+node[3].outchan[2].msg.data.values[1]:false
+node[3].outchan[2].msg.data.values[2]:false
+node[3].outchan[2].msg.data.values[3]:false
+node[3].outchan[2].valid:false
+node[3].outchan[3].msg.source:0
+node[3].outchan[3].msg.dest:0
+node[3].outchan[3].msg.op:op_invalid
+node[3].outchan[3].msg.addr:0
+node[3].outchan[3].msg.data.values[0]:false
+node[3].outchan[3].msg.data.values[1]:false
+node[3].outchan[3].msg.data.values[2]:false
+node[3].outchan[3].msg.data.values[3]:false
+node[3].outchan[3].valid:false
+node[4].memory[0].values[0]:false
+node[4].memory[0].values[1]:false
+node[4].memory[0].values[2]:false
+node[4].memory[0].values[3]:false
+node[4].memory[1].values[0]:false
+node[4].memory[1].values[1]:false
+node[4].memory[1].values[2]:false
+node[4].memory[1].values[3]:false
+node[4].memory[2].values[0]:false
+node[4].memory[2].values[1]:false
+node[4].memory[2].values[2]:false
+node[4].memory[2].values[3]:false
+node[4].memory[3].values[0]:false
+node[4].memory[3].values[1]:false
+node[4].memory[3].values[2]:false
+node[4].memory[3].values[3]:false
+node[4].cache[0].state:cache_invalid
+node[4].cache[0].data.values[0]:false
+node[4].cache[0].data.values[1]:false
+node[4].cache[0].data.values[2]:false
+node[4].cache[0].data.values[3]:false
+node[4].cache[1].state:cache_invalid
+node[4].cache[1].data.values[0]:false
+node[4].cache[1].data.values[1]:false
+node[4].cache[1].data.values[2]:false
+node[4].cache[1].data.values[3]:false
+node[4].cache[2].state:cache_invalid
+node[4].cache[2].data.values[0]:false
+node[4].cache[2].data.values[1]:false
+node[4].cache[2].data.values[2]:false
+node[4].cache[2].data.values[3]:false
+node[4].cache[3].state:cache_invalid
+node[4].cache[3].data.values[0]:false
+node[4].cache[3].data.values[1]:false
+node[4].cache[3].data.values[2]:false
+node[4].cache[3].data.values[3]:false
+node[4].directory[0][0]:cache_invalid
+node[4].directory[0][1]:cache_invalid
+node[4].directory[0][2]:cache_invalid
+node[4].directory[0][3]:cache_invalid
+node[4].directory[0][4]:cache_invalid
+node[4].directory[1][0]:cache_invalid
+node[4].directory[1][1]:cache_invalid
+node[4].directory[1][2]:cache_invalid
+node[4].directory[1][3]:cache_invalid
+node[4].directory[1][4]:cache_invalid
+node[4].directory[2][0]:cache_invalid
+node[4].directory[2][1]:cache_invalid
+node[4].directory[2][2]:cache_invalid
+node[4].directory[2][3]:cache_invalid
+node[4].directory[2][4]:cache_invalid
+node[4].directory[3][0]:cache_invalid
+node[4].directory[3][1]:cache_invalid
+node[4].directory[3][2]:cache_invalid
+node[4].directory[3][3]:cache_invalid
+node[4].directory[3][4]:cache_invalid
+node[4].local_requests[0]:false
+node[4].local_requests[1]:false
+node[4].local_requests[2]:false
+node[4].local_requests[3]:false
+node[4].home_requests[0].source:0
+node[4].home_requests[0].op:op_invalid
+node[4].home_requests[0].data.values[0]:false
+node[4].home_requests[0].data.values[1]:false
+node[4].home_requests[0].data.values[2]:false
+node[4].home_requests[0].data.values[3]:false
+node[4].home_requests[0].invalidate_list[0]:false
+node[4].home_requests[0].invalidate_list[1]:false
+node[4].home_requests[0].invalidate_list[2]:false
+node[4].home_requests[0].invalidate_list[3]:false
+node[4].home_requests[0].invalidate_list[4]:false
+node[4].home_requests[0].status:inactive
+node[4].home_requests[1].source:0
+node[4].home_requests[1].op:op_invalid
+node[4].home_requests[1].data.values[0]:false
+node[4].home_requests[1].data.values[1]:false
+node[4].home_requests[1].data.values[2]:false
+node[4].home_requests[1].data.values[3]:false
+node[4].home_requests[1].invalidate_list[0]:false
+node[4].home_requests[1].invalidate_list[1]:false
+node[4].home_requests[1].invalidate_list[2]:false
+node[4].home_requests[1].invalidate_list[3]:false
+node[4].home_requests[1].invalidate_list[4]:false
+node[4].home_requests[1].status:inactive
+node[4].home_requests[2].source:0
+node[4].home_requests[2].op:op_invalid
+node[4].home_requests[2].data.values[0]:false
+node[4].home_requests[2].data.values[1]:false
+node[4].home_requests[2].data.values[2]:false
+node[4].home_requests[2].data.values[3]:false
+node[4].home_requests[2].invalidate_list[0]:false
+node[4].home_requests[2].invalidate_list[1]:false
+node[4].home_requests[2].invalidate_list[2]:false
+node[4].home_requests[2].invalidate_list[3]:false
+node[4].home_requests[2].invalidate_list[4]:false
+node[4].home_requests[2].status:inactive
+node[4].home_requests[3].source:0
+node[4].home_requests[3].op:op_invalid
+node[4].home_requests[3].data.values[0]:false
+node[4].home_requests[3].data.values[1]:false
+node[4].home_requests[3].data.values[2]:false
+node[4].home_requests[3].data.values[3]:false
+node[4].home_requests[3].invalidate_list[0]:false
+node[4].home_requests[3].invalidate_list[1]:false
+node[4].home_requests[3].invalidate_list[2]:false
+node[4].home_requests[3].invalidate_list[3]:false
+node[4].home_requests[3].invalidate_list[4]:false
+node[4].home_requests[3].status:inactive
+node[4].remote_requests[0].home:0
+node[4].remote_requests[0].op:op_invalid
+node[4].remote_requests[0].data.values[0]:false
+node[4].remote_requests[0].data.values[1]:false
+node[4].remote_requests[0].data.values[2]:false
+node[4].remote_requests[0].data.values[3]:false
+node[4].remote_requests[0].status:inactive
+node[4].remote_requests[1].home:0
+node[4].remote_requests[1].op:op_invalid
+node[4].remote_requests[1].data.values[0]:false
+node[4].remote_requests[1].data.values[1]:false
+node[4].remote_requests[1].data.values[2]:false
+node[4].remote_requests[1].data.values[3]:false
+node[4].remote_requests[1].status:inactive
+node[4].remote_requests[2].home:0
+node[4].remote_requests[2].op:op_invalid
+node[4].remote_requests[2].data.values[0]:false
+node[4].remote_requests[2].data.values[1]:false
+node[4].remote_requests[2].data.values[2]:false
+node[4].remote_requests[2].data.values[3]:false
+node[4].remote_requests[2].status:inactive
+node[4].remote_requests[3].home:0
+node[4].remote_requests[3].op:op_invalid
+node[4].remote_requests[3].data.values[0]:false
+node[4].remote_requests[3].data.values[1]:false
+node[4].remote_requests[3].data.values[2]:false
+node[4].remote_requests[3].data.values[3]:false
+node[4].remote_requests[3].status:inactive
+node[4].inchan[1].msg.source:0
+node[4].inchan[1].msg.dest:0
+node[4].inchan[1].msg.op:op_invalid
+node[4].inchan[1].msg.addr:0
+node[4].inchan[1].msg.data.values[0]:false
+node[4].inchan[1].msg.data.values[1]:false
+node[4].inchan[1].msg.data.values[2]:false
+node[4].inchan[1].msg.data.values[3]:false
+node[4].inchan[1].valid:false
+node[4].inchan[2].msg.source:0
+node[4].inchan[2].msg.dest:0
+node[4].inchan[2].msg.op:op_invalid
+node[4].inchan[2].msg.addr:0
+node[4].inchan[2].msg.data.values[0]:false
+node[4].inchan[2].msg.data.values[1]:false
+node[4].inchan[2].msg.data.values[2]:false
+node[4].inchan[2].msg.data.values[3]:false
+node[4].inchan[2].valid:false
+node[4].inchan[3].msg.source:0
+node[4].inchan[3].msg.dest:0
+node[4].inchan[3].msg.op:op_invalid
+node[4].inchan[3].msg.addr:0
+node[4].inchan[3].msg.data.values[0]:false
+node[4].inchan[3].msg.data.values[1]:false
+node[4].inchan[3].msg.data.values[2]:false
+node[4].inchan[3].msg.data.values[3]:false
+node[4].inchan[3].valid:false
+node[4].outchan[1].msg.source:0
+node[4].outchan[1].msg.dest:0
+node[4].outchan[1].msg.op:op_invalid
+node[4].outchan[1].msg.addr:0
+node[4].outchan[1].msg.data.values[0]:false
+node[4].outchan[1].msg.data.values[1]:false
+node[4].outchan[1].msg.data.values[2]:false
+node[4].outchan[1].msg.data.values[3]:false
+node[4].outchan[1].valid:false
+node[4].outchan[2].msg.source:0
+node[4].outchan[2].msg.dest:0
+node[4].outchan[2].msg.op:op_invalid
+node[4].outchan[2].msg.addr:0
+node[4].outchan[2].msg.data.values[0]:false
+node[4].outchan[2].msg.data.values[1]:false
+node[4].outchan[2].msg.data.values[2]:false
+node[4].outchan[2].msg.data.values[3]:false
+node[4].outchan[2].valid:false
+node[4].outchan[3].msg.source:0
+node[4].outchan[3].msg.dest:0
+node[4].outchan[3].msg.op:op_invalid
+node[4].outchan[3].msg.addr:0
+node[4].outchan[3].msg.data.values[0]:false
+node[4].outchan[3].msg.data.values[1]:false
+node[4].outchan[3].msg.data.values[2]:false
+node[4].outchan[3].msg.data.values[3]:false
+node[4].outchan[3].valid:false
+auxdata.values[0]:false
+auxdata.values[1]:false
+auxdata.values[2]:false
+auxdata.values[3]:false
+
+------------- Show Initstate: ------------------
+node[0].memory[0].values[0]:false
+node[0].memory[0].values[1]:false
+node[0].memory[0].values[2]:false
+node[0].memory[0].values[3]:false
+node[0].memory[1].values[0]:false
+node[0].memory[1].values[1]:false
+node[0].memory[1].values[2]:false
+node[0].memory[1].values[3]:false
+node[0].memory[2].values[0]:false
+node[0].memory[2].values[1]:false
+node[0].memory[2].values[2]:false
+node[0].memory[2].values[3]:false
+node[0].memory[3].values[0]:false
+node[0].memory[3].values[1]:false
+node[0].memory[3].values[2]:false
+node[0].memory[3].values[3]:false
+node[0].cache[0].state:cache_invalid
+node[0].cache[0].data.values[0]:false
+node[0].cache[0].data.values[1]:false
+node[0].cache[0].data.values[2]:false
+node[0].cache[0].data.values[3]:false
+node[0].cache[1].state:cache_invalid
+node[0].cache[1].data.values[0]:false
+node[0].cache[1].data.values[1]:false
+node[0].cache[1].data.values[2]:false
+node[0].cache[1].data.values[3]:false
+node[0].cache[2].state:cache_invalid
+node[0].cache[2].data.values[0]:false
+node[0].cache[2].data.values[1]:false
+node[0].cache[2].data.values[2]:false
+node[0].cache[2].data.values[3]:false
+node[0].cache[3].state:cache_invalid
+node[0].cache[3].data.values[0]:false
+node[0].cache[3].data.values[1]:false
+node[0].cache[3].data.values[2]:false
+node[0].cache[3].data.values[3]:false
+node[0].directory[0][0]:cache_invalid
+node[0].directory[0][1]:cache_invalid
+node[0].directory[0][2]:cache_invalid
+node[0].directory[0][3]:cache_invalid
+node[0].directory[0][4]:cache_invalid
+node[0].directory[1][0]:cache_invalid
+node[0].directory[1][1]:cache_invalid
+node[0].directory[1][2]:cache_invalid
+node[0].directory[1][3]:cache_invalid
+node[0].directory[1][4]:cache_invalid
+node[0].directory[2][0]:cache_invalid
+node[0].directory[2][1]:cache_invalid
+node[0].directory[2][2]:cache_invalid
+node[0].directory[2][3]:cache_invalid
+node[0].directory[2][4]:cache_invalid
+node[0].directory[3][0]:cache_invalid
+node[0].directory[3][1]:cache_invalid
+node[0].directory[3][2]:cache_invalid
+node[0].directory[3][3]:cache_invalid
+node[0].directory[3][4]:cache_invalid
+node[0].local_requests[0]:false
+node[0].local_requests[1]:false
+node[0].local_requests[2]:false
+node[0].local_requests[3]:false
+node[0].home_requests[0].source:0
+node[0].home_requests[0].op:op_invalid
+node[0].home_requests[0].data.values[0]:false
+node[0].home_requests[0].data.values[1]:false
+node[0].home_requests[0].data.values[2]:false
+node[0].home_requests[0].data.values[3]:false
+node[0].home_requests[0].invalidate_list[0]:false
+node[0].home_requests[0].invalidate_list[1]:false
+node[0].home_requests[0].invalidate_list[2]:false
+node[0].home_requests[0].invalidate_list[3]:false
+node[0].home_requests[0].invalidate_list[4]:false
+node[0].home_requests[0].status:inactive
+node[0].home_requests[1].source:0
+node[0].home_requests[1].op:op_invalid
+node[0].home_requests[1].data.values[0]:false
+node[0].home_requests[1].data.values[1]:false
+node[0].home_requests[1].data.values[2]:false
+node[0].home_requests[1].data.values[3]:false
+node[0].home_requests[1].invalidate_list[0]:false
+node[0].home_requests[1].invalidate_list[1]:false
+node[0].home_requests[1].invalidate_list[2]:false
+node[0].home_requests[1].invalidate_list[3]:false
+node[0].home_requests[1].invalidate_list[4]:false
+node[0].home_requests[1].status:inactive
+node[0].home_requests[2].source:0
+node[0].home_requests[2].op:op_invalid
+node[0].home_requests[2].data.values[0]:false
+node[0].home_requests[2].data.values[1]:false
+node[0].home_requests[2].data.values[2]:false
+node[0].home_requests[2].data.values[3]:false
+node[0].home_requests[2].invalidate_list[0]:false
+node[0].home_requests[2].invalidate_list[1]:false
+node[0].home_requests[2].invalidate_list[2]:false
+node[0].home_requests[2].invalidate_list[3]:false
+node[0].home_requests[2].invalidate_list[4]:false
+node[0].home_requests[2].status:inactive
+node[0].home_requests[3].source:0
+node[0].home_requests[3].op:op_invalid
+node[0].home_requests[3].data.values[0]:false
+node[0].home_requests[3].data.values[1]:false
+node[0].home_requests[3].data.values[2]:false
+node[0].home_requests[3].data.values[3]:false
+node[0].home_requests[3].invalidate_list[0]:false
+node[0].home_requests[3].invalidate_list[1]:false
+node[0].home_requests[3].invalidate_list[2]:false
+node[0].home_requests[3].invalidate_list[3]:false
+node[0].home_requests[3].invalidate_list[4]:false
+node[0].home_requests[3].status:inactive
+node[0].remote_requests[0].home:0
+node[0].remote_requests[0].op:op_invalid
+node[0].remote_requests[0].data.values[0]:false
+node[0].remote_requests[0].data.values[1]:false
+node[0].remote_requests[0].data.values[2]:false
+node[0].remote_requests[0].data.values[3]:false
+node[0].remote_requests[0].status:inactive
+node[0].remote_requests[1].home:0
+node[0].remote_requests[1].op:op_invalid
+node[0].remote_requests[1].data.values[0]:false
+node[0].remote_requests[1].data.values[1]:false
+node[0].remote_requests[1].data.values[2]:false
+node[0].remote_requests[1].data.values[3]:false
+node[0].remote_requests[1].status:inactive
+node[0].remote_requests[2].home:0
+node[0].remote_requests[2].op:op_invalid
+node[0].remote_requests[2].data.values[0]:false
+node[0].remote_requests[2].data.values[1]:false
+node[0].remote_requests[2].data.values[2]:false
+node[0].remote_requests[2].data.values[3]:false
+node[0].remote_requests[2].status:inactive
+node[0].remote_requests[3].home:0
+node[0].remote_requests[3].op:op_invalid
+node[0].remote_requests[3].data.values[0]:false
+node[0].remote_requests[3].data.values[1]:false
+node[0].remote_requests[3].data.values[2]:false
+node[0].remote_requests[3].data.values[3]:false
+node[0].remote_requests[3].status:inactive
+node[0].inchan[1].msg.source:0
+node[0].inchan[1].msg.dest:0
+node[0].inchan[1].msg.op:op_invalid
+node[0].inchan[1].msg.addr:0
+node[0].inchan[1].msg.data.values[0]:false
+node[0].inchan[1].msg.data.values[1]:false
+node[0].inchan[1].msg.data.values[2]:false
+node[0].inchan[1].msg.data.values[3]:false
+node[0].inchan[1].valid:false
+node[0].inchan[2].msg.source:0
+node[0].inchan[2].msg.dest:0
+node[0].inchan[2].msg.op:op_invalid
+node[0].inchan[2].msg.addr:0
+node[0].inchan[2].msg.data.values[0]:false
+node[0].inchan[2].msg.data.values[1]:false
+node[0].inchan[2].msg.data.values[2]:false
+node[0].inchan[2].msg.data.values[3]:false
+node[0].inchan[2].valid:false
+node[0].inchan[3].msg.source:0
+node[0].inchan[3].msg.dest:0
+node[0].inchan[3].msg.op:op_invalid
+node[0].inchan[3].msg.addr:0
+node[0].inchan[3].msg.data.values[0]:false
+node[0].inchan[3].msg.data.values[1]:false
+node[0].inchan[3].msg.data.values[2]:false
+node[0].inchan[3].msg.data.values[3]:false
+node[0].inchan[3].valid:false
+node[0].outchan[1].msg.source:0
+node[0].outchan[1].msg.dest:0
+node[0].outchan[1].msg.op:op_invalid
+node[0].outchan[1].msg.addr:0
+node[0].outchan[1].msg.data.values[0]:false
+node[0].outchan[1].msg.data.values[1]:false
+node[0].outchan[1].msg.data.values[2]:false
+node[0].outchan[1].msg.data.values[3]:false
+node[0].outchan[1].valid:false
+node[0].outchan[2].msg.source:0
+node[0].outchan[2].msg.dest:0
+node[0].outchan[2].msg.op:op_invalid
+node[0].outchan[2].msg.addr:0
+node[0].outchan[2].msg.data.values[0]:false
+node[0].outchan[2].msg.data.values[1]:false
+node[0].outchan[2].msg.data.values[2]:false
+node[0].outchan[2].msg.data.values[3]:false
+node[0].outchan[2].valid:false
+node[0].outchan[3].msg.source:0
+node[0].outchan[3].msg.dest:0
+node[0].outchan[3].msg.op:op_invalid
+node[0].outchan[3].msg.addr:0
+node[0].outchan[3].msg.data.values[0]:false
+node[0].outchan[3].msg.data.values[1]:false
+node[0].outchan[3].msg.data.values[2]:false
+node[0].outchan[3].msg.data.values[3]:false
+node[0].outchan[3].valid:false
+node[1].memory[0].values[0]:false
+node[1].memory[0].values[1]:false
+node[1].memory[0].values[2]:false
+node[1].memory[0].values[3]:false
+node[1].memory[1].values[0]:false
+node[1].memory[1].values[1]:false
+node[1].memory[1].values[2]:false
+node[1].memory[1].values[3]:false
+node[1].memory[2].values[0]:false
+node[1].memory[2].values[1]:false
+node[1].memory[2].values[2]:false
+node[1].memory[2].values[3]:false
+node[1].memory[3].values[0]:false
+node[1].memory[3].values[1]:false
+node[1].memory[3].values[2]:false
+node[1].memory[3].values[3]:false
+node[1].cache[0].state:cache_invalid
+node[1].cache[0].data.values[0]:false
+node[1].cache[0].data.values[1]:false
+node[1].cache[0].data.values[2]:false
+node[1].cache[0].data.values[3]:false
+node[1].cache[1].state:cache_invalid
+node[1].cache[1].data.values[0]:false
+node[1].cache[1].data.values[1]:false
+node[1].cache[1].data.values[2]:false
+node[1].cache[1].data.values[3]:false
+node[1].cache[2].state:cache_invalid
+node[1].cache[2].data.values[0]:false
+node[1].cache[2].data.values[1]:false
+node[1].cache[2].data.values[2]:false
+node[1].cache[2].data.values[3]:false
+node[1].cache[3].state:cache_invalid
+node[1].cache[3].data.values[0]:false
+node[1].cache[3].data.values[1]:false
+node[1].cache[3].data.values[2]:false
+node[1].cache[3].data.values[3]:false
+node[1].directory[0][0]:cache_invalid
+node[1].directory[0][1]:cache_invalid
+node[1].directory[0][2]:cache_invalid
+node[1].directory[0][3]:cache_invalid
+node[1].directory[0][4]:cache_invalid
+node[1].directory[1][0]:cache_invalid
+node[1].directory[1][1]:cache_invalid
+node[1].directory[1][2]:cache_invalid
+node[1].directory[1][3]:cache_invalid
+node[1].directory[1][4]:cache_invalid
+node[1].directory[2][0]:cache_invalid
+node[1].directory[2][1]:cache_invalid
+node[1].directory[2][2]:cache_invalid
+node[1].directory[2][3]:cache_invalid
+node[1].directory[2][4]:cache_invalid
+node[1].directory[3][0]:cache_invalid
+node[1].directory[3][1]:cache_invalid
+node[1].directory[3][2]:cache_invalid
+node[1].directory[3][3]:cache_invalid
+node[1].directory[3][4]:cache_invalid
+node[1].local_requests[0]:false
+node[1].local_requests[1]:false
+node[1].local_requests[2]:false
+node[1].local_requests[3]:false
+node[1].home_requests[0].source:0
+node[1].home_requests[0].op:op_invalid
+node[1].home_requests[0].data.values[0]:false
+node[1].home_requests[0].data.values[1]:false
+node[1].home_requests[0].data.values[2]:false
+node[1].home_requests[0].data.values[3]:false
+node[1].home_requests[0].invalidate_list[0]:false
+node[1].home_requests[0].invalidate_list[1]:false
+node[1].home_requests[0].invalidate_list[2]:false
+node[1].home_requests[0].invalidate_list[3]:false
+node[1].home_requests[0].invalidate_list[4]:false
+node[1].home_requests[0].status:inactive
+node[1].home_requests[1].source:0
+node[1].home_requests[1].op:op_invalid
+node[1].home_requests[1].data.values[0]:false
+node[1].home_requests[1].data.values[1]:false
+node[1].home_requests[1].data.values[2]:false
+node[1].home_requests[1].data.values[3]:false
+node[1].home_requests[1].invalidate_list[0]:false
+node[1].home_requests[1].invalidate_list[1]:false
+node[1].home_requests[1].invalidate_list[2]:false
+node[1].home_requests[1].invalidate_list[3]:false
+node[1].home_requests[1].invalidate_list[4]:false
+node[1].home_requests[1].status:inactive
+node[1].home_requests[2].source:0
+node[1].home_requests[2].op:op_invalid
+node[1].home_requests[2].data.values[0]:false
+node[1].home_requests[2].data.values[1]:false
+node[1].home_requests[2].data.values[2]:false
+node[1].home_requests[2].data.values[3]:false
+node[1].home_requests[2].invalidate_list[0]:false
+node[1].home_requests[2].invalidate_list[1]:false
+node[1].home_requests[2].invalidate_list[2]:false
+node[1].home_requests[2].invalidate_list[3]:false
+node[1].home_requests[2].invalidate_list[4]:false
+node[1].home_requests[2].status:inactive
+node[1].home_requests[3].source:0
+node[1].home_requests[3].op:op_invalid
+node[1].home_requests[3].data.values[0]:false
+node[1].home_requests[3].data.values[1]:false
+node[1].home_requests[3].data.values[2]:false
+node[1].home_requests[3].data.values[3]:false
+node[1].home_requests[3].invalidate_list[0]:false
+node[1].home_requests[3].invalidate_list[1]:false
+node[1].home_requests[3].invalidate_list[2]:false
+node[1].home_requests[3].invalidate_list[3]:false
+node[1].home_requests[3].invalidate_list[4]:false
+node[1].home_requests[3].status:inactive
+node[1].remote_requests[0].home:0
+node[1].remote_requests[0].op:op_invalid
+node[1].remote_requests[0].data.values[0]:false
+node[1].remote_requests[0].data.values[1]:false
+node[1].remote_requests[0].data.values[2]:false
+node[1].remote_requests[0].data.values[3]:false
+node[1].remote_requests[0].status:inactive
+node[1].remote_requests[1].home:0
+node[1].remote_requests[1].op:op_invalid
+node[1].remote_requests[1].data.values[0]:false
+node[1].remote_requests[1].data.values[1]:false
+node[1].remote_requests[1].data.values[2]:false
+node[1].remote_requests[1].data.values[3]:false
+node[1].remote_requests[1].status:inactive
+node[1].remote_requests[2].home:0
+node[1].remote_requests[2].op:op_invalid
+node[1].remote_requests[2].data.values[0]:false
+node[1].remote_requests[2].data.values[1]:false
+node[1].remote_requests[2].data.values[2]:false
+node[1].remote_requests[2].data.values[3]:false
+node[1].remote_requests[2].status:inactive
+node[1].remote_requests[3].home:0
+node[1].remote_requests[3].op:op_invalid
+node[1].remote_requests[3].data.values[0]:false
+node[1].remote_requests[3].data.values[1]:false
+node[1].remote_requests[3].data.values[2]:false
+node[1].remote_requests[3].data.values[3]:false
+node[1].remote_requests[3].status:inactive
+node[1].inchan[1].msg.source:0
+node[1].inchan[1].msg.dest:0
+node[1].inchan[1].msg.op:op_invalid
+node[1].inchan[1].msg.addr:0
+node[1].inchan[1].msg.data.values[0]:false
+node[1].inchan[1].msg.data.values[1]:false
+node[1].inchan[1].msg.data.values[2]:false
+node[1].inchan[1].msg.data.values[3]:false
+node[1].inchan[1].valid:false
+node[1].inchan[2].msg.source:0
+node[1].inchan[2].msg.dest:0
+node[1].inchan[2].msg.op:op_invalid
+node[1].inchan[2].msg.addr:0
+node[1].inchan[2].msg.data.values[0]:false
+node[1].inchan[2].msg.data.values[1]:false
+node[1].inchan[2].msg.data.values[2]:false
+node[1].inchan[2].msg.data.values[3]:false
+node[1].inchan[2].valid:false
+node[1].inchan[3].msg.source:0
+node[1].inchan[3].msg.dest:0
+node[1].inchan[3].msg.op:op_invalid
+node[1].inchan[3].msg.addr:0
+node[1].inchan[3].msg.data.values[0]:false
+node[1].inchan[3].msg.data.values[1]:false
+node[1].inchan[3].msg.data.values[2]:false
+node[1].inchan[3].msg.data.values[3]:false
+node[1].inchan[3].valid:false
+node[1].outchan[1].msg.source:0
+node[1].outchan[1].msg.dest:0
+node[1].outchan[1].msg.op:op_invalid
+node[1].outchan[1].msg.addr:0
+node[1].outchan[1].msg.data.values[0]:false
+node[1].outchan[1].msg.data.values[1]:false
+node[1].outchan[1].msg.data.values[2]:false
+node[1].outchan[1].msg.data.values[3]:false
+node[1].outchan[1].valid:false
+node[1].outchan[2].msg.source:0
+node[1].outchan[2].msg.dest:0
+node[1].outchan[2].msg.op:op_invalid
+node[1].outchan[2].msg.addr:0
+node[1].outchan[2].msg.data.values[0]:false
+node[1].outchan[2].msg.data.values[1]:false
+node[1].outchan[2].msg.data.values[2]:false
+node[1].outchan[2].msg.data.values[3]:false
+node[1].outchan[2].valid:false
+node[1].outchan[3].msg.source:0
+node[1].outchan[3].msg.dest:0
+node[1].outchan[3].msg.op:op_invalid
+node[1].outchan[3].msg.addr:0
+node[1].outchan[3].msg.data.values[0]:false
+node[1].outchan[3].msg.data.values[1]:false
+node[1].outchan[3].msg.data.values[2]:false
+node[1].outchan[3].msg.data.values[3]:false
+node[1].outchan[3].valid:false
+node[2].memory[0].values[0]:false
+node[2].memory[0].values[1]:false
+node[2].memory[0].values[2]:false
+node[2].memory[0].values[3]:false
+node[2].memory[1].values[0]:false
+node[2].memory[1].values[1]:false
+node[2].memory[1].values[2]:false
+node[2].memory[1].values[3]:false
+node[2].memory[2].values[0]:false
+node[2].memory[2].values[1]:false
+node[2].memory[2].values[2]:false
+node[2].memory[2].values[3]:false
+node[2].memory[3].values[0]:false
+node[2].memory[3].values[1]:false
+node[2].memory[3].values[2]:false
+node[2].memory[3].values[3]:false
+node[2].cache[0].state:cache_invalid
+node[2].cache[0].data.values[0]:false
+node[2].cache[0].data.values[1]:false
+node[2].cache[0].data.values[2]:false
+node[2].cache[0].data.values[3]:false
+node[2].cache[1].state:cache_invalid
+node[2].cache[1].data.values[0]:false
+node[2].cache[1].data.values[1]:false
+node[2].cache[1].data.values[2]:false
+node[2].cache[1].data.values[3]:false
+node[2].cache[2].state:cache_invalid
+node[2].cache[2].data.values[0]:false
+node[2].cache[2].data.values[1]:false
+node[2].cache[2].data.values[2]:false
+node[2].cache[2].data.values[3]:false
+node[2].cache[3].state:cache_invalid
+node[2].cache[3].data.values[0]:false
+node[2].cache[3].data.values[1]:false
+node[2].cache[3].data.values[2]:false
+node[2].cache[3].data.values[3]:false
+node[2].directory[0][0]:cache_invalid
+node[2].directory[0][1]:cache_invalid
+node[2].directory[0][2]:cache_invalid
+node[2].directory[0][3]:cache_invalid
+node[2].directory[0][4]:cache_invalid
+node[2].directory[1][0]:cache_invalid
+node[2].directory[1][1]:cache_invalid
+node[2].directory[1][2]:cache_invalid
+node[2].directory[1][3]:cache_invalid
+node[2].directory[1][4]:cache_invalid
+node[2].directory[2][0]:cache_invalid
+node[2].directory[2][1]:cache_invalid
+node[2].directory[2][2]:cache_invalid
+node[2].directory[2][3]:cache_invalid
+node[2].directory[2][4]:cache_invalid
+node[2].directory[3][0]:cache_invalid
+node[2].directory[3][1]:cache_invalid
+node[2].directory[3][2]:cache_invalid
+node[2].directory[3][3]:cache_invalid
+node[2].directory[3][4]:cache_invalid
+node[2].local_requests[0]:false
+node[2].local_requests[1]:false
+node[2].local_requests[2]:false
+node[2].local_requests[3]:false
+node[2].home_requests[0].source:0
+node[2].home_requests[0].op:op_invalid
+node[2].home_requests[0].data.values[0]:false
+node[2].home_requests[0].data.values[1]:false
+node[2].home_requests[0].data.values[2]:false
+node[2].home_requests[0].data.values[3]:false
+node[2].home_requests[0].invalidate_list[0]:false
+node[2].home_requests[0].invalidate_list[1]:false
+node[2].home_requests[0].invalidate_list[2]:false
+node[2].home_requests[0].invalidate_list[3]:false
+node[2].home_requests[0].invalidate_list[4]:false
+node[2].home_requests[0].status:inactive
+node[2].home_requests[1].source:0
+node[2].home_requests[1].op:op_invalid
+node[2].home_requests[1].data.values[0]:false
+node[2].home_requests[1].data.values[1]:false
+node[2].home_requests[1].data.values[2]:false
+node[2].home_requests[1].data.values[3]:false
+node[2].home_requests[1].invalidate_list[0]:false
+node[2].home_requests[1].invalidate_list[1]:false
+node[2].home_requests[1].invalidate_list[2]:false
+node[2].home_requests[1].invalidate_list[3]:false
+node[2].home_requests[1].invalidate_list[4]:false
+node[2].home_requests[1].status:inactive
+node[2].home_requests[2].source:0
+node[2].home_requests[2].op:op_invalid
+node[2].home_requests[2].data.values[0]:false
+node[2].home_requests[2].data.values[1]:false
+node[2].home_requests[2].data.values[2]:false
+node[2].home_requests[2].data.values[3]:false
+node[2].home_requests[2].invalidate_list[0]:false
+node[2].home_requests[2].invalidate_list[1]:false
+node[2].home_requests[2].invalidate_list[2]:false
+node[2].home_requests[2].invalidate_list[3]:false
+node[2].home_requests[2].invalidate_list[4]:false
+node[2].home_requests[2].status:inactive
+node[2].home_requests[3].source:0
+node[2].home_requests[3].op:op_invalid
+node[2].home_requests[3].data.values[0]:false
+node[2].home_requests[3].data.values[1]:false
+node[2].home_requests[3].data.values[2]:false
+node[2].home_requests[3].data.values[3]:false
+node[2].home_requests[3].invalidate_list[0]:false
+node[2].home_requests[3].invalidate_list[1]:false
+node[2].home_requests[3].invalidate_list[2]:false
+node[2].home_requests[3].invalidate_list[3]:false
+node[2].home_requests[3].invalidate_list[4]:false
+node[2].home_requests[3].status:inactive
+node[2].remote_requests[0].home:0
+node[2].remote_requests[0].op:op_invalid
+node[2].remote_requests[0].data.values[0]:false
+node[2].remote_requests[0].data.values[1]:false
+node[2].remote_requests[0].data.values[2]:false
+node[2].remote_requests[0].data.values[3]:false
+node[2].remote_requests[0].status:inactive
+node[2].remote_requests[1].home:0
+node[2].remote_requests[1].op:op_invalid
+node[2].remote_requests[1].data.values[0]:false
+node[2].remote_requests[1].data.values[1]:false
+node[2].remote_requests[1].data.values[2]:false
+node[2].remote_requests[1].data.values[3]:false
+node[2].remote_requests[1].status:inactive
+node[2].remote_requests[2].home:0
+node[2].remote_requests[2].op:op_invalid
+node[2].remote_requests[2].data.values[0]:false
+node[2].remote_requests[2].data.values[1]:false
+node[2].remote_requests[2].data.values[2]:false
+node[2].remote_requests[2].data.values[3]:false
+node[2].remote_requests[2].status:inactive
+node[2].remote_requests[3].home:0
+node[2].remote_requests[3].op:op_invalid
+node[2].remote_requests[3].data.values[0]:false
+node[2].remote_requests[3].data.values[1]:false
+node[2].remote_requests[3].data.values[2]:false
+node[2].remote_requests[3].data.values[3]:false
+node[2].remote_requests[3].status:inactive
+node[2].inchan[1].msg.source:0
+node[2].inchan[1].msg.dest:0
+node[2].inchan[1].msg.op:op_invalid
+node[2].inchan[1].msg.addr:0
+node[2].inchan[1].msg.data.values[0]:false
+node[2].inchan[1].msg.data.values[1]:false
+node[2].inchan[1].msg.data.values[2]:false
+node[2].inchan[1].msg.data.values[3]:false
+node[2].inchan[1].valid:false
+node[2].inchan[2].msg.source:0
+node[2].inchan[2].msg.dest:0
+node[2].inchan[2].msg.op:op_invalid
+node[2].inchan[2].msg.addr:0
+node[2].inchan[2].msg.data.values[0]:false
+node[2].inchan[2].msg.data.values[1]:false
+node[2].inchan[2].msg.data.values[2]:false
+node[2].inchan[2].msg.data.values[3]:false
+node[2].inchan[2].valid:false
+node[2].inchan[3].msg.source:0
+node[2].inchan[3].msg.dest:0
+node[2].inchan[3].msg.op:op_invalid
+node[2].inchan[3].msg.addr:0
+node[2].inchan[3].msg.data.values[0]:false
+node[2].inchan[3].msg.data.values[1]:false
+node[2].inchan[3].msg.data.values[2]:false
+node[2].inchan[3].msg.data.values[3]:false
+node[2].inchan[3].valid:false
+node[2].outchan[1].msg.source:0
+node[2].outchan[1].msg.dest:0
+node[2].outchan[1].msg.op:op_invalid
+node[2].outchan[1].msg.addr:0
+node[2].outchan[1].msg.data.values[0]:false
+node[2].outchan[1].msg.data.values[1]:false
+node[2].outchan[1].msg.data.values[2]:false
+node[2].outchan[1].msg.data.values[3]:false
+node[2].outchan[1].valid:false
+node[2].outchan[2].msg.source:0
+node[2].outchan[2].msg.dest:0
+node[2].outchan[2].msg.op:op_invalid
+node[2].outchan[2].msg.addr:0
+node[2].outchan[2].msg.data.values[0]:false
+node[2].outchan[2].msg.data.values[1]:false
+node[2].outchan[2].msg.data.values[2]:false
+node[2].outchan[2].msg.data.values[3]:false
+node[2].outchan[2].valid:false
+node[2].outchan[3].msg.source:0
+node[2].outchan[3].msg.dest:0
+node[2].outchan[3].msg.op:op_invalid
+node[2].outchan[3].msg.addr:0
+node[2].outchan[3].msg.data.values[0]:false
+node[2].outchan[3].msg.data.values[1]:false
+node[2].outchan[3].msg.data.values[2]:false
+node[2].outchan[3].msg.data.values[3]:false
+node[2].outchan[3].valid:false
+node[3].memory[0].values[0]:false
+node[3].memory[0].values[1]:false
+node[3].memory[0].values[2]:false
+node[3].memory[0].values[3]:false
+node[3].memory[1].values[0]:false
+node[3].memory[1].values[1]:false
+node[3].memory[1].values[2]:false
+node[3].memory[1].values[3]:false
+node[3].memory[2].values[0]:false
+node[3].memory[2].values[1]:false
+node[3].memory[2].values[2]:false
+node[3].memory[2].values[3]:false
+node[3].memory[3].values[0]:false
+node[3].memory[3].values[1]:false
+node[3].memory[3].values[2]:false
+node[3].memory[3].values[3]:false
+node[3].cache[0].state:cache_invalid
+node[3].cache[0].data.values[0]:false
+node[3].cache[0].data.values[1]:false
+node[3].cache[0].data.values[2]:false
+node[3].cache[0].data.values[3]:false
+node[3].cache[1].state:cache_invalid
+node[3].cache[1].data.values[0]:false
+node[3].cache[1].data.values[1]:false
+node[3].cache[1].data.values[2]:false
+node[3].cache[1].data.values[3]:false
+node[3].cache[2].state:cache_invalid
+node[3].cache[2].data.values[0]:false
+node[3].cache[2].data.values[1]:false
+node[3].cache[2].data.values[2]:false
+node[3].cache[2].data.values[3]:false
+node[3].cache[3].state:cache_invalid
+node[3].cache[3].data.values[0]:false
+node[3].cache[3].data.values[1]:false
+node[3].cache[3].data.values[2]:false
+node[3].cache[3].data.values[3]:false
+node[3].directory[0][0]:cache_invalid
+node[3].directory[0][1]:cache_invalid
+node[3].directory[0][2]:cache_invalid
+node[3].directory[0][3]:cache_invalid
+node[3].directory[0][4]:cache_invalid
+node[3].directory[1][0]:cache_invalid
+node[3].directory[1][1]:cache_invalid
+node[3].directory[1][2]:cache_invalid
+node[3].directory[1][3]:cache_invalid
+node[3].directory[1][4]:cache_invalid
+node[3].directory[2][0]:cache_invalid
+node[3].directory[2][1]:cache_invalid
+node[3].directory[2][2]:cache_invalid
+node[3].directory[2][3]:cache_invalid
+node[3].directory[2][4]:cache_invalid
+node[3].directory[3][0]:cache_invalid
+node[3].directory[3][1]:cache_invalid
+node[3].directory[3][2]:cache_invalid
+node[3].directory[3][3]:cache_invalid
+node[3].directory[3][4]:cache_invalid
+node[3].local_requests[0]:false
+node[3].local_requests[1]:false
+node[3].local_requests[2]:false
+node[3].local_requests[3]:false
+node[3].home_requests[0].source:0
+node[3].home_requests[0].op:op_invalid
+node[3].home_requests[0].data.values[0]:false
+node[3].home_requests[0].data.values[1]:false
+node[3].home_requests[0].data.values[2]:false
+node[3].home_requests[0].data.values[3]:false
+node[3].home_requests[0].invalidate_list[0]:false
+node[3].home_requests[0].invalidate_list[1]:false
+node[3].home_requests[0].invalidate_list[2]:false
+node[3].home_requests[0].invalidate_list[3]:false
+node[3].home_requests[0].invalidate_list[4]:false
+node[3].home_requests[0].status:inactive
+node[3].home_requests[1].source:0
+node[3].home_requests[1].op:op_invalid
+node[3].home_requests[1].data.values[0]:false
+node[3].home_requests[1].data.values[1]:false
+node[3].home_requests[1].data.values[2]:false
+node[3].home_requests[1].data.values[3]:false
+node[3].home_requests[1].invalidate_list[0]:false
+node[3].home_requests[1].invalidate_list[1]:false
+node[3].home_requests[1].invalidate_list[2]:false
+node[3].home_requests[1].invalidate_list[3]:false
+node[3].home_requests[1].invalidate_list[4]:false
+node[3].home_requests[1].status:inactive
+node[3].home_requests[2].source:0
+node[3].home_requests[2].op:op_invalid
+node[3].home_requests[2].data.values[0]:false
+node[3].home_requests[2].data.values[1]:false
+node[3].home_requests[2].data.values[2]:false
+node[3].home_requests[2].data.values[3]:false
+node[3].home_requests[2].invalidate_list[0]:false
+node[3].home_requests[2].invalidate_list[1]:false
+node[3].home_requests[2].invalidate_list[2]:false
+node[3].home_requests[2].invalidate_list[3]:false
+node[3].home_requests[2].invalidate_list[4]:false
+node[3].home_requests[2].status:inactive
+node[3].home_requests[3].source:0
+node[3].home_requests[3].op:op_invalid
+node[3].home_requests[3].data.values[0]:false
+node[3].home_requests[3].data.values[1]:false
+node[3].home_requests[3].data.values[2]:false
+node[3].home_requests[3].data.values[3]:false
+node[3].home_requests[3].invalidate_list[0]:false
+node[3].home_requests[3].invalidate_list[1]:false
+node[3].home_requests[3].invalidate_list[2]:false
+node[3].home_requests[3].invalidate_list[3]:false
+node[3].home_requests[3].invalidate_list[4]:false
+node[3].home_requests[3].status:inactive
+node[3].remote_requests[0].home:0
+node[3].remote_requests[0].op:op_invalid
+node[3].remote_requests[0].data.values[0]:false
+node[3].remote_requests[0].data.values[1]:false
+node[3].remote_requests[0].data.values[2]:false
+node[3].remote_requests[0].data.values[3]:false
+node[3].remote_requests[0].status:inactive
+node[3].remote_requests[1].home:0
+node[3].remote_requests[1].op:op_invalid
+node[3].remote_requests[1].data.values[0]:false
+node[3].remote_requests[1].data.values[1]:false
+node[3].remote_requests[1].data.values[2]:false
+node[3].remote_requests[1].data.values[3]:false
+node[3].remote_requests[1].status:inactive
+node[3].remote_requests[2].home:0
+node[3].remote_requests[2].op:op_invalid
+node[3].remote_requests[2].data.values[0]:false
+node[3].remote_requests[2].data.values[1]:false
+node[3].remote_requests[2].data.values[2]:false
+node[3].remote_requests[2].data.values[3]:false
+node[3].remote_requests[2].status:inactive
+node[3].remote_requests[3].home:0
+node[3].remote_requests[3].op:op_invalid
+node[3].remote_requests[3].data.values[0]:false
+node[3].remote_requests[3].data.values[1]:false
+node[3].remote_requests[3].data.values[2]:false
+node[3].remote_requests[3].data.values[3]:false
+node[3].remote_requests[3].status:inactive
+node[3].inchan[1].msg.source:0
+node[3].inchan[1].msg.dest:0
+node[3].inchan[1].msg.op:op_invalid
+node[3].inchan[1].msg.addr:0
+node[3].inchan[1].msg.data.values[0]:false
+node[3].inchan[1].msg.data.values[1]:false
+node[3].inchan[1].msg.data.values[2]:false
+node[3].inchan[1].msg.data.values[3]:false
+node[3].inchan[1].valid:false
+node[3].inchan[2].msg.source:0
+node[3].inchan[2].msg.dest:0
+node[3].inchan[2].msg.op:op_invalid
+node[3].inchan[2].msg.addr:0
+node[3].inchan[2].msg.data.values[0]:false
+node[3].inchan[2].msg.data.values[1]:false
+node[3].inchan[2].msg.data.values[2]:false
+node[3].inchan[2].msg.data.values[3]:false
+node[3].inchan[2].valid:false
+node[3].inchan[3].msg.source:0
+node[3].inchan[3].msg.dest:0
+node[3].inchan[3].msg.op:op_invalid
+node[3].inchan[3].msg.addr:0
+node[3].inchan[3].msg.data.values[0]:false
+node[3].inchan[3].msg.data.values[1]:false
+node[3].inchan[3].msg.data.values[2]:false
+node[3].inchan[3].msg.data.values[3]:false
+node[3].inchan[3].valid:false
+node[3].outchan[1].msg.source:0
+node[3].outchan[1].msg.dest:0
+node[3].outchan[1].msg.op:op_invalid
+node[3].outchan[1].msg.addr:0
+node[3].outchan[1].msg.data.values[0]:false
+node[3].outchan[1].msg.data.values[1]:false
+node[3].outchan[1].msg.data.values[2]:false
+node[3].outchan[1].msg.data.values[3]:false
+node[3].outchan[1].valid:false
+node[3].outchan[2].msg.source:0
+node[3].outchan[2].msg.dest:0
+node[3].outchan[2].msg.op:op_invalid
+node[3].outchan[2].msg.addr:0
+node[3].outchan[2].msg.data.values[0]:false
+node[3].outchan[2].msg.data.values[1]:false
+node[3].outchan[2].msg.data.values[2]:false
+node[3].outchan[2].msg.data.values[3]:false
+node[3].outchan[2].valid:false
+node[3].outchan[3].msg.source:0
+node[3].outchan[3].msg.dest:0
+node[3].outchan[3].msg.op:op_invalid
+node[3].outchan[3].msg.addr:0
+node[3].outchan[3].msg.data.values[0]:false
+node[3].outchan[3].msg.data.values[1]:false
+node[3].outchan[3].msg.data.values[2]:false
+node[3].outchan[3].msg.data.values[3]:false
+node[3].outchan[3].valid:false
+node[4].memory[0].values[0]:false
+node[4].memory[0].values[1]:false
+node[4].memory[0].values[2]:false
+node[4].memory[0].values[3]:false
+node[4].memory[1].values[0]:false
+node[4].memory[1].values[1]:false
+node[4].memory[1].values[2]:false
+node[4].memory[1].values[3]:false
+node[4].memory[2].values[0]:false
+node[4].memory[2].values[1]:false
+node[4].memory[2].values[2]:false
+node[4].memory[2].values[3]:false
+node[4].memory[3].values[0]:false
+node[4].memory[3].values[1]:false
+node[4].memory[3].values[2]:false
+node[4].memory[3].values[3]:false
+node[4].cache[0].state:cache_invalid
+node[4].cache[0].data.values[0]:false
+node[4].cache[0].data.values[1]:false
+node[4].cache[0].data.values[2]:false
+node[4].cache[0].data.values[3]:false
+node[4].cache[1].state:cache_invalid
+node[4].cache[1].data.values[0]:false
+node[4].cache[1].data.values[1]:false
+node[4].cache[1].data.values[2]:false
+node[4].cache[1].data.values[3]:false
+node[4].cache[2].state:cache_invalid
+node[4].cache[2].data.values[0]:false
+node[4].cache[2].data.values[1]:false
+node[4].cache[2].data.values[2]:false
+node[4].cache[2].data.values[3]:false
+node[4].cache[3].state:cache_invalid
+node[4].cache[3].data.values[0]:false
+node[4].cache[3].data.values[1]:false
+node[4].cache[3].data.values[2]:false
+node[4].cache[3].data.values[3]:false
+node[4].directory[0][0]:cache_invalid
+node[4].directory[0][1]:cache_invalid
+node[4].directory[0][2]:cache_invalid
+node[4].directory[0][3]:cache_invalid
+node[4].directory[0][4]:cache_invalid
+node[4].directory[1][0]:cache_invalid
+node[4].directory[1][1]:cache_invalid
+node[4].directory[1][2]:cache_invalid
+node[4].directory[1][3]:cache_invalid
+node[4].directory[1][4]:cache_invalid
+node[4].directory[2][0]:cache_invalid
+node[4].directory[2][1]:cache_invalid
+node[4].directory[2][2]:cache_invalid
+node[4].directory[2][3]:cache_invalid
+node[4].directory[2][4]:cache_invalid
+node[4].directory[3][0]:cache_invalid
+node[4].directory[3][1]:cache_invalid
+node[4].directory[3][2]:cache_invalid
+node[4].directory[3][3]:cache_invalid
+node[4].directory[3][4]:cache_invalid
+node[4].local_requests[0]:false
+node[4].local_requests[1]:false
+node[4].local_requests[2]:false
+node[4].local_requests[3]:false
+node[4].home_requests[0].source:0
+node[4].home_requests[0].op:op_invalid
+node[4].home_requests[0].data.values[0]:false
+node[4].home_requests[0].data.values[1]:false
+node[4].home_requests[0].data.values[2]:false
+node[4].home_requests[0].data.values[3]:false
+node[4].home_requests[0].invalidate_list[0]:false
+node[4].home_requests[0].invalidate_list[1]:false
+node[4].home_requests[0].invalidate_list[2]:false
+node[4].home_requests[0].invalidate_list[3]:false
+node[4].home_requests[0].invalidate_list[4]:false
+node[4].home_requests[0].status:inactive
+node[4].home_requests[1].source:0
+node[4].home_requests[1].op:op_invalid
+node[4].home_requests[1].data.values[0]:false
+node[4].home_requests[1].data.values[1]:false
+node[4].home_requests[1].data.values[2]:false
+node[4].home_requests[1].data.values[3]:false
+node[4].home_requests[1].invalidate_list[0]:false
+node[4].home_requests[1].invalidate_list[1]:false
+node[4].home_requests[1].invalidate_list[2]:false
+node[4].home_requests[1].invalidate_list[3]:false
+node[4].home_requests[1].invalidate_list[4]:false
+node[4].home_requests[1].status:inactive
+node[4].home_requests[2].source:0
+node[4].home_requests[2].op:op_invalid
+node[4].home_requests[2].data.values[0]:false
+node[4].home_requests[2].data.values[1]:false
+node[4].home_requests[2].data.values[2]:false
+node[4].home_requests[2].data.values[3]:false
+node[4].home_requests[2].invalidate_list[0]:false
+node[4].home_requests[2].invalidate_list[1]:false
+node[4].home_requests[2].invalidate_list[2]:false
+node[4].home_requests[2].invalidate_list[3]:false
+node[4].home_requests[2].invalidate_list[4]:false
+node[4].home_requests[2].status:inactive
+node[4].home_requests[3].source:0
+node[4].home_requests[3].op:op_invalid
+node[4].home_requests[3].data.values[0]:false
+node[4].home_requests[3].data.values[1]:false
+node[4].home_requests[3].data.values[2]:false
+node[4].home_requests[3].data.values[3]:false
+node[4].home_requests[3].invalidate_list[0]:false
+node[4].home_requests[3].invalidate_list[1]:false
+node[4].home_requests[3].invalidate_list[2]:false
+node[4].home_requests[3].invalidate_list[3]:false
+node[4].home_requests[3].invalidate_list[4]:false
+node[4].home_requests[3].status:inactive
+node[4].remote_requests[0].home:0
+node[4].remote_requests[0].op:op_invalid
+node[4].remote_requests[0].data.values[0]:false
+node[4].remote_requests[0].data.values[1]:false
+node[4].remote_requests[0].data.values[2]:false
+node[4].remote_requests[0].data.values[3]:false
+node[4].remote_requests[0].status:inactive
+node[4].remote_requests[1].home:0
+node[4].remote_requests[1].op:op_invalid
+node[4].remote_requests[1].data.values[0]:false
+node[4].remote_requests[1].data.values[1]:false
+node[4].remote_requests[1].data.values[2]:false
+node[4].remote_requests[1].data.values[3]:false
+node[4].remote_requests[1].status:inactive
+node[4].remote_requests[2].home:0
+node[4].remote_requests[2].op:op_invalid
+node[4].remote_requests[2].data.values[0]:false
+node[4].remote_requests[2].data.values[1]:false
+node[4].remote_requests[2].data.values[2]:false
+node[4].remote_requests[2].data.values[3]:false
+node[4].remote_requests[2].status:inactive
+node[4].remote_requests[3].home:0
+node[4].remote_requests[3].op:op_invalid
+node[4].remote_requests[3].data.values[0]:false
+node[4].remote_requests[3].data.values[1]:false
+node[4].remote_requests[3].data.values[2]:false
+node[4].remote_requests[3].data.values[3]:false
+node[4].remote_requests[3].status:inactive
+node[4].inchan[1].msg.source:0
+node[4].inchan[1].msg.dest:0
+node[4].inchan[1].msg.op:op_invalid
+node[4].inchan[1].msg.addr:0
+node[4].inchan[1].msg.data.values[0]:false
+node[4].inchan[1].msg.data.values[1]:false
+node[4].inchan[1].msg.data.values[2]:false
+node[4].inchan[1].msg.data.values[3]:false
+node[4].inchan[1].valid:false
+node[4].inchan[2].msg.source:0
+node[4].inchan[2].msg.dest:0
+node[4].inchan[2].msg.op:op_invalid
+node[4].inchan[2].msg.addr:0
+node[4].inchan[2].msg.data.values[0]:false
+node[4].inchan[2].msg.data.values[1]:false
+node[4].inchan[2].msg.data.values[2]:false
+node[4].inchan[2].msg.data.values[3]:false
+node[4].inchan[2].valid:false
+node[4].inchan[3].msg.source:0
+node[4].inchan[3].msg.dest:0
+node[4].inchan[3].msg.op:op_invalid
+node[4].inchan[3].msg.addr:0
+node[4].inchan[3].msg.data.values[0]:false
+node[4].inchan[3].msg.data.values[1]:false
+node[4].inchan[3].msg.data.values[2]:false
+node[4].inchan[3].msg.data.values[3]:false
+node[4].inchan[3].valid:false
+node[4].outchan[1].msg.source:0
+node[4].outchan[1].msg.dest:0
+node[4].outchan[1].msg.op:op_invalid
+node[4].outchan[1].msg.addr:0
+node[4].outchan[1].msg.data.values[0]:false
+node[4].outchan[1].msg.data.values[1]:false
+node[4].outchan[1].msg.data.values[2]:false
+node[4].outchan[1].msg.data.values[3]:false
+node[4].outchan[1].valid:false
+node[4].outchan[2].msg.source:0
+node[4].outchan[2].msg.dest:0
+node[4].outchan[2].msg.op:op_invalid
+node[4].outchan[2].msg.addr:0
+node[4].outchan[2].msg.data.values[0]:false
+node[4].outchan[2].msg.data.values[1]:false
+node[4].outchan[2].msg.data.values[2]:false
+node[4].outchan[2].msg.data.values[3]:false
+node[4].outchan[2].valid:false
+node[4].outchan[3].msg.source:0
+node[4].outchan[3].msg.dest:0
+node[4].outchan[3].msg.op:op_invalid
+node[4].outchan[3].msg.addr:0
+node[4].outchan[3].msg.data.values[0]:false
+node[4].outchan[3].msg.data.values[1]:false
+node[4].outchan[3].msg.data.values[2]:false
+node[4].outchan[3].msg.data.values[3]:false
+node[4].outchan[3].valid:false
+auxdata.values[0]:false
+auxdata.values[1]:false
+auxdata.values[2]:false
+auxdata.values[3]:false
+
+------------- Show a heuristic value: ------------------
+20
+
+Progress Report:
+
+	1000 states explored in 1.25s, with 1671 rules fired and 947 states in the queue.
+	2000 states explored in 1.30s, with 3567 rules fired and 1875 states in the queue.
+	3000 states explored in 1.36s, with 5719 rules fired and 2793 states in the queue.
+	4000 states explored in 1.41s, with 7551 rules fired and 3724 states in the queue.
+	5000 states explored in 1.47s, with 9879 rules fired and 4636 states in the queue.
+	6000 states explored in 1.54s, with 12559 rules fired and 5535 states in the queue.
+	7000 states explored in 1.63s, with 16487 rules fired and 6388 states in the queue.
+	8000 states explored in 1.73s, with 20640 rules fired and 7224 states in the queue.
+	9000 states explored in 1.78s, with 22402 rules fired and 8136 states in the queue.
+	10000 states explored in 1.85s, with 24758 rules fired and 9018 states in the queue.
+	11000 states explored in 1.94s, with 28571 rules fired and 9840 states in the queue.
+	12000 states explored in 2.00s, with 30766 rules fired and 10741 states in the queue.
+	13000 states explored in 2.05s, with 32583 rules fired and 11650 states in the queue.
+	14000 states explored in 2.12s, with 35217 rules fired and 12520 states in the queue.
+	15000 states explored in 2.22s, with 39044 rules fired and 13349 states in the queue.
+	16000 states explored in 2.27s, with 40877 rules fired and 14257 states in the queue.
+	17000 states explored in 2.33s, with 42862 rules fired and 15158 states in the queue.
+	18000 states explored in 2.40s, with 45840 rules fired and 16012 states in the queue.
+	19000 states explored in 2.49s, with 49268 rules fired and 16860 states in the queue.
+	20000 states explored in 2.54s, with 51021 rules fired and 17772 states in the queue.
+	21000 states explored in 2.60s, with 53366 rules fired and 18655 states in the queue.
+	22000 states explored in 2.70s, with 57186 rules fired and 19475 states in the queue.
+	23000 states explored in 2.76s, with 59380 rules fired and 20376 states in the queue.
+	24000 states explored in 2.81s, with 61230 rules fired and 21283 states in the queue.
+	25000 states explored in 2.88s, with 63835 rules fired and 22155 states in the queue.
+	26000 states explored in 2.97s, with 67611 rules fired and 22988 states in the queue.
+	27000 states explored in 3.03s, with 69508 rules fired and 23893 states in the queue.
+	28000 states explored in 3.08s, with 71485 rules fired and 24794 states in the queue.
+	29000 states explored in 3.16s, with 74423 rules fired and 25650 states in the queue.
+	30000 states explored in 3.25s, with 77900 rules fired and 26495 states in the queue.
+	31000 states explored in 3.30s, with 79645 rules fired and 27408 states in the queue.
+	32000 states explored in 3.36s, with 81950 rules fired and 28293 states in the queue.
+	33000 states explored in 3.46s, with 85770 rules fired and 29112 states in the queue.
+	34000 states explored in 3.52s, with 88012 rules fired and 30011 states in the queue.
+	35000 states explored in 3.57s, with 89829 rules fired and 30920 states in the queue.
+	36000 states explored in 3.64s, with 92463 rules fired and 31790 states in the queue.
+	37000 states explored in 3.74s, with 96627 rules fired and 32603 states in the queue.
+	38000 states explored in 3.83s, with 100181 rules fired and 33433 states in the queue.
+	39000 states explored in 3.91s, with 103597 rules fired and 34280 states in the queue.
+	40000 states explored in 4.01s, with 107713 rules fired and 35095 states in the queue.
+	41000 states explored in 4.11s, with 111549 rules fired and 35915 states in the queue.
+	42000 states explored in 4.19s, with 114735 rules fired and 36768 states in the queue.
+	43000 states explored in 4.29s, with 118836 rules fired and 37584 states in the queue.
+	44000 states explored in 4.38s, with 122957 rules fired and 38401 states in the queue.
+	45000 states explored in 4.46s, with 125967 rules fired and 39253 states in the queue.
+	46000 states explored in 4.56s, with 129908 rules fired and 40077 states in the queue.
+	47000 states explored in 4.66s, with 134098 rules fired and 40889 states in the queue.
+	48000 states explored in 4.74s, with 137420 rules fired and 41727 states in the queue.
+	49000 states explored in 4.87s, with 143115 rules fired and 42486 states in the queue.
+	50000 states explored in 5.00s, with 148683 rules fired and 43257 states in the queue.
+	51000 states explored in 5.13s, with 154572 rules fired and 44010 states in the queue.
+	52000 states explored in 5.26s, with 160329 rules fired and 44790 states in the queue.
+	53000 states explored in 5.40s, with 166931 rules fired and 45574 states in the queue.
+	54000 states explored in 5.46s, with 168759 rules fired and 46443 states in the queue.
+	55000 states explored in 5.53s, with 171607 rules fired and 47277 states in the queue.
+	56000 states explored in 5.59s, with 173624 rules fired and 48136 states in the queue.
+	57000 states explored in 5.67s, with 176332 rules fired and 48980 states in the queue.
+	58000 states explored in 5.73s, with 178520 rules fired and 49829 states in the queue.
+	59000 states explored in 5.80s, with 181057 rules fired and 50684 states in the queue.
+	60000 states explored in 5.87s, with 183391 rules fired and 51524 states in the queue.
+	61000 states explored in 5.94s, with 185778 rules fired and 52387 states in the queue.
+	62000 states explored in 6.01s, with 188322 rules fired and 53226 states in the queue.
+	63000 states explored in 6.07s, with 190459 rules fired and 54090 states in the queue.
+	64000 states explored in 6.15s, with 193387 rules fired and 54922 states in the queue.
+	65000 states explored in 6.20s, with 195185 rules fired and 55793 states in the queue.
+	66000 states explored in 6.28s, with 198113 rules fired and 56625 states in the queue.
+	67000 states explored in 6.34s, with 199877 rules fired and 57498 states in the queue.
+	68000 states explored in 6.42s, with 203299 rules fired and 58302 states in the queue.
+	69000 states explored in 6.52s, with 207010 rules fired and 59110 states in the queue.
+	70000 states explored in 6.60s, with 210409 rules fired and 59914 states in the queue.
+	71000 states explored in 6.70s, with 214153 rules fired and 60722 states in the queue.
+	72000 states explored in 6.79s, with 217561 rules fired and 61526 states in the queue.
+	73000 states explored in 6.88s, with 221313 rules fired and 62342 states in the queue.
+	74000 states explored in 6.99s, with 226016 rules fired and 63159 states in the queue.
+	75000 states explored in 7.14s, with 232783 rules fired and 63908 states in the queue.
+	76000 states explored in 7.19s, with 234581 rules fired and 64780 states in the queue.
+	77000 states explored in 7.27s, with 237508 rules fired and 65612 states in the queue.
+	78000 states explored in 7.33s, with 239302 rules fired and 66482 states in the queue.
+	79000 states explored in 7.40s, with 242158 rules fired and 67312 states in the queue.
+	80000 states explored in 7.47s, with 244226 rules fired and 68165 states in the queue.
+	81000 states explored in 7.54s, with 246856 rules fired and 69008 states in the queue.
+	82000 states explored in 7.61s, with 249150 rules fired and 69850 states in the queue.
+	83000 states explored in 7.67s, with 251561 rules fired and 70706 states in the queue.
+	84000 states explored in 7.74s, with 254048 rules fired and 71547 states in the queue.
+	85000 states explored in 7.81s, with 256266 rules fired and 72409 states in the queue.
+	86000 states explored in 7.88s, with 259161 rules fired and 73237 states in the queue.
+	87000 states explored in 7.94s, with 260949 rules fired and 74108 states in the queue.
+	88000 states explored in 8.02s, with 263854 rules fired and 74934 states in the queue.
+	89000 states explored in 8.08s, with 265746 rules fired and 75799 states in the queue.
+	90000 states explored in 8.17s, with 269175 rules fired and 76598 states in the queue.
+	91000 states explored in 8.26s, with 272946 rules fired and 77398 states in the queue.
+	92000 states explored in 8.35s, with 276406 rules fired and 78203 states in the queue.
+	93000 states explored in 8.44s, with 280150 rules fired and 78997 states in the queue.
+	94000 states explored in 8.54s, with 283928 rules fired and 79793 states in the queue.
+	95000 states explored in 8.64s, with 288044 rules fired and 80598 states in the queue.
+	96000 states explored in 8.75s, with 292838 rules fired and 81403 states in the queue.
+	97000 states explored in 8.87s, with 298079 rules fired and 82168 states in the queue.
+	98000 states explored in 8.94s, with 300496 rules fired and 83007 states in the queue.
+	99000 states explored in 9.02s, with 302798 rules fired and 83871 states in the queue.
+	100000 states explored in 9.09s, with 305446 rules fired and 84706 states in the queue.
+	101000 states explored in 9.15s, with 307448 rules fired and 85571 states in the queue.
+	102000 states explored in 9.23s, with 310424 rules fired and 86393 states in the queue.
+	103000 states explored in 9.28s, with 312162 rules fired and 87265 states in the queue.
+	104000 states explored in 9.36s, with 315076 rules fired and 88094 states in the queue.
+	105000 states explored in 9.42s, with 317068 rules fired and 88953 states in the queue.
+	106000 states explored in 9.50s, with 319800 rules fired and 89796 states in the queue.
+	107000 states explored in 9.56s, with 321990 rules fired and 90642 states in the queue.
+	108000 states explored in 9.63s, with 324451 rules fired and 91496 states in the queue.
+	109000 states explored in 9.70s, with 326947 rules fired and 92331 states in the queue.
+	110000 states explored in 9.76s, with 329160 rules fired and 93192 states in the queue.
+	111000 states explored in 9.85s, with 332201 rules fired and 94012 states in the queue.
+	112000 states explored in 9.93s, with 335622 rules fired and 94813 states in the queue.
+	113000 states explored in 10.03s, with 339400 rules fired and 95611 states in the queue.
+	114000 states explored in 10.12s, with 342828 rules fired and 96417 states in the queue.
+	115000 states explored in 10.21s, with 346605 rules fired and 97210 states in the queue.
+	116000 states explored in 10.31s, with 350394 rules fired and 98009 states in the queue.
+	117000 states explored in 10.42s, with 355184 rules fired and 98817 states in the queue.
+	118000 states explored in 10.56s, with 361641 rules fired and 99551 states in the queue.
+	119000 states explored in 10.62s, with 363521 rules fired and 100419 states in the queue.
+	120000 states explored in 10.70s, with 366332 rules fired and 101257 states in the queue.
+	121000 states explored in 10.76s, with 368432 rules fired and 102110 states in the queue.
+	122000 states explored in 10.83s, with 371046 rules fired and 102953 states in the queue.
+	123000 states explored in 10.90s, with 373356 rules fired and 103793 states in the queue.
+	124000 states explored in 10.97s, with 375714 rules fired and 104653 states in the queue.
+	125000 states explored in 11.04s, with 378306 rules fired and 105488 states in the queue.
+	126000 states explored in 11.10s, with 380372 rules fired and 106353 states in the queue.
+	127000 states explored in 11.18s, with 383326 rules fired and 107183 states in the queue.
+	128000 states explored in 11.23s, with 385090 rules fired and 108056 states in the queue.
+	129000 states explored in 11.31s, with 388035 rules fired and 108879 states in the queue.
+	130000 states explored in 11.37s, with 389935 rules fired and 109743 states in the queue.
+	131000 states explored in 11.45s, with 392718 rules fired and 110578 states in the queue.
+	132000 states explored in 11.51s, with 394876 rules fired and 111427 states in the queue.
+	133000 states explored in 11.60s, with 398634 rules fired and 112231 states in the queue.
+	134000 states explored in 11.69s, with 402076 rules fired and 113026 states in the queue.
+	135000 states explored in 11.79s, with 405848 rules fired and 113823 states in the queue.
+	136000 states explored in 11.88s, with 409280 rules fired and 114630 states in the queue.
+	137000 states explored in 11.97s, with 413058 rules fired and 115421 states in the queue.
+	138000 states explored in 12.08s, with 417512 rules fired and 116228 states in the queue.
+	139000 states explored in 12.21s, with 423246 rules fired and 117000 states in the queue.
+	140000 states explored in 12.30s, with 426933 rules fired and 117810 states in the queue.
+	141000 states explored in 12.38s, with 429866 rules fired and 118640 states in the queue.
+	142000 states explored in 12.43s, with 431614 rules fired and 119513 states in the queue.
+	143000 states explored in 12.51s, with 434594 rules fired and 120343 states in the queue.
+	144000 states explored in 12.57s, with 436326 rules fired and 121218 states in the queue.
+	145000 states explored in 12.65s, with 439322 rules fired and 122047 states in the queue.
+	146000 states explored in 12.70s, with 441217 rules fired and 122912 states in the queue.
+	147000 states explored in 12.78s, with 444030 rules fired and 123750 states in the queue.
+	148000 states explored in 12.84s, with 446126 rules fired and 124604 states in the queue.
+	149000 states explored in 12.91s, with 448730 rules fired and 125452 states in the queue.
+	150000 states explored in 12.98s, with 451016 rules fired and 126296 states in the queue.
+	151000 states explored in 13.05s, with 453425 rules fired and 127156 states in the queue.
+	152000 states explored in 13.12s, with 455913 rules fired and 127997 states in the queue.
+	153000 states explored in 13.18s, with 458138 rules fired and 128860 states in the queue.
+	154000 states explored in 13.26s, with 461159 rules fired and 129687 states in the queue.
+	155000 states explored in 13.35s, with 464546 rules fired and 130490 states in the queue.
+	156000 states explored in 13.44s, with 468316 rules fired and 131298 states in the queue.
+	157000 states explored in 13.53s, with 471730 rules fired and 132101 states in the queue.
+	158000 states explored in 13.63s, with 475485 rules fired and 132908 states in the queue.
+	159000 states explored in 13.72s, with 478905 rules fired and 133714 states in the queue.
+	160000 states explored in 13.82s, with 483324 rules fired and 134540 states in the queue.
+	161000 states explored in 13.95s, with 489195 rules fired and 135317 states in the queue.
+	162000 states explored in 14.04s, with 492837 rules fired and 136137 states in the queue.
+	163000 states explored in 14.12s, with 495617 rules fired and 136971 states in the queue.
+	164000 states explored in 14.18s, with 497555 rules fired and 137840 states in the queue.
+	165000 states explored in 14.26s, with 500532 rules fired and 138662 states in the queue.
+	166000 states explored in 14.31s, with 502254 rules fired and 139536 states in the queue.
+	167000 states explored in 14.39s, with 505183 rules fired and 140362 states in the queue.
+	168000 states explored in 14.45s, with 507187 rules fired and 141220 states in the queue.
+	169000 states explored in 14.52s, with 509838 rules fired and 142062 states in the queue.
+	170000 states explored in 14.59s, with 512100 rules fired and 142908 states in the queue.
+	171000 states explored in 14.66s, with 514561 rules fired and 143765 states in the queue.
+	172000 states explored in 14.73s, with 517025 rules fired and 144600 states in the queue.
+	173000 states explored in 14.79s, with 519255 rules fired and 145462 states in the queue.
+	174000 states explored in 14.87s, with 522191 rules fired and 146287 states in the queue.
+	175000 states explored in 14.93s, with 523979 rules fired and 147158 states in the queue.
+	176000 states explored in 15.01s, with 527227 rules fired and 147965 states in the queue.
+	177000 states explored in 15.10s, with 530671 rules fired and 148777 states in the queue.
+	178000 states explored in 15.20s, with 534441 rules fired and 149562 states in the queue.
+	179000 states explored in 15.29s, with 538213 rules fired and 150365 states in the queue.
+	180000 states explored in 15.38s, with 541665 rules fired and 151163 states in the queue.
+	181000 states explored in 15.49s, with 545791 rules fired and 151963 states in the queue.
+	182000 states explored in 15.60s, with 550605 rules fired and 152768 states in the queue.
+	183000 states explored in 15.73s, with 556449 rules fired and 153517 states in the queue.
+	184000 states explored in 15.80s, with 558605 rules fired and 154368 states in the queue.
+	185000 states explored in 15.87s, with 561169 rules fired and 155219 states in the queue.
+	186000 states explored in 15.93s, with 563511 rules fired and 156058 states in the queue.
+	187000 states explored in 16.00s, with 565822 rules fired and 156919 states in the queue.
+	188000 states explored in 16.08s, with 568622 rules fired and 157748 states in the queue.
+	189000 states explored in 16.13s, with 570481 rules fired and 158619 states in the queue.
+	190000 states explored in 16.21s, with 573450 rules fired and 159442 states in the queue.
+	191000 states explored in 16.27s, with 575198 rules fired and 160315 states in the queue.
+	192000 states explored in 16.35s, with 578177 rules fired and 161145 states in the queue.
+	193000 states explored in 16.41s, with 580117 rules fired and 162006 states in the queue.
+	194000 states explored in 16.48s, with 582829 rules fired and 162845 states in the queue.
+	195000 states explored in 16.55s, with 585035 rules fired and 163690 states in the queue.
+	196000 states explored in 16.61s, with 587489 rules fired and 164544 states in the queue.
+	197000 states explored in 16.69s, with 589993 rules fired and 165378 states in the queue.
+	198000 states explored in 16.78s, with 593753 rules fired and 166176 states in the queue.
+	199000 states explored in 16.87s, with 597382 rules fired and 166978 states in the queue.
+	200000 states explored in 16.97s, with 600960 rules fired and 167770 states in the queue.
+	201000 states explored in 17.06s, with 604749 rules fired and 168571 states in the queue.
+	202000 states explored in 17.15s, with 608217 rules fired and 169370 states in the queue.
+	203000 states explored in 17.26s, with 613015 rules fired and 170176 states in the queue.
+	204000 states explored in 17.42s, with 620011 rules fired and 170897 states in the queue.
+	205000 states explored in 17.47s, with 621745 rules fired and 171774 states in the queue.
+	206000 states explored in 17.55s, with 624721 rules fired and 172602 states in the queue.
+	207000 states explored in 17.61s, with 626613 rules fired and 173467 states in the queue.
+	208000 states explored in 17.69s, with 629436 rules fired and 174299 states in the queue.
+	209000 states explored in 17.75s, with 631528 rules fired and 175151 states in the queue.
+	210000 states explored in 17.82s, with 634087 rules fired and 175999 states in the queue.
+	211000 states explored in 17.89s, with 636485 rules fired and 176836 states in the queue.
+	212000 states explored in 17.96s, with 638746 rules fired and 177699 states in the queue.
+	213000 states explored in 18.03s, with 641399 rules fired and 178537 states in the queue.
+	214000 states explored in 18.09s, with 643467 rules fired and 179402 states in the queue.
+	215000 states explored in 18.17s, with 646445 rules fired and 180224 states in the queue.
+	216000 states explored in 18.22s, with 648143 rules fired and 181100 states in the queue.
+	217000 states explored in 18.30s, with 651097 rules fired and 181924 states in the queue.
+	218000 states explored in 18.36s, with 653061 rules fired and 182783 states in the queue.
+	219000 states explored in 18.45s, with 656522 rules fired and 183588 states in the queue.
+	220000 states explored in 18.55s, with 660280 rules fired and 184381 states in the queue.
+	221000 states explored in 18.65s, with 664076 rules fired and 185177 states in the queue.
+	222000 states explored in 18.73s, with 667495 rules fired and 185980 states in the queue.
+	223000 states explored in 18.83s, with 671293 rules fired and 186775 states in the queue.
+	224000 states explored in 18.93s, with 675422 rules fired and 187585 states in the queue.
+	225000 states explored in 19.04s, with 680251 rules fired and 188390 states in the queue.
+	226000 states explored in 19.19s, with 686723 rules fired and 189096 states in the queue.
+	227000 states explored in 19.28s, with 690124 rules fired and 189905 states in the queue.
+	228000 states explored in 19.38s, with 693866 rules fired and 190711 states in the queue.
+	229000 states explored in 19.47s, with 697269 rules fired and 191520 states in the queue.
+	230000 states explored in 19.56s, with 701005 rules fired and 192322 states in the queue.
+	231000 states explored in 19.66s, with 705072 rules fired and 193144 states in the queue.
+	232000 states explored in 19.77s, with 709801 rules fired and 193961 states in the queue.
+	233000 states explored in 19.91s, with 716029 rules fired and 194698 states in the queue.
+	234000 states explored in 20.00s, with 719802 rules fired and 195492 states in the queue.
+	235000 states explored in 20.10s, with 723580 rules fired and 196290 states in the queue.
+	236000 states explored in 20.19s, with 727006 rules fired and 197091 states in the queue.
+	237000 states explored in 20.28s, with 730794 rules fired and 197888 states in the queue.
+	238000 states explored in 20.38s, with 734910 rules fired and 198696 states in the queue.
+	239000 states explored in 20.49s, with 739712 rules fired and 199502 states in the queue.
+	240000 states explored in 20.64s, with 746204 rules fired and 200214 states in the queue.
+	241000 states explored in 20.73s, with 749638 rules fired and 201013 states in the queue.
+	242000 states explored in 20.83s, with 753420 rules fired and 201808 states in the queue.
+	243000 states explored in 20.91s, with 756866 rules fired and 202618 states in the queue.
+	244000 states explored in 21.01s, with 760636 rules fired and 203405 states in the queue.
+	245000 states explored in 21.11s, with 765090 rules fired and 204217 states in the queue.
+	246000 states explored in 21.26s, with 771769 rules fired and 204955 states in the queue.
+	247000 states explored in 21.37s, with 776046 rules fired and 205731 states in the queue.
+	248000 states explored in 21.46s, with 779824 rules fired and 206529 states in the queue.
+	249000 states explored in 21.55s, with 783252 rules fired and 207326 states in the queue.
+	250000 states explored in 21.65s, with 787035 rules fired and 208127 states in the queue.
+	251000 states explored in 21.73s, with 790488 rules fired and 208931 states in the queue.
+	252000 states explored in 21.85s, with 795268 rules fired and 209738 states in the queue.
+	253000 states explored in 22.00s, with 802475 rules fired and 210446 states in the queue.
+	254000 states explored in 22.09s, with 805877 rules fired and 211256 states in the queue.
+	255000 states explored in 22.19s, with 809617 rules fired and 212058 states in the queue.
+	256000 states explored in 22.27s, with 813058 rules fired and 212869 states in the queue.
+	257000 states explored in 22.37s, with 816794 rules fired and 213667 states in the queue.
+	258000 states explored in 22.46s, with 820222 rules fired and 214484 states in the queue.
+	259000 states explored in 22.57s, with 825002 rules fired and 215298 states in the queue.
+	260000 states explored in 22.72s, with 832235 rules fired and 216030 states in the queue.
+	261000 states explored in 22.81s, with 835675 rules fired and 216832 states in the queue.
+	262000 states explored in 22.91s, with 839455 rules fired and 217629 states in the queue.
+	263000 states explored in 23.00s, with 842896 rules fired and 218430 states in the queue.
+	264000 states explored in 23.09s, with 846685 rules fired and 219226 states in the queue.
+	265000 states explored in 23.18s, with 850155 rules fired and 220033 states in the queue.
+	266000 states explored in 23.30s, with 855103 rules fired and 220835 states in the queue.
+	267000 states explored in 23.45s, with 862155 rules fired and 221541 states in the queue.
+	268000 states explored in 23.54s, with 865599 rules fired and 222355 states in the queue.
+	269000 states explored in 23.64s, with 869361 rules fired and 223139 states in the queue.
+	270000 states explored in 23.73s, with 873133 rules fired and 223942 states in the queue.
+	271000 states explored in 23.82s, with 876593 rules fired and 224741 states in the queue.
+	272000 states explored in 23.92s, with 880711 rules fired and 225541 states in the queue.
+	273000 states explored in 24.03s, with 885517 rules fired and 226346 states in the queue.
+	274000 states explored in 24.18s, with 892047 rules fired and 227060 states in the queue.
+	275000 states explored in 24.27s, with 895824 rules fired and 227856 states in the queue.
+	276000 states explored in 24.36s, with 899285 rules fired and 228664 states in the queue.
+	277000 states explored in 24.46s, with 903031 rules fired and 229455 states in the queue.
+	278000 states explored in 24.55s, with 906821 rules fired and 230250 states in the queue.
+	279000 states explored in 24.65s, with 910956 rules fired and 231058 states in the queue.
+	280000 states explored in 24.76s, with 915771 rules fired and 231862 states in the queue.
+	281000 states explored in 24.92s, with 922921 rules fired and 232589 states in the queue.
+	282000 states explored in 25.03s, with 927826 rules fired and 233400 states in the queue.
+	283000 states explored in 25.18s, with 934594 rules fired and 234146 states in the queue.
+	284000 states explored in 25.33s, with 941416 rules fired and 234878 states in the queue.
+	285000 states explored in 25.45s, with 946574 rules fired and 235674 states in the queue.
+	286000 states explored in 25.61s, with 953909 rules fired and 236392 states in the queue.
+	287000 states explored in 25.73s, with 958905 rules fired and 237191 states in the queue.
+	288000 states explored in 25.88s, with 966081 rules fired and 237915 states in the queue.
+	289000 states explored in 25.98s, with 970535 rules fired and 238740 states in the queue.
+	290000 states explored in 26.14s, with 977820 rules fired and 239469 states in the queue.
+	291000 states explored in 26.26s, with 982633 rules fired and 240274 states in the queue.
+	292000 states explored in 26.41s, with 989857 rules fired and 240994 states in the queue.
+	293000 states explored in 26.58s, with 997303 rules fired and 241705 states in the queue.
+	294000 states explored in 26.69s, with 1002147 rules fired and 242512 states in the queue.
+	295000 states explored in 26.89s, with 1011404 rules fired and 243163 states in the queue.
+	296000 states explored in 27.22s, with 1027835 rules fired and 243570 states in the queue.
+	297000 states explored in 27.45s, with 1038615 rules fired and 244140 states in the queue.
+	298000 states explored in 27.52s, with 1040633 rules fired and 244970 states in the queue.
+	299000 states explored in 27.58s, with 1042737 rules fired and 245805 states in the queue.
+	300000 states explored in 27.64s, with 1044839 rules fired and 246641 states in the queue.
+	301000 states explored in 27.71s, with 1047214 rules fired and 247454 states in the queue.
+	302000 states explored in 27.78s, with 1049238 rules fired and 248284 states in the queue.
+	303000 states explored in 27.84s, with 1051298 rules fired and 249115 states in the queue.
+	304000 states explored in 27.91s, with 1053902 rules fired and 249947 states in the queue.
+	305000 states explored in 28.00s, with 1057059 rules fired and 250774 states in the queue.
+	306000 states explored in 28.08s, with 1060185 rules fired and 251602 states in the queue.
+	307000 states explored in 28.21s, with 1065685 rules fired and 252312 states in the queue.
+	308000 states explored in 28.27s, with 1067724 rules fired and 253141 states in the queue.
+	309000 states explored in 28.34s, with 1069782 rules fired and 253971 states in the queue.
+	310000 states explored in 28.40s, with 1071895 rules fired and 254805 states in the queue.
+	311000 states explored in 28.47s, with 1074014 rules fired and 255639 states in the queue.
+	312000 states explored in 28.54s, with 1076431 rules fired and 256455 states in the queue.
+	313000 states explored in 28.60s, with 1078475 rules fired and 257283 states in the queue.
+	314000 states explored in 28.67s, with 1080953 rules fired and 258115 states in the queue.
+	315000 states explored in 28.75s, with 1084240 rules fired and 258936 states in the queue.
+	316000 states explored in 28.84s, with 1087422 rules fired and 259762 states in the queue.
+	317000 states explored in 28.98s, with 1093355 rules fired and 260467 states in the queue.
+	318000 states explored in 29.04s, with 1095376 rules fired and 261297 states in the queue.
+	319000 states explored in 29.10s, with 1097427 rules fired and 262126 states in the queue.
+	320000 states explored in 29.17s, with 1099468 rules fired and 262955 states in the queue.
+	321000 states explored in 29.23s, with 1101585 rules fired and 263789 states in the queue.
+	322000 states explored in 29.30s, with 1103702 rules fired and 264624 states in the queue.
+	323000 states explored in 29.37s, with 1106127 rules fired and 265438 states in the queue.
+	324000 states explored in 29.43s, with 1108286 rules fired and 266275 states in the queue.
+	325000 states explored in 29.51s, with 1111460 rules fired and 267102 states in the queue.
+	326000 states explored in 29.60s, with 1114752 rules fired and 267924 states in the queue.
+	327000 states explored in 29.74s, with 1121006 rules fired and 268623 states in the queue.
+	328000 states explored in 29.81s, with 1123029 rules fired and 269453 states in the queue.
+	329000 states explored in 29.87s, with 1125079 rules fired and 270282 states in the queue.
+	330000 states explored in 29.94s, with 1127130 rules fired and 271111 states in the queue.
+	331000 states explored in 30.00s, with 1129156 rules fired and 271939 states in the queue.
+	332000 states explored in 30.06s, with 1131275 rules fired and 272774 states in the queue.
+	333000 states explored in 30.13s, with 1133397 rules fired and 273607 states in the queue.
+	334000 states explored in 30.20s, with 1135865 rules fired and 274425 states in the queue.
+	335000 states explored in 30.28s, with 1139033 rules fired and 275252 states in the queue.
+	336000 states explored in 30.37s, with 1142206 rules fired and 276078 states in the queue.
+	337000 states explored in 30.50s, with 1148140 rules fired and 276789 states in the queue.
+	338000 states explored in 30.58s, with 1150634 rules fired and 277603 states in the queue.
+	339000 states explored in 30.64s, with 1152686 rules fired and 278434 states in the queue.
+	340000 states explored in 30.70s, with 1154722 rules fired and 279264 states in the queue.
+	341000 states explored in 30.77s, with 1156773 rules fired and 280093 states in the queue.
+	342000 states explored in 30.83s, with 1158779 rules fired and 280921 states in the queue.
+	343000 states explored in 30.90s, with 1160897 rules fired and 281755 states in the queue.
+	344000 states explored in 30.96s, with 1163011 rules fired and 282591 states in the queue.
+	345000 states explored in 31.05s, with 1166497 rules fired and 283401 states in the queue.
+	346000 states explored in 31.13s, with 1169639 rules fired and 284227 states in the queue.
+	347000 states explored in 31.27s, with 1175376 rules fired and 284941 states in the queue.
+	348000 states explored in 31.34s, with 1177796 rules fired and 285765 states in the queue.
+	349000 states explored in 31.40s, with 1179848 rules fired and 286594 states in the queue.
+	350000 states explored in 31.46s, with 1181899 rules fired and 287423 states in the queue.
+	351000 states explored in 31.53s, with 1183925 rules fired and 288251 states in the queue.
+	352000 states explored in 31.59s, with 1185977 rules fired and 289081 states in the queue.
+	353000 states explored in 31.66s, with 1188073 rules fired and 289913 states in the queue.
+	354000 states explored in 31.72s, with 1190196 rules fired and 290746 states in the queue.
+	355000 states explored in 31.80s, with 1193426 rules fired and 291571 states in the queue.
+	356000 states explored in 31.89s, with 1196914 rules fired and 292383 states in the queue.
+	357000 states explored in 32.02s, with 1202202 rules fired and 293115 states in the queue.
+	358000 states explored in 32.10s, with 1205103 rules fired and 293930 states in the queue.
+	359000 states explored in 32.17s, with 1207517 rules fired and 294746 states in the queue.
+	360000 states explored in 32.23s, with 1209552 rules fired and 295573 states in the queue.
+	361000 states explored in 32.30s, with 1211605 rules fired and 296403 states in the queue.
+	362000 states explored in 32.36s, with 1213647 rules fired and 297233 states in the queue.
+	363000 states explored in 32.43s, with 1215682 rules fired and 298060 states in the queue.
+	364000 states explored in 32.49s, with 1217804 rules fired and 298894 states in the queue.
+	365000 states explored in 32.57s, with 1220977 rules fired and 299720 states in the queue.
+	366000 states explored in 32.65s, with 1224158 rules fired and 300546 states in the queue.
+	367000 states explored in 32.77s, with 1229139 rules fired and 301293 states in the queue.
+	368000 states explored in 32.87s, with 1232709 rules fired and 302077 states in the queue.
+	369000 states explored in 32.93s, with 1234856 rules fired and 302911 states in the queue.
+	370000 states explored in 33.00s, with 1237240 rules fired and 303726 states in the queue.
+	371000 states explored in 33.07s, with 1239273 rules fired and 304554 states in the queue.
+	372000 states explored in 33.13s, with 1241317 rules fired and 305384 states in the queue.
+	373000 states explored in 33.20s, with 1243370 rules fired and 306213 states in the queue.
+	374000 states explored in 33.26s, with 1245404 rules fired and 307041 states in the queue.
+	375000 states explored in 33.34s, with 1248585 rules fired and 307867 states in the queue.
+	376000 states explored in 33.42s, with 1251767 rules fired and 308693 states in the queue.
+	377000 states explored in 33.53s, with 1256094 rules fired and 309469 states in the queue.
+	378000 states explored in 33.65s, with 1261322 rules fired and 310217 states in the queue.
+	379000 states explored in 33.74s, with 1264446 rules fired and 311043 states in the queue.
+	380000 states explored in 33.83s, with 1268371 rules fired and 311838 states in the queue.
+	381000 states explored in 33.95s, with 1273341 rules fired and 312596 states in the queue.
+	382000 states explored in 34.04s, with 1276858 rules fired and 313407 states in the queue.
+	383000 states explored in 34.13s, with 1280437 rules fired and 314216 states in the queue.
+	384000 states explored in 34.26s, with 1286100 rules fired and 314948 states in the queue.
+	385000 states explored in 34.35s, with 1289283 rules fired and 315774 states in the queue.
+	386000 states explored in 34.43s, with 1292699 rules fired and 316590 states in the queue.
+	387000 states explored in 34.58s, with 1298874 rules fired and 317299 states in the queue.
+	388000 states explored in 34.66s, with 1302057 rules fired and 318125 states in the queue.
+	389000 states explored in 34.74s, with 1305229 rules fired and 318951 states in the queue.
+	390000 states explored in 34.89s, with 1311614 rules fired and 319648 states in the queue.
+	391000 states explored in 34.97s, with 1314790 rules fired and 320476 states in the queue.
+	392000 states explored in 35.05s, with 1317937 rules fired and 321302 states in the queue.
+	393000 states explored in 35.20s, with 1324016 rules fired and 322009 states in the queue.
+	394000 states explored in 35.28s, with 1327201 rules fired and 322834 states in the queue.
+	395000 states explored in 35.36s, with 1330385 rules fired and 323660 states in the queue.
+	396000 states explored in 35.50s, with 1336480 rules fired and 324373 states in the queue.
+	397000 states explored in 35.59s, with 1339985 rules fired and 325184 states in the queue.
+	398000 states explored in 35.68s, with 1343171 rules fired and 326009 states in the queue.
+	399000 states explored in 35.82s, with 1349246 rules fired and 326723 states in the queue.
+	400000 states explored in 35.90s, with 1352482 rules fired and 327547 states in the queue.
+	401000 states explored in 35.99s, with 1355956 rules fired and 328359 states in the queue.
+	402000 states explored in 36.14s, with 1362797 rules fired and 329038 states in the queue.
+	403000 states explored in 36.32s, with 1370564 rules fired and 329681 states in the queue.
+	404000 states explored in 36.50s, with 1378817 rules fired and 330306 states in the queue.
+	405000 states explored in 36.68s, with 1386883 rules fired and 330942 states in the queue.
+	406000 states explored in 36.87s, with 1395280 rules fired and 331567 states in the queue.
+	407000 states explored in 37.05s, with 1403617 rules fired and 332238 states in the queue.
+
+==========================================================================
+
+Result:
+
+	Invariant "coherent, addr:0, n2:4, n1:0" failed.
+
+State Space Explored:
+
+	407465 states, 1407749 rules fired in 37.14s.
+
+Analysis of State Space:
+
+	There are rules that are never fired.
+	If you are running with symmetry, this may be why.  Otherwise,
+	please run this program with "-pr" for the rules information.
