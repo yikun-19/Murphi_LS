@@ -2523,6 +2523,28 @@ Invariant "Consistency of data"
 Invariant "Adequate invalidations with Read Exclusive request"
 */
 
+Invariant "Globally invalid RAC state at Home Cluster"
+  Forall n : Proc Do
+  Forall h : Home Do
+  Forall a : Address Do
+    ( h != n )
+    |
+    ( ( Procs[n].RAC[h][a].State != WRD
+      & Procs[n].RAC[h][a].State != RRD ) )
+  End
+  End
+  End; -- globally invalid RAC state at Home Cluster
+
+Invariant "Gobally invalid RAC state at Local Cluster"
+  Forall n : Proc Do
+  Forall h : Home Do
+  Forall a : Address Do
+    ( h = n )
+    |
+    ( Procs[n].RAC[h][a].State != WRDO )
+  End
+  End
+  End; -- globally invalid RAC state at Local Cluster
 
 Invariant "Only a single master copy exist"
   Forall n1 : Proc Do
@@ -2540,6 +2562,129 @@ Invariant "Only a single master copy exist"
   End
   End; -- only a single master copy exist
 
+Invariant "Irrelevant data is set to zero"
+  Forall n : Proc Do
+  Forall h : Home Do
+  Forall a : Address Do
+    ( Homes[h].Dir[a].State != Uncached
+    | Homes[h].Dir[a].SharedCount = 0 )
+    &
+    ( Forall i:0..DirMax-1 Do
+        i >= Homes[h].Dir[a].SharedCount
+        ->
+        Isundefined(Homes[h].Dir[a].Entries[i])
+      End )
+    &
+    ( Procs[n].Cache[h][a].State = Non_Locally_Cached
+      ->
+      Isundefined(Procs[n].Cache[h][a].Value)
+      )
+    &
+    ( Procs[n].RAC[h][a].State = INVAL
+      ->
+      ( Isundefined(Procs[n].RAC[h][a].Value)
+      & Procs[n].RAC[h][a].InvCount = 0 ) )
+  End
+  End
+  End; -- Irrelevant data is set to zero
+
+Invariant "Consistency within Directory"
+  Forall h : Home Do
+  Forall a : Address Do
+    ( Homes[h].Dir[a].State = Uncached
+    & Homes[h].Dir[a].SharedCount = 0 )
+    |
+    ( Homes[h].Dir[a].State = Dirty_Remote
+    & Homes[h].Dir[a].SharedCount = 1 )
+    |
+    ( Homes[h].Dir[a].State = Shared_Remote
+    & Homes[h].Dir[a].SharedCount != 0
+    & Forall i : DirIndex Do
+      Forall j : DirIndex Do
+        ( i != j
+        & i < Homes[h].Dir[a].SharedCount
+        & j < Homes[h].Dir[a].SharedCount )
+        ->
+        ( Homes[h].Dir[a].Entries[i] != Homes[h].Dir[a].Entries[j] )
+      End
+      End )
+  End
+  End; -- Consistency within Directory
+
+Invariant "Condition for existance of master copy of data"
+  Forall n : Proc Do
+  Forall h : Home Do
+  Forall a : Address Do
+    ( Procs[n].Cache[h][a].State != Locally_Exmod
+    | Procs[n].RAC[h][a].State = INVAL
+    | Procs[n].RAC[h][a].State = WINV )
+  End
+  End
+  End; -- Condition for existance of master copy of data
+
+Invariant "Consistency of data"
+  Forall n : Proc Do
+  Forall h : Home Do
+  Forall a : Address Do
+    ! ( Procs[n].Cache[h][a].State = Locally_Shared
+      & Procs[n].Cache[h][a].Value != Homes[h].Mem[a]
+      & Homes[h].Dir[a].State != Dirty_Remote
+      & ! ( Exists i : 0..ChanMax-1 Do
+              ( i < ReqNet[h][n].Count
+              & ReqNet[h][n].Messages[i].Mtype = INV )
+            End )
+      & ! ( Exists i:0..ChanMax-1 Do
+              ( i < ReqNet[n][h].Count
+              & ReqNet[n][h].Messages[i].Mtype = SHWB )
+            End
+            |
+            Exists m : Proc Do
+            Exists i : 0..ChanMax-1 Do
+              ( i < ReqNet[m][h].Count
+              & ReqNet[m][h].Messages[i].Mtype = SHWB
+              & ReqNet[m][h].Messages[i].Aux = n)
+            End
+            End )
+      & ! ( Exists i:0..ChanMax-1 Do
+              ( i < ReplyNet[n][h].Count
+              & ReplyNet[n][h].Messages[i].Mtype = ACK )
+            End
+            |
+            Exists m:Proc Do
+            Exists i:0..ChanMax-1 Do
+              ( i < ReplyNet[n][h].Count
+              & ReplyNet[m][h].Messages[i].Mtype = ACK
+              & ReplyNet[m][h].Messages[i].Aux = n)
+            End
+            End )
+      & Procs[n].RAC[h][a].State != WDMAW
+      & ! ( Exists i:0..ChanMax-1 Do
+                ( i<ReqNet[h][n].Count
+                & ReqNet[h][n].Messages[i].Mtype = DUP )
+            End ) )
+  End
+  End
+  End; -- Consistency of data
+
+Invariant "Adequate invalidations with Read Exclusive request"
+  Forall n1 : Proc Do
+  Forall n2 : Proc Do
+  Forall h : Home Do
+  Forall a : Address Do
+    ( n1 = n2 )
+    |
+    !( ( Procs[n1].RAC[h][a].State = WINV )
+       &
+       ( Procs[n2].Cache[h][a].State = Locally_Shared )
+       &
+       ( ! Exists i : 0..ChanMax-1 Do
+             ( i < ReqNet[h][n2].Count
+             & ReqNet[h][n2].Messages[i].Mtype = INV )
+           End ) )
+  End
+  End
+  End
+  End; -- Adequate invalidations with Read Exclusive request
 
 /******************
 

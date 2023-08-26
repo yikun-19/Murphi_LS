@@ -8,7 +8,7 @@ Run this program with "-h" for the list of options.
 Bugs, questions, and comments should be directed to
 "melatti@di.uniroma1.it".
 
-CMurphi compiler last modified date: Nov 26 2022
+CMurphi compiler last modified date: Aug 25 2023
 Include files last modified date:    Jul 23 2021
 ==========================================================================
 
@@ -36,11 +36,11 @@ Memory usage:
 
 	* The size of each state is 2248 bits (rounded up to 288 bytes).
 	* The memory allocated for the hash table and state queue is
-	  5242 Mbytes.
+	  10485 Mbytes.
 	  With two words of overhead per state, the maximum size of
-	  the state space is 17201053 states.
+	  the state space is 34402099 states.
 	   * Use option "-k" or "-m" to increase this, if necessary.
-	* Capacity in queue for breadth-first search: 1720105 states.
+	* Capacity in queue for breadth-first search: 3440209 states.
 	   * Change the constant gPercentActiveStates in mu_prolog.inc
 	     to increase this, if necessary.
 
@@ -312,12 +312,12 @@ ReplyNet[Remote_2][Remote_2].Messages[2].Aux:Undefined
 ReplyNet[Remote_2][Remote_2].Messages[2].Addr:Undefined
 ReplyNet[Remote_2][Remote_2].Messages[2].InvCount:Undefined
 ReplyNet[Remote_2][Remote_2].Messages[2].Value:Undefined
-Procs[Home_1].Cache[Home_1][Address_1].State:Locally_Exmod
+Procs[Home_1].Cache[Home_1][Address_1].State:Non_Locally_Cached
 Procs[Home_1].Cache[Home_1][Address_1].Value:Undefined
 Procs[Home_1].RAC[Home_1][Address_1].State:INVAL
 Procs[Home_1].RAC[Home_1][Address_1].Value:Undefined
 Procs[Home_1].RAC[Home_1][Address_1].InvCount:0
-Procs[Remote_1].Cache[Home_1][Address_1].State:Locally_Shared
+Procs[Remote_1].Cache[Home_1][Address_1].State:Non_Locally_Cached
 Procs[Remote_1].Cache[Home_1][Address_1].Value:Undefined
 Procs[Remote_1].RAC[Home_1][Address_1].State:INVAL
 Procs[Remote_1].RAC[Home_1][Address_1].Value:Undefined
@@ -617,7 +617,7 @@ Homes[Home_1].Dir[Address_1].Entries[0]:Undefined
 Homes[Home_1].Dir[Address_1].Entries[1]:Undefined
 
 ------------- Show a heuristic value: ------------------
-2
+0
 
 ===== Startstates generated! =====
 
@@ -629,7 +629,7 @@ Result:
 
 State Space Explored:
 
-	95 states, 305 rules fired in 1.27s.
+	138 states, 614 rules fired in 2.48s.
 
 Analysis of State Space:
 

@@ -1181,6 +1181,64 @@ Invariant "Correct lock state -> forward"
   Endforall
   Endforall;
 
+Invariant "Correct lock state -> backward"
+  Forall h : Home Do
+  Forall l : LAddress Do
+    ( Homes[h].LDir[l].State = Locked
+    | Homes[h].LDir[l].State = Queued )
+    ->
+    ( LockOwner[h][l].State = Valid
+    | Exists n : Proc Do
+        ( Procs[n].LRAC[h][l].State = DULCK 
+        | Procs[n].LRAC[h][l].State = DGNTS )
+      Endexists
+    | Exists n : Proc Do
+      Exists i : 0..ChanMax-1 Do
+        ( i < ReplyNet[h][n].Count
+        & ReplyNet[h][n].Messages[i].Mtype = UNLCK )
+        |
+        ( i < ReqNet[n][h].Count
+        & ReqNet[n][h].Messages[i].Mtype = IOWR )
+        |
+        ( i < ReqNet[h][n].Count
+        & ReqNet[h][n].Messages[i].Mtype = GSET )
+       Endexists
+       Endexists )
+  Endforall
+  Endforall;
+
+Invariant "Correct lock queue"
+  Forall h : Home Do
+  Forall l : LAddress Do
+  Forall j : 0..DirMax-1 Do
+  Forall n : Proc Do
+    ( Homes[h].LDir[l].State = Queued
+    & j < Homes[h].LDir[l].QueuedCount
+    & Homes[h].LDir[l].Entries[j] = n )
+    -> 
+    ( Procs[n].LCache[h][l].State = Locally_Shared
+    | Procs[n].LRAC[h][l].State = DLCK 
+    | Exists i : 0..ChanMax-1 Do
+        ( i < ReplyNet[h][n].Count
+        & ReplyNet[h][n].Messages[i].Mtype = LCK )
+      Endexists )
+  Endforall
+  Endforall
+  Endforall
+  Endforall;
+
+Invariant "Irrelevant queue members are set to zero"
+  Forall h : Home Do
+  Forall l : LAddress Do
+    ( Homes[h].LDir[l].State = Queued
+    | Homes[h].LDir[l].QueuedCount = 0 )
+    &
+    ( Forall i:Dir_Index Do
+        i>=Homes[h].LDir[l].QueuedCount
+        -> Isundefined(Homes[h].LDir[l].Entries[i])
+      Endforall )
+  Endforall
+  Endforall;
 
 /******************
 
